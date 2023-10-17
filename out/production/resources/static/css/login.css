@@ -1,0 +1,70 @@
+@import "reset.css";
+
+*{
+    padding : 0;
+    margin : 0;
+    border : none;
+}
+body{
+    font-size : 14px;
+    font-family : 'Pretendard', sans-serif;
+}
+
+.logo{
+    width: 165px;
+    height: 80px;
+    display: block;
+    margin: auto;
+    margin-top: 130px;
+}
+
+.login-wrapper{ /*로그인 폼 전체*/
+    border-radius: 10px;
+    background-color: #F0E39E;
+    width: 250px;
+    height: 350px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-top: 50px
+
+}
+
+.login-wrapper > h2{ /*로그인 제목*/
+    font-size: 30px;
+    font-weight: 900;
+    color: #000000;
+    margin-bottom: 35px;
+}
+
+#login-form > input{ /*아이디, 비번 입력창*/
+    width: 100%;
+    height: 48px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: #F8F8F8;
+}
+
+#login-form > label{ /*경고메시지*/
+    width: 100%;
+    height: 48px;
+    color: #FF0000;
+    font-size: 14px;
+}
+
+#login-form > input::placeholder{ /*아이디, 비번 안내문구*/
+    color: #dedede;
+}
+#login-form > input[type="submit"]{ /*로그인 확인버튼*/
+    color: #fff;
+    font-size: 16px;
+    font-weight: 900;
+    background-color: #4D594A;
+    margin-top: 20px;
+}
