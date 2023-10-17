@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="../css/join.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>join</title>
+</head>
+<body>
+
+<!--폼에 작성한 데이터를 어디로 전송할지 지정-->
+<form action="/member/join" method="post">
+
+    <div class="joinpage" id="joinpage"> <!--전체 화면-->
+
+
+        <div class="menu" id="menu"> <!--상단 메뉴(로고, 메뉴바)-->
+
+            <div class="joinlogo" id="joinlogo">
+                <a href="main.html">
+                    <img class="joinlogo" src="../img/joinlogo.PNG" id="joinlogo"/>
+                </a>
+
+            </div>
+
+            <a href=login.html>로그인&emsp;</a>
+            <a href="mypage.html">마이페이지&emsp;</a>
+            <a href="explain.html">또독이란?</a>
+
+        </div>
+
+
+        <div>
+            <h2 class="join-title">회원가입</h2>
+        </div>
+
+
+
+        <!--회원가입 폼 시작-->
+        <div class="join-rectangle" id="join-rectangle">
+
+
+
+
+            <table >
+                <tr>
+                    <th>아이디</th>
+                    <td>&emsp;<input type = "text" name = "id" id="idcheck">
+                        &nbsp;
+                        <input class="idcheck" type="submit" value="중복확인">
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <th>
+                    </th>
+                    <td>
+                        <label class="notice-joinid" for="idcheck">&emsp; · 영문, 숫자 또는 각각의 조합으로 5~10자리까지 가능합니다.</label>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th>비밀번호 </th>
+                    <td>&emsp;<input class = join-input type = "password" name = "password"></td>
+                </tr>
+
+                <tr>
+                    <th>
+                    </th>
+                    <td>
+                        <label class="notice-joinid" for="idcheck">&emsp; · 영문 대소문자, 숫자, 특수문자 중 2가지 이상 조합이어야 합니다.</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>비밀번호 확인 </th>
+                    <td>&emsp;<input class = join-input type = "password" name = "password_check"></td>
+                </tr>
+
+                <tr>
+                    <th>이름 </th>
+                    <td>&emsp;<input class = join-input type = "text" name = "name"></td>
+                </tr>
+
+                <tr>
+                    <th>전화번호 </th>
+                    <td> &emsp;
+                        <select>
+                            <option value = "1">02</option>
+                            <option value = "2">011</option>
+                            <option value = "3">010</option>
+                        </select>
+                        <input type = 'tel' name = 'phone2'> -
+                        <input type = 'tel' name = 'phone3'>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>생년월일 </th>
+                    <td> &emsp;
+                        <select>
+                            <option value = "1">2005</option>
+                            <option value = "2">2006</option>
+                            <option value = "3">2007</option>
+                        </select> 년
+
+                        <select>
+                            <option value = "1">1</option>
+                            <option value = "2">2</option>
+                            <option value = "3">3</option>
+                            <option value = "4">4</option>
+                            <option value = "5">5</option>
+                            <option value = "6">6</option>
+                            <option value = "7">7</option>
+                            <option value = "8">8</option>
+                            <option value = "9">9</option>
+                            <option value = "10">10</option>
+                            <option value = "11">11</option>
+                            <option value = "12">12</option>
+                        </select> 월
+
+                        <select>
+
+                            <option value = "1">1</option>
+                            <option value = "2">2</option>
+                            <option value = "3">3</option>
+                            <option value = "4">4</option>
+                            <option value = "5">5</option>
+                            <option value = "6">6</option>
+                            <option value = "7">7</option>
+                            <option value = "8">8</option>
+                            <option value = "9">9</option>
+                            <option value = "10">10</option>
+                            <option value = "11">11</option>
+                            <option value = "12">12</option>
+                            <option value = "13">13</option>
+                            <option value = "14">14</option>
+                            <option value = "15">15</option>
+                            <option value = "16">16</option>
+                            <option value = "17">17</option>
+                            <option value = "18">18</option>
+                            <option value = "19">19</option>
+                            <option value = "20">20</option>
+                            <option value = "21">21</option>
+                            <option value = "22">22</option>
+                            <option value = "23">23</option>
+                            <option value = "24">24</option>
+                            <option value = "25">25</option>
+                            <option value = "26">26</option>
+                            <option value = "27">27</option>
+                            <option value = "28">28</option>
+                            <option value = "29">29</option>
+                            <option value = "30">30</option>
+                            <option value = "31">31<option>
+                        </select> 일
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>닉네임 </th>
+                    <td>&emsp;
+                        <input class = join-input type = "text" name = "nickname"></td>
+                </tr>
+
+                <tr>
+                    <th>&nbsp;</th>
+                    <td>&nbsp;</td>
+                </tr>
+
+
+            </table>
+
+            <div class="join-button" id="join-button">
+                <input class="joinbutton" type="submit" value="가입하기">
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+</form>
+
+
+
+
+
+</body>
+</html>

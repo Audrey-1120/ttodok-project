@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="/css/join.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join</title>
+    <!-- jquery cdn -->
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script> <!-- 이 주소가 있어야 jquery를 사용할 수 있음. -->
+
+
+</head>
+<body>
+
+
+
+<form action="/member/join" method="post">
+
+
+    <div class="joinpage" id="joinpage"> <!--전체 화면-->
+
+
+        <div class="menu" id="menu"> <!--상단 메뉴(로고, 메뉴바)-->
+
+            <div class="joinlogo" id="joinlogo">
+                <a href="main.html">
+                    <img class="joinlogo" src="../images/joinlogo.PNG"/>
+                </a>
+
+            </div>
+
+            <a href="login.html">로그인&emsp;</a>
+            <a href="mypage.html">마이페이지&emsp;</a>
+            <a href="explain.html">또독이란?</a>
+
+        </div>
+
+
+        <div>
+            <h2 class="join-title">회원가입</h2>
+        </div>
+
+
+
+        <!--회원가입 폼 시작-->
+        <div class="join-rectangle" id="join-rectangle">
+
+            <table >
+                <tr>
+                    <th>아이디</th> <!--onkeyup 속성 : JS 처리, 키보드를 입력할때마다 해당 함수 호출-->
+                    <td>&emsp;<input type = "text" name = "memberId" id="memberId" onkeyup="idCheck()">
+                        &nbsp;
+<!--                        <input class="idcheck" type="submit" value="중복확인" id="checkIdButton">-->
+                        <label class="check-joinid" id="check-result">&emsp;</label>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th>
+                    </th>
+                    <td>
+                        <label class="notice-joinid" for="memberId">&emsp; · 영문, 숫자 또는 각각의 조합으로 5~10자리까지 가능합니다.</label>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th>비밀번호 </th>
+                    <td>&emsp;<input class = join-input type = "password" name = "memberPw" id="memberPw"></td>
+                </tr>
+                <tr>
+                    <th>
+                    </th>
+                    <td>
+                        <label class="notice-joinid" for="memberPw">&emsp; · 영문 대소문자, 숫자, 특수문자 중 2가지 이상 조합이어야 합니다.</label>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th>이름 </th>
+                    <td>&emsp;<input class = join-input type = "text" name = "memberName"></td>
+                </tr>
+
+                <tr>
+                    <th>전화번호 </th>
+                    <td>&emsp;<input class = join-input type = "text" name = "memberPhone"></td>
+                </tr>
+
+                <tr>
+                    <th>생년월일 </th>
+                    <td> &emsp;
+                        <select name="year">
+                            <option value = "2005">2005</option>
+                            <option value = "2006">2006</option>
+                            <option value = "2007">2007</option>
+                            <option value = "2008">2008</option>
+                            <option value = "2009">2009</option>
+                            <option value = "2010">2010</option>
+                            <option value = "2011">2011</option>
+                        </select> 년
+
+                        <select name="month">
+                            <option value = "1">1</option>
+                            <option value = "2">2</option>
+                            <option value = "3">3</option>
+                            <option value = "4">4</option>
+                            <option value = "5">5</option>
+                            <option value = "6">6</option>
+                            <option value = "7">7</option>
+                            <option value = "8">8</option>
+                            <option value = "9">9</option>
+                            <option value = "10">10</option>
+                            <option value = "11">11</option>
+                            <option value = "12">12</option>
+                        </select> 월
+
+                        <select name="day">
+
+                            <option value = "1">1</option>
+                            <option value = "2">2</option>
+                            <option value = "3">3</option>
+                            <option value = "4">4</option>
+                            <option value = "5">5</option>
+                            <option value = "6">6</option>
+                            <option value = "7">7</option>
+                            <option value = "8">8</option>
+                            <option value = "9">9</option>
+                            <option value = "10">10</option>
+                            <option value = "11">11</option>
+                            <option value = "12">12</option>
+                            <option value = "13">13</option>
+                            <option value = "14">14</option>
+                            <option value = "15">15</option>
+                            <option value = "16">16</option>
+                            <option value = "17">17</option>
+                            <option value = "18">18</option>
+                            <option value = "19">19</option>
+                            <option value = "20">20</option>
+                            <option value = "21">21</option>
+                            <option value = "22">22</option>
+                            <option value = "23">23</option>
+                            <option value = "24">24</option>
+                            <option value = "25">25</option>
+                            <option value = "26">26</option>
+                            <option value = "27">27</option>
+                            <option value = "28">28</option>
+                            <option value = "29">29</option>
+                            <option value = "30">30</option>
+                            <option value = "31">31<option>
+                        </select> 일
+
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <th>닉네임 </th>
+                    <td>&emsp;
+                        <input class = join-input type = "text" name = "memberNick"></td>
+                </tr>
+
+                <tr>
+                    <th>&nbsp;</th>
+                    <td>&nbsp;</td>
+                </tr>
+
+
+
+
+            </table>
+
+            <div class="join-button" id="join-button">
+                <input class="joinbutton" type="submit" value="가입하기">
+            </div>
+            <!--회원가입 폼 끝-->
+
+        </div>
+
+    </div>
+</form>
+
+</body>
+<script th:inline="javascript">
+    const idCheck = () => {
+        const id = document.getElementById("memberId").value;
+        const checkResult = document.getElementById("check-result");
+        const idRegex = /^(?=.*[a-z])(?=.*[0-9])[a-z0-9]{8,16}$/;
+
+        console.log("입력값: ", id);
+
+        if (!idRegex.test(id)) {
+            checkResult.style.color = "red";
+            checkResult.innerHTML = "아이디는 영문 소문자와 숫자로 구성된 8~16자여야 합니다.";
+            return;
+        }
+
+        $.ajax({
+            type: "post",
+            url: "/member/id-check",
+            data: {
+                "memberId": id
+            },
+            success: function(res) {
+                console.log("요청성공", res);
+                if (res == "ok") {
+                    console.log("사용가능한 아이디");
+                    checkResult.style.color = "green";
+                    checkResult.innerHTML = "사용가능한 아이디입니다.";
+
+                } else {
+                    console.log("이미 사용중인 아이디");
+                    checkResult.style.color = "red";
+                    checkResult.innerHTML = "이미 사용중인 아이디입니다.";
+
+                }
+            },
+            error: function(err) {
+                console.log("에러발생", err);
+            }
+        });
+    }
+
+
+    const signupButton = document.getElementById("signupButton"); // 가입하기 버튼 아이디로 설정
+
+    signupButton.addEventListener("click", function(event) {
+        const id = document.getElementById("memberId").value;
+        const checkResult = document.getElementById("check-result");
+        const idRegex = /^(?=.*[a-z])(?=.*[0-9])[a-z0-9]{8,16}$/;
+
+        if (!idRegex.test(id)) {
+            event.preventDefault(); // 유효성 검사를 통과하지 못하면 기본 동작을 막음
+            alert("올바른 형식의 아이디를 입력해주세요."); // 사용자에게 알림
+        } else {
+            // 유효한 아이디일 경우, 가입 절차를 진행하도록 설정
+            // 여기에 가입 절차를 진행하는 코드를 추가하세요.
+        }
+    });
+
+
+
+
+
+    //비밀번호 유효성 검사
+    const passwordCheck = () => {
+    const pw = document.getElementById("memberPw").value;
+    const checkResult = document.getElementById("password-result");
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,16}$/;
+
+    console.log("입력값: ", pw);
+
+    if (!passwordRegex.test(pw)) {
+        checkResult.style.color = "red";
+        checkResult.innerHTML = "비밀번호는 영문 대소문자, 숫자, 특수문자 중 2가지 이상 조합된 10~16자여야 합니다.";
+        return;
+    }
+
+    $.ajax({
+        type: "post",
+        url: "/member/pw-check",
+        data: {
+            "memberPw": pw
+        },
+        success: function(res) {
+            console.log("요청성공", res);
+            if (res === "ok") {
+                console.log("사용가능한 비밀번호");
+                checkResult.style.color = "green";
+                checkResult.innerHTML = "사용가능한 비밀번호입니다.";
+            } else {
+                console.log("이미 사용중인 비밀번호");
+                checkResult.style.color = "red";
+                checkResult.innerHTML = "이미 사용중인 비밀번호입니다.";
+            }
+        },
+        error: function(err) {
+            console.log("에러발생", err);
+        }
+    });
+}
+
+
+
+</script>
+
+</html>
