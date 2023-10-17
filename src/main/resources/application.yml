@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: "jdbc:mysql://localhost/Usertest"
+    url: "jdbc:mysql://localhost:3306/ttodok"
     username : "root"
-    password : ""
+    password : "D64x8Ct@"
   thymeleaf:
     cache: false
 

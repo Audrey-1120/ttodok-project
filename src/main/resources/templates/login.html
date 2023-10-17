@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="/css/login.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<body>
+<a href="main.html"> <!--로그인 창 로고-->
+    <img src="../images/logo.PNG" class="logo" alt="My Image">
+</a>
+
+
+<div class="login-wrapper">
+
+    <h2>로그인</h2> <!--로그인-->
+    <form method="post" action="/member/login" id="login-form">
+
+        <input type="text" name="memberId" placeholder="아이디"> <!--아이디 입력창-->
+        <input type="passWord" name="memberPw" placeholder="패스워드"> <!--비밀번호 입력창-->
+        <label for="login-form" th:text="${errorMessage}" th:if="${errorMessage}"></label> <!--아이디, 비번 틀렸을 시 경고메시지-->
+
+        <input class="" type="submit" value="로그인"> <!--로그인 확인 버튼-->
+
+
+
+    </form>
+
+</div>
+
+</body>
+</html>
