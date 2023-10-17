@@ -3,7 +3,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: "jdbc:mysql://localhost/Usertest"
     username : "root"
-    password : ""
+    password : "1205"
   thymeleaf:
     cache: false
 
