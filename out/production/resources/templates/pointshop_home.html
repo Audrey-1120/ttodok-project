@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="pointshop_home_css.css" /> <!--css스타일적용-->
+    <title>또독-포인트상점</title>
+</head>
+
+<body style="background-color:#F0E39E;">
+<header>
+    <div class="member_links">
+        <a href="/" class="link_text">회원가입</a>
+        <a href="/" class="link_text">로그인</a>
+        <a href="/" class="link_text">마이페이지</a>
+    </div>
+    <h2>또독</h2> <!--나중에이미지로고삽입-->
+    <h1 id="ps_pageTitle">포인트 상점</h1>
+    <div class="point_hap">
+        <h2>내 포인트: 100p</h2> <!--단락만배경색적용할수있도록-->
+    </div>
+</header>
+
+<section> <!--productName,productPoint,productImgPath-->
+    <div class="giftcon_list">
+        <section>
+            <article>
+                <div class="giftcon1">
+                    <h2>기프티콘1</h2>
+                    <img src="C:\Users\2064_\Pictures\Screenshots\gftc_img.png" alt="기프티콘1" title="기프티콘1">
+                    <h2>500P</h2>
+                    <button onclick="location.href='pointshop_buy.html'">구매하기</button> <!--기프티콘1구매페이지로이동-->
+                </div>
+            </article> <!--기프티콘1-->
+        </section>
+
+        <section>
+            <article>
+                <div class="giftcon2">
+                    <h2>기프티콘2</h2>
+                    <img src="C:\Users\2064_\Pictures\Screenshots\gftc_img.png" alt="기프티콘2" title="기프티콘2">
+                    <h2>500P</h2>
+                    <input type="submit" value="구매하기">
+                </div>
+            </article> <!--기프티콘2-->
+        </section>
+
+        <section>
+            <article>
+                <div class="giftcon3">
+                    <h2>기프티콘3</h2>
+                    <img src="C:\Users\2064_\Pictures\Screenshots\gftc_img.png" alt="기프티콘3" title="기프티콘3">
+                    <h2>500P</h2>
+                    <input type="submit" value="구매하기">
+                </div>
+            </article> <!--기프티콘3-->
+        </section>
+
+        <section>
+            <article>
+                <div class="giftcon4">
+                    <h2>기프티콘4</h2>
+                    <img src="C:\Users\2064_\Pictures\Screenshots\gftc_img.png" alt="기프티콘4" title="기프티콘4">
+                    <h2>500P</h2>
+                    <input type="submit" value="구매하기">
+                </div>
+            </article> <!--기프티콘4-->
+        </section>
+    </div> <!--giftion_list-->
+    </setcion> <!--전체섹션-->
+
+
+
+    <main> <!--레이아웃나눠서기프티콘이미지삽입-->
+        <form action="/pointShop/home" method="post">
+            <img src="https://www.devkuma.com/docs/html/html_layout.png" alt="기프티콘1" title="기프티콘1"> <!--기프티콘이미지삽입코드-->
+            <input type="radio" name="gifticon1" value="0" checked>기프티콘1<br>
+            <input type="radio" name="gifticon2" value="1">기프티콘2<br>
+            <input type="radio" name="gifticon3" value="2">기프티콘3<br>
+            <input type="radio" name="gifticon4" value="3">기프티콘4<br>
+            <input type="submit" value="구매하기">
+        </form>
+    </main>
+
+
+</body>
+</html>
