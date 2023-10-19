@@ -36,7 +36,7 @@ public class MemberController {
         memberDTO.setBirthDate(birthDate);
         //setBirthDate 메소드를 사용하여 DTO객체에 birthDate 값 설정함.
         memberService.save(memberDTO);
-        return "login";
+        return "endjoin";
     }
     //회원가입 끝
 
@@ -63,11 +63,11 @@ public class MemberController {
             if (errorMessage != null) {
                 model.addAttribute("errorMessage", errorMessage);
             }
-            return "login";
+            return "main";
         } //아이디가 틀리면 아이디가 틀렸다고 에러메시지 넣어줌.
     }
 
-    //아이디 중복체크
+    //아이디 중복확인
     @PostMapping("/member/id-check")
     public @ResponseBody String idCheck(@RequestParam("memberId") String memberId) {
         System.out.println("memberId = " + memberId); //파라미터가 제대로 오는지 확인
@@ -79,8 +79,15 @@ public class MemberController {
 //        } else {
 //            return "no";
 //        }
-
-
         //로그인 끝
     }
+
+    @PostMapping("/member/pw-check")
+    public @ResponseBody String passwordCheck(@RequestParam("memberPw") String memberPw) {
+        System.out.println("memberPw = " + memberPw); //파라미터가 제대로 오는지 확인
+        String pwcheckResult = memberService.passwordCheck(memberPw);
+        return pwcheckResult;
+    }
+
+
 }

@@ -11,30 +11,70 @@ body{
 }
 
 .logo{
-    width: 165px;
-    height: 80px;
+    width: 160px;
+    height: 75px;
     display: block;
     margin: auto;
-    margin-top: 130px;
+    margin-top: 10px;
 }
+
+/* 홍보메시지 */
+.login-massage {
+    font-size: 45px;
+    text-align: center;
+    padding: 15%;
+}
+
+/*단어*/
+.word {
+    font-size: 70px;
+    font-weight: 800;
+    color: #66ad54;
+}
+
+/* 또독 */
+.ttodok {
+    font-size: 70px;
+    font-weight: 800;
+    color: #57814d;
+}
+
+/*홍보메시지-말*/
+.p1 {
+    font-size: 60px;
+    font-weight: 300;
+    color: #000000;
+    margin-bottom: 50%;
+}
+
+/*홍보메시지-문구*/
+.p2 {
+    font-size: 70px;
+    margin-bottom: 50%;
+}
+
+
+
+
 
 .login-wrapper{ /*로그인 폼 전체*/
     border-radius: 10px;
     background-color: #F0E39E;
-    width: 250px;
-    height: 350px;
+    width: 290px;
+    height: 390px;
     padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
     margin: 0 auto;
-    margin-top: 50px
+    margin-top: 50px;
+    margin-bottom: 20%;
 
 }
 
 .login-wrapper > h2{ /*로그인 제목*/
-    font-size: 30px;
+    font-size: 33px;
     font-weight: 900;
     color: #000000;
     margin-bottom: 35px;
@@ -66,5 +106,22 @@ body{
     font-size: 16px;
     font-weight: 900;
     background-color: #4D594A;
-    margin-top: 20px;
+    margin: 20px 0 5px 0;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/*하단 회원가입, 비밀번호 찾기 버튼*/
+.login-menu{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*회원가입*/
+.menu-join {
+    font-size: 13px;
+}
+
+/*비번찾기*/
+.menu-findpw {
+    font-size: 13px;
 }

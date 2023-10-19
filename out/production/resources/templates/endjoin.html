@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="../css/endjoin.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>endjoin</title>
+    <!-- jquery cdn -->
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script> <!-- 이 주소가 있어야 jquery를 사용할 수 있음. -->
+
+</head>
+<body>
+
+
+<form action="/member/endjoin" method="post">
+
+
+    <div class="endjoin-page" id="endjoin-page"> <!--전체 화면-->
+
+
+        <header class="menu" id="menu"> <!--상단 메뉴(로고, 메뉴바)-->
+
+            <div class="endjoin-logo" id="endjoin-logo">
+                <a href="main.html">
+                    <img class="endjoin-logo" src="../img/joinlogo.PNG"/>
+                </a>
+
+            </div>
+
+            <div class="endjoin-menubar" id="endjoin-menubar">
+                <a href="login.html">로그인&emsp;</a>
+                <a href="mypage.html">마이페이지&emsp;</a>
+                <a href="explain.html">또독이란?</a>
+            </div>
+
+
+        </header>
+
+
+        <div>
+            <h2 class="endjoin-title">회원가입</h2>
+        </div>
+
+
+
+        <!--회원가입 폼 시작-->
+        <div class="endjoin-rectangle" id="endjoin-rectangle">
+            <div class="endjoin-end" id="endjoin-end">
+                <p>회원가입이<br>완료되었습니다.</p>
+
+            </div>
+
+
+
+            <div class="endjoin-button" id="endjoin-button">
+                <input class="endjoinbutton" type="submit" value="로그인하러 가기">
+            </div>
+            <!--회원가입 폼 끝-->
+
+        </div>
+
+    </div>
+</form>
+
+</body>
+<script th:inline="javascript">
+
+
+
+
+</script>
+
+</html>

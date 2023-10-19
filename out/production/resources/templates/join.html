@@ -18,23 +18,25 @@
 <form action="/member/join" method="post">
 
 
-    <div class="joinpage" id="joinpage"> <!--전체 화면-->
+    <div class="join-page" id="join-page"> <!--전체 화면-->
 
 
-        <div class="menu" id="menu"> <!--상단 메뉴(로고, 메뉴바)-->
+        <header class="menu" id="menu"> <!--상단 메뉴(로고, 메뉴바)-->
 
-            <div class="joinlogo" id="joinlogo">
+            <div class="join-logo" id="join-logo">
                 <a href="main.html">
-                    <img class="joinlogo" src="../images/joinlogo.PNG"/>
+                    <img class="join-logo" src="../images/joinlogo.PNG"/>
                 </a>
 
             </div>
 
-            <a href="login.html">로그인&emsp;</a>
-            <a href="mypage.html">마이페이지&emsp;</a>
-            <a href="explain.html">또독이란?</a>
 
-        </div>
+            <div class="join-menubar" id="join-menubar">
+                <a href="/member/login">로그인&emsp;</a>
+                <a href="mypage.html">마이페이지&emsp;</a>
+                <a href="/member/login">또독이란?</a>
+            </div>
+        </header>
 
 
         <div>
@@ -51,7 +53,7 @@
                     <th>아이디</th> <!--onkeyup 속성 : JS 처리, 키보드를 입력할때마다 해당 함수 호출-->
                     <td>&emsp;<input type = "text" name = "memberId" id="memberId" onkeyup="idCheck()">
                         &nbsp;
-<!--                        <input class="idcheck" type="submit" value="중복확인" id="checkIdButton">-->
+                        <!--                        <input class="idcheck" type="submit" value="중복확인" id="checkIdButton">-->
                         <label class="check-joinid" id="check-result">&emsp;</label>
                     </td>
                 </tr>
@@ -68,13 +70,24 @@
 
                 <tr>
                     <th>비밀번호 </th>
-                    <td>&emsp;<input class = join-input type = "password" name = "memberPw" id="memberPw"></td>
+                    <td>&emsp;<input class = join-input type = "password" name = "memberPw" id="memberPw" onkeyup="passwordCheck()">
+                        &nbsp;
+                        <label class="check-joinpw" id="pwcheck-result">&emsp;</label>
+                    </td>
                 </tr>
                 <tr>
                     <th>
                     </th>
                     <td>
                         <label class="notice-joinid" for="memberPw">&emsp; · 영문 대소문자, 숫자, 특수문자 중 2가지 이상 조합이어야 합니다.</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>비밀번호 확인 </th>
+                    <td>&emsp;<input class = join-input type = "password" name = "memberPw_check" id="memberPw_check" onkeyup="isPwSame()">
+                    &nbsp;
+                    <label class="pwcheck01-result" id="pwcheck01-result">&emsp;</label>
                     </td>
                 </tr>
 
@@ -160,7 +173,10 @@
                 <tr>
                     <th>닉네임 </th>
                     <td>&emsp;
-                        <input class = join-input type = "text" name = "memberNick"></td>
+                        <input class = join-input type = "text" name = "memberNick" id = "memberNick" onkeyup="checkNicknameLength()">
+                        &nbsp;&nbsp;
+                        <label class="nick-result" id="nick-result">&emsp;</label>
+                    </td>
                 </tr>
 
                 <tr>
@@ -185,77 +201,65 @@
 
 </body>
 <script th:inline="javascript">
+
+    // 아이디 유효성 검사 및 중복확인
     const idCheck = () => {
-        const id = document.getElementById("memberId").value;
-        const checkResult = document.getElementById("check-result");
-        const idRegex = /^(?=.*[a-z])(?=.*[0-9])[a-z0-9]{8,16}$/;
+        const id = document.getElementById("memberId").value; //HTML 문서에서 memberId라는 ID를 가진 요소의 값 가져옴. 이 값은 정규식 검사에 사용됨.
+        const checkResult = document.getElementById("check-result"); //check-result라는 ID를 가진 요소를 찾음. 검사 결과를 표시하는데 사용
+        const idRegex = /^(?=.*[a-z])(?=.*[0-9])[a-z0-9]{8,16}$/; //정규식
 
-        console.log("입력값: ", id);
+        console.log("입력값: ", id); //테스트용 로그 출력
 
-        if (!idRegex.test(id)) {
-            checkResult.style.color = "red";
-            checkResult.innerHTML = "아이디는 영문 소문자와 숫자로 구성된 8~16자여야 합니다.";
-            return;
+        //아래 if문의 조건식은 값이 false일때 -> 정규식 조건에 맞지 않음.
+        if (!idRegex.test(id)) { //idRegex라는 정규식 사용해서 id가 정규식 조건에 맞는지 확인. test메소드는 주어진 문자열이 정규식과 일치하는지 판단. !연산자는 일치하지 않을때
+            checkResult.style.color = "red"; //checkResult요소의 스타일 변경.
+            checkResult.innerHTML = "아이디는 영문 소문자와 숫자로 구성된 8~16자여야 합니다."; //checkResult 요소의 내용을 변경해서 오류 메시지 설정.
+            return; //함수 실행 종료
         }
 
-        $.ajax({
-            type: "post",
-            url: "/member/id-check",
+        $.ajax({ //AJAX 요청을 초기화함. 서버로 HTTP POST 요청을 보내는데 사용됨. url에 지정된 엔드포인트에 데이터 보냄.
+            type: "post", //HTTP 요청의 유형 지정. POST 유형 사용됨.
+            url: "/member/id-check", //요청을 보낼 URL 지정. /member/id-check 엔드포인트로 요청이 보내짐. 아이디의 중복 여부 확인.
             data: {
-                "memberId": id
+                "memberId": id //POST 요청과 함께 보낼 데이터 정의. 아이디 값 서버로 보냄.
             },
-            success: function(res) {
-                console.log("요청성공", res);
-                if (res == "ok") {
-                    console.log("사용가능한 아이디");
-                    checkResult.style.color = "green";
-                    checkResult.innerHTML = "사용가능한 아이디입니다.";
+            success: function(res) { //서버 요청이 성공했을 때 실행. 서버에서의 응답이 res 매개변수로 전달됨. 이를 통해 응답 데이터 확인 가능.
+
+                console.log("요청성공", res); //테스트용 로그 출력
+
+                if (res == "ok") { //서버로부터 받은 응답을 검사. 응답이 ok일때 다음 문장 실행
+                    console.log("사용가능한 아이디"); //테스트용 로그 출력
+                    checkResult.style.color = "green"; //checkResult 요소의 스타일을 변경.
+                    checkResult.innerHTML = "사용가능한 아이디입니다."; //checkResult 요소의 내용을 변경하여 사용자에게 메시지 보여줌.
 
                 } else {
-                    console.log("이미 사용중인 아이디");
-                    checkResult.style.color = "red";
-                    checkResult.innerHTML = "이미 사용중인 아이디입니다.";
+                    console.log("이미 사용중인 아이디"); //테스트용 로그 출력
+                    checkResult.style.color = "red"; //checkResult 요소의 스타일을 변경.
+                    checkResult.innerHTML = "이미 사용중인 아이디입니다."; //checkResult 요소의 내용을 변경하여 사용자에게 메시지 보여줌.
 
                 }
             },
-            error: function(err) {
-                console.log("에러발생", err);
+            error: function(err) { //AJAX 요청이 실패했을 때 실행. err 매개변수를 통해 발생한 오류의 종류 알 수 있음.
+                console.log("에러발생", err); //테스트용 로그 출력 : 콘솔에 에러발생 : 에러내용 출력
             }
         });
     }
 
 
-    const signupButton = document.getElementById("signupButton"); // 가입하기 버튼 아이디로 설정
-
-    signupButton.addEventListener("click", function(event) {
-        const id = document.getElementById("memberId").value;
-        const checkResult = document.getElementById("check-result");
-        const idRegex = /^(?=.*[a-z])(?=.*[0-9])[a-z0-9]{8,16}$/;
-
-        if (!idRegex.test(id)) {
-            event.preventDefault(); // 유효성 검사를 통과하지 못하면 기본 동작을 막음
-            alert("올바른 형식의 아이디를 입력해주세요."); // 사용자에게 알림
-        } else {
-            // 유효한 아이디일 경우, 가입 절차를 진행하도록 설정
-            // 여기에 가입 절차를 진행하는 코드를 추가하세요.
-        }
-    });
 
 
 
-
-
-    //비밀번호 유효성 검사
+    //비밀번호 유효성 검사 및 중복확인
     const passwordCheck = () => {
     const pw = document.getElementById("memberPw").value;
-    const checkResult = document.getElementById("password-result");
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,16}$/;
+    const pwcheckResult = document.getElementById("pwcheck-result");
+    const passwordRegex = /^(?!((?:[A-Za-z]+)|(?:[~!@#$%^&*()_+=]+)|(?:[0-9]+))$)[A-Za-z\d~!@#$%^&*()_+=]{10,16}$/;
 
-    console.log("입력값: ", pw);
+    console.log("입력값: ", pw, "pwcheckResult: ", pwcheckResult);
 
     if (!passwordRegex.test(pw)) {
-        checkResult.style.color = "red";
-        checkResult.innerHTML = "비밀번호는 영문 대소문자, 숫자, 특수문자 중 2가지 이상 조합된 10~16자여야 합니다.";
+        pwcheckResult.style.color = "red";
+        pwcheckResult.innerHTML = "비밀번호는 영문 대소문자, 숫자, 특수문자 중 2가지 이상 조합된 10~16자여야 합니다.";
         return;
     }
 
@@ -265,23 +269,62 @@
         data: {
             "memberPw": pw
         },
-        success: function(res) {
-            console.log("요청성공", res);
-            if (res === "ok") {
+        success: function(res1) {
+            console.log("요청성공", res1);
+            if (res1 == "ok") {
                 console.log("사용가능한 비밀번호");
-                checkResult.style.color = "green";
-                checkResult.innerHTML = "사용가능한 비밀번호입니다.";
+                pwcheckResult.style.color = "green";
+                pwcheckResult.innerHTML = "사용가능한 비밀번호입니다.";
             } else {
                 console.log("이미 사용중인 비밀번호");
-                checkResult.style.color = "red";
-                checkResult.innerHTML = "이미 사용중인 비밀번호입니다.";
+                pwcheckResult.style.color = "red";
+                pwcheckResult.innerHTML = "이미 사용중인 비밀번호입니다.";
             }
         },
         error: function(err) {
             console.log("에러발생", err);
         }
-    });
-}
+      });
+   }
+
+
+    //비밀번호 확인 검사
+    const isPwSame = () => {
+
+    let pwcheck01Result = document.getElementById("pwcheck01-result"); //에러 메시지 표시할 label 가져오기
+    console.log(pwcheck01Result.innerText); //테스트용 로그 출력
+    let realPw = document.getElementById("memberPw").value; //비밀번호 칸에 입력한 값 가져오기
+    let samePw = document.getElementById("memberPw_check").value; //비밀번호 확인칸에 입력한 값 가져오기
+
+    if(realPw != samePw) {
+        pwcheck01Result.style.color = "red";
+        pwcheck01Result.innerHTML = "비밀번호가 일치하지 않습니다.";
+
+    } else {
+        pwcheck01Result.style.color = "green";
+        pwcheck01Result.innerHTML = "비밀번호가 일치합니다.";
+    }
+   }
+
+    //닉네임 글자 수 검사
+    const checkNicknameLength = () => {
+
+    let nickResult = document.getElementById("nick-result");
+    console.log(nickResult.innerText); //테스트용 로그 출력
+    let nickName = document.getElementById("memberNick").value;
+
+    if(nickName.length > 9) {
+        nickResult.style.color = "red";
+        nickResult.innerHTML = "닉네임은 9글자 이하입니다.";
+    } else {
+        nickResult.style.color = "green";
+        nickResult.innerHTML = "사용할 수 있는 닉네임입니다.";
+    }
+
+   }
+
+
+
 
 
 

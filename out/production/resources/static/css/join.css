@@ -2,7 +2,6 @@
 
 
 body{
-
     padding : 0;
     margin : 0;
     border : none;
@@ -11,32 +10,36 @@ body{
     background-color: #f0e39e;
 }
 
-.joinpage{ /*전체 틀*/
+.join-page{ /*전체 틀*/
     align-items: center;
     display: flex;
     flex-direction: column;
-    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     position: relative;
     width: 100%;
 }
 
 .menu { /*상단 로고 및 메뉴바*/
-    align-items : flex-start;
     display : flex;
-    flex-shrink: 0;
+    justify-content: space-between;
+    align-items : center;
     margin-bottom: 7rem;
     width: 100%;
-    text-decoration-line: none;
 }
 
-.menu > a{ /*상단 메뉴*/
+.join-menubar {
+    margin-right: 1%;
+    font-weight: 500;
+}
+
+/*상단 메뉴*/
+/*.menu > a{
     text-decoration-line: none;
     color: black;
-}
+}*/
 
-.joinlogo { /*회원가입 페이지 로고*/
-    width: 90px;
-    height: 50px;
+.join-logo { /*회원가입 페이지 로고*/
+    width: 93px;
+    height: 53px;
     flex-shrink: 0;
     margin: 0.5rem 76.3rem 1rem 1rem;
 }
@@ -103,7 +106,19 @@ body{
     color: red;
 }
 
-.idcheck { /*아이디 중복확인 버튼*/
+.check-joinpw{ /*패스워드 중복 및 유효성 검사 경고문*/
+    font-size: 15px;
+    font-weight: revert;
+    color: red;
+}
+
+.pwcheck01-result{ /*패스워드 확인 경고문*/
+    font-size: 15px;
+    font-weight: revert;
+    color: red;
+}
+
+.check-button { /*아이디 중복확인 버튼*/
     background-color: #3b9e23;
     border-radius: 5px;
     border: none;
@@ -111,6 +126,12 @@ body{
     font-size: 14px;
     padding: 0.4rem;
     font-family: 'Pretendard';
+}
+
+.nick-result { /*닉네임 글자수 확인 경고문*/
+    font-size: 15px;
+    font-weight: revert;
+    color: red;
 }
 
 .join-input { /*데이터입력창*/

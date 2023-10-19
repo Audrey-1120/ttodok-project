@@ -26,8 +26,6 @@ public class MemberService {
         memberRepository.save(memberEntity); //여기서 save는 jpa가 제공해주는 메소드임.
         //repository의 save 메소드 호출 (조건. entity객체를 넘겨줘야 함.)
 
-
-
     }
 
     //로그인 관련 메소드
@@ -56,12 +54,7 @@ public class MemberService {
     }
 
 
-
-
-
-
-
-
+    //아이디 중복확인
     public String idCheck(String memberId) {
         Optional<MemberEntity> byMemberId = memberRepository.findByMemberId(memberId);
         if(byMemberId.isPresent()) {
@@ -73,4 +66,12 @@ public class MemberService {
         }
     }
 
+    public String passwordCheck(String memberPw) {
+        Optional<MemberEntity> byMemberPw = memberRepository.findByMemberPw(memberPw);
+        if(byMemberPw.isPresent()) {
+            return null;
+        } else {
+            return "ok";
+        }
+    }
 }
