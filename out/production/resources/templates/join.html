@@ -17,7 +17,7 @@
 
 <form action="/member/join" method="post">
 
-
+<!--    onsubmit="return onSubmit()"-->
     <div class="join-page" id="join-page"> <!--전체 화면-->
 
 
@@ -63,7 +63,7 @@
                     <th>
                     </th>
                     <td>
-                        <label class="notice-joinid" for="memberId">&emsp; · 영문, 숫자 또는 각각의 조합으로 5~10자리까지 가능합니다.</label>
+                        <label class="notice-joinid" for="memberId">&emsp; · 영문, 숫자 또는 각각의 조합으로 8~10자리까지 가능합니다.</label>
                     </td>
                 </tr>
 
@@ -94,12 +94,12 @@
 
                 <tr>
                     <th>이름 </th>
-                    <td>&emsp;<input class = join-input type = "text" name = "memberName"></td>
+                    <td>&emsp;<input class = join-input type = "text" name = "memberName" id="memberName"></td>
                 </tr>
 
                 <tr>
                     <th>전화번호 </th>
-                    <td>&emsp;<input class = join-input type = "text" name = "memberPhone"></td>
+                    <td>&emsp;<input class = join-input type = "text" name = "memberPhone" id="memberPhone"></td>
                 </tr>
 
                 <tr>
@@ -190,7 +190,7 @@
             </table>
 
             <div class="join-button" id="join-button">
-                <input class="joinbutton" type="submit" value="가입하기">
+                <button class="joinbutton" id="joinbutton" type="submit">가입하기</button>
             </div>
             <!--회원가입 폼 끝-->
 
@@ -202,10 +202,15 @@
 </body>
 <script th:inline="javascript">
 
+    let checkid;
+    let checkpw;
+    let checkpwsame;
+    let checknick;
+
     // 아이디 유효성 검사 및 중복확인
     const idCheck = () => {
-        const id = document.getElementById("memberId").value; //HTML 문서에서 memberId라는 ID를 가진 요소의 값 가져옴. 이 값은 정규식 검사에 사용됨.
-        const checkResult = document.getElementById("check-result"); //check-result라는 ID를 가진 요소를 찾음. 검사 결과를 표시하는데 사용
+        let id = document.getElementById("memberId").value; //HTML 문서에서 memberId라는 ID를 가진 요소의 값 가져옴. 이 값은 정규식 검사에 사용됨.
+        let checkResult = document.getElementById("check-result"); //check-result라는 ID를 가진 요소를 찾음. 검사 결과를 표시하는데 사용
         const idRegex = /^(?=.*[a-z])(?=.*[0-9])[a-z0-9]{8,16}$/; //정규식
 
         console.log("입력값: ", id); //테스트용 로그 출력
@@ -214,6 +219,7 @@
         if (!idRegex.test(id)) { //idRegex라는 정규식 사용해서 id가 정규식 조건에 맞는지 확인. test메소드는 주어진 문자열이 정규식과 일치하는지 판단. !연산자는 일치하지 않을때
             checkResult.style.color = "red"; //checkResult요소의 스타일 변경.
             checkResult.innerHTML = "아이디는 영문 소문자와 숫자로 구성된 8~16자여야 합니다."; //checkResult 요소의 내용을 변경해서 오류 메시지 설정.
+            checkid = false;
             return; //함수 실행 종료
         }
 
@@ -231,11 +237,13 @@
                     console.log("사용가능한 아이디"); //테스트용 로그 출력
                     checkResult.style.color = "green"; //checkResult 요소의 스타일을 변경.
                     checkResult.innerHTML = "사용가능한 아이디입니다."; //checkResult 요소의 내용을 변경하여 사용자에게 메시지 보여줌.
+                    checkid = true;
 
                 } else {
                     console.log("이미 사용중인 아이디"); //테스트용 로그 출력
                     checkResult.style.color = "red"; //checkResult 요소의 스타일을 변경.
                     checkResult.innerHTML = "이미 사용중인 아이디입니다."; //checkResult 요소의 내용을 변경하여 사용자에게 메시지 보여줌.
+                    checkid = false;
 
                 }
             },
@@ -250,9 +258,9 @@
 
 
     //비밀번호 유효성 검사 및 중복확인
-    const passwordCheck = () => {
-    const pw = document.getElementById("memberPw").value;
-    const pwcheckResult = document.getElementById("pwcheck-result");
+    let passwordCheck = () => {
+    let pw = document.getElementById("memberPw").value;
+    let pwcheckResult = document.getElementById("pwcheck-result");
     const passwordRegex = /^(?!((?:[A-Za-z]+)|(?:[~!@#$%^&*()_+=]+)|(?:[0-9]+))$)[A-Za-z\d~!@#$%^&*()_+=]{10,16}$/;
 
     console.log("입력값: ", pw, "pwcheckResult: ", pwcheckResult);
@@ -260,6 +268,7 @@
     if (!passwordRegex.test(pw)) {
         pwcheckResult.style.color = "red";
         pwcheckResult.innerHTML = "비밀번호는 영문 대소문자, 숫자, 특수문자 중 2가지 이상 조합된 10~16자여야 합니다.";
+        checkpw = false;
         return;
     }
 
@@ -275,10 +284,12 @@
                 console.log("사용가능한 비밀번호");
                 pwcheckResult.style.color = "green";
                 pwcheckResult.innerHTML = "사용가능한 비밀번호입니다.";
+                checkpw = true;
             } else {
                 console.log("이미 사용중인 비밀번호");
                 pwcheckResult.style.color = "red";
                 pwcheckResult.innerHTML = "이미 사용중인 비밀번호입니다.";
+                checkpw = false;
             }
         },
         error: function(err) {
@@ -299,10 +310,13 @@
     if(realPw != samePw) {
         pwcheck01Result.style.color = "red";
         pwcheck01Result.innerHTML = "비밀번호가 일치하지 않습니다.";
+        checkpwsame = false;
+
 
     } else {
         pwcheck01Result.style.color = "green";
         pwcheck01Result.innerHTML = "비밀번호가 일치합니다.";
+        checkpwsame = true;
     }
    }
 
@@ -316,12 +330,107 @@
     if(nickName.length > 9) {
         nickResult.style.color = "red";
         nickResult.innerHTML = "닉네임은 9글자 이하입니다.";
+        checknick =  false;
     } else {
         nickResult.style.color = "green";
         nickResult.innerHTML = "사용할 수 있는 닉네임입니다.";
+        checknick = true;
     }
 
-   }
+    }
+
+
+    //입력하지 않은 값이 하나라도 있으면 회원가입 통과 X
+    let submitButton = document.getElementById("joinbutton");
+    let isValidation;
+    let isNull;
+
+    submitButton.addEventListener("click",function(event){
+<!--        event.preventDefault();-->
+
+        let Id = document.getElementById("memberId");
+        let Pw = document.getElementById("memberPw");
+        let Pw_check = document.getElementById("memberPw_check");
+        let Name = document.getElementById("memberName");
+        let Phone = document.getElementById("memberPhone");
+        let Nick = document.getElementById("memberNick");
+
+
+        //데이터 확인용 로그 출력
+<!--        console.log("Id",Id.value);-->
+<!--        console.log("Pw",Pw.value);-->
+<!--        console.log("Pw_check",Pw_check.value);-->
+<!--        console.log("Name",Name.value);-->
+<!--        console.log("Phone",Phone.value);-->
+<!--        console.log("Nick",Nick.value);-->
+
+<!--        console.log("checkid",checkid);-->
+<!--        console.log("checkpw",checkpw);-->
+<!--        console.log("checkpwsame",checkpwsame);-->
+<!--        console.log("checknick",checknick);-->
+
+
+            //유효성, 중복확인 통과했는지 검사
+        if(!checkid) {
+            alert('아이디를 올바르게 입력하세요');
+            Id.focus();
+
+        } else if (!checkpw) {
+            alert('비밀번호를 올바르게 입력하세요');
+            Pw.focus();
+
+        } else if (!checkpwsame) {
+            alert('비밀번호가 일치하지 않습니다.');
+            Pw_check.focus();
+
+        } else if (!checknick) {
+            alert('닉네임을 9자 이하로 입력하세요.');
+            Nick.focus();
+        } else
+            isValidation = true;
+            console.log("isValidation", isValidation);
+
+
+        //null값 있는지 검사
+        if(Id.value.trim() === '') {
+            alert('아이디를 다시 입력하세요');
+            Id.focus();
+
+        } else if (Pw.value.trim() === '') {
+            alert('비밀번호를 다시 입력하세요');
+            Pw.focus();
+
+        } else if(Pw_check.value.trim() === '') {
+            alert('비밀번호 확인을 해주세요');
+            Pw_check.focus();
+
+        } else if(Name.value.trim() === '') {
+            alert('이름을 입력해주세요');
+            Name.focus();
+
+        } else if(Phone.value.trim() === '') {
+            alert('전화번호를 입력해주세요');
+            Phone.focus();
+
+        } else if(Nick.value.trim() === '') {
+            alert('닉네임을 입력해주세요');
+            Nick.focus();
+        } else
+            isNull = true;
+            console.log("isNull", isNull);
+
+        if(isValidation && inNull) {
+            return;
+        } else
+            event.preventDefault();
+
+
+
+ });
+
+
+
+
 
 
 

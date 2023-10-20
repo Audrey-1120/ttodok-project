@@ -41,8 +41,12 @@ public class MemberController {
     //회원가입 끝
 
 
-
     //여기부터 로그인 시작
+
+//    @GetMapping("/member/endjoin")
+//    public String againloginForm() {
+//        return "login";
+//    }
 
     //로그인 페이지 띄워줌
     @GetMapping("/member/login")
@@ -57,13 +61,13 @@ public class MemberController {
         Map<String, String> loginResult = memberService.login(memberDTO);
         if (loginResult.get("status").equals("success")) {
             session.setAttribute("loginId", memberDTO.getMemberId());
-            return "main";
+            return "main_verr2";
         } else {
             String errorMessage = loginResult.get("message");
             if (errorMessage != null) {
                 model.addAttribute("errorMessage", errorMessage);
             }
-            return "main";
+            return "login";
         } //아이디가 틀리면 아이디가 틀렸다고 에러메시지 넣어줌.
     }
 

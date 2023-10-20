@@ -11,11 +11,11 @@ body{
 }
 
 .logo{
-    width: 160px;
-    height: 75px;
+    width: 165px;
+    height: 85px;
     display: block;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 10%;
 }
 
 /* 홍보메시지 */
@@ -89,6 +89,7 @@ body{
     border-radius: 6px;
     box-sizing: border-box;
     background-color: #F8F8F8;
+    font-size: medium;
 }
 
 #login-form > label{ /*경고메시지*/
