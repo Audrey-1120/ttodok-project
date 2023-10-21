@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="pointshop_home_css.css" /> <!--css스타일적용-->
+
+  <script>
+            //src="buy_gifticon.js"
+            //let userPoints = 100;
+            let userPoints = localStorage.getItem("points") || 100; //
+
+            function addPoints(points) {
+            userPoints -= points; //포인트차감
+            document.getElementById("pointsDisplay").textContent = userPoints;
+            //localStorage.setItem("points", userPoints); // 새로고침해도포인트저장되게
+            }
+        </script>
+  <title>또독-포인트상점-구매</title>
+</head>
+
+<body style="background-color:#F0E39E;">
+<div class="member_links">
+  <a href="/" class="link_text">회원가입</a>
+  <a href="/" class="link_text">로그인</a>
+  <a href="/" class="link_text">마이페이지</a>
+</div>
+<div>
+  <img class="td_logo" src="C:\Users\2064_\Desktop\td_project\public\ttodokLogo.png">
+</div>
+<div class="ps_pagetitle">포인트 상점</div>
+<div class="total_point_box">
+  <p>내 포인트 <span id="pointsDisplay">0</span>p</p>
+</div>
+</div>
+
+<div class="gifticon_list">
+  <div class="gifticon">
+    <div class="gifticon_title">기프티콘1</div>
+    <div>
+      <img class="gifticon_img" src="C:\Users\2064_\Desktop\td_project\public\gftc_img.png">
+    </div>
+    <div class="gifticon_price">500p</div>
+  </div> <!--기프티콘1-->
+</div> <!--gifticon_list-->
+
+<p>구매하시겠습니까?</p>
+<button onclick="buyItem('gifticon1',50)">구매하기</button>
+<button onclick="addPoints(10)">10 포인트 획득</button>
+
+
+<!--전체섹션-->
+</body>
+</html>
