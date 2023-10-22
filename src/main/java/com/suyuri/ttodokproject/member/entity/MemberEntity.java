@@ -29,7 +29,7 @@ public class MemberEntity { //Entity클래스는 테이블 역할을 한다. 스
     @Column(length = 20, nullable = false)
     private String memberPhone;
 
-    @Column(length = 20, nullable = true)
+    @Column(length = 20, nullable = false)
     private String memberNick;
 
     @Column(nullable = false, columnDefinition = "int default 0")
