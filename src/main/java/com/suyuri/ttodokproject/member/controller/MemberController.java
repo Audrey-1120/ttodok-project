@@ -43,11 +43,6 @@ public class MemberController {
 
     //여기부터 로그인 시작
 
-//    @GetMapping("/member/endjoin")
-//    public String againloginForm() {
-//        return "login";
-//    }
-
     //로그인 페이지 띄워줌
     @GetMapping("/member/login")
     public String loginForm() {
@@ -78,11 +73,6 @@ public class MemberController {
         String checkResult = memberService.idCheck(memberId);
         return checkResult;
 
-//        if(checkResult != null) {
-//            return "ok";
-//        } else {
-//            return "no";
-//        }
         //로그인 끝
     }
 
