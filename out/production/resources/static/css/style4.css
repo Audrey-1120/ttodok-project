@@ -84,24 +84,24 @@
   font-size: 40px;
   font-weight: 800;
 }
-.p {
-    top: 890px;
-    left: 335px;
-    font-size: 40px;
-    font-weight: 800;
+.div3 {
+    top: 945px;
+  left: 1362px;
+  font-size:37px;
+  font-weight: 800;
 }
 .div3,
 .div4 {
   position: absolute;
   top: 880px;
   left: 290px;
-  font-size: var(--font-size-13xl);
+  font-size: 40px;
   font-weight: 800;
 }
 .div4 {
   top: 930px;
   left: 1362px;
-  font-size:50px;
+  font-size:40px;
 }
 .free-icon-rabbit-6363517-1,
 .home-1-icon {

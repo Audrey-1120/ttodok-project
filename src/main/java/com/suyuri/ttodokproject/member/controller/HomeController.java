@@ -11,6 +11,4 @@ public class HomeController { //전체 요청을 처리하는 대표 컨트롤�
     public String index() { //인덱스 페이지를 요청하는 API
         return "login";
     }
-
-
 }
