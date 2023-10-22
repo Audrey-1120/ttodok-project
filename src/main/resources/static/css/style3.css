@@ -159,14 +159,14 @@
     position: absolute;
     top: 675px;
     left: 220px;
-    font-size: var(--font-size-21xl);
+    font-size: 40px;
     font-weight: 800;
 }
 .div8{
     position: absolute;
     top: 675px;
     left: 820px;
-    font-size: var(--font-size-21xl);
+    font-size:40px;
     font-weight: 800;
 }
   
