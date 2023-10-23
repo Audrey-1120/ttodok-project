@@ -1,0 +1,172 @@
+@import "reset.css";
+.child {
+    top: 139px;
+    left: 186px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-palegoldenrod);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    width: 1131px;
+    height: 447px;
+  }
+  .child,
+  .item,
+  .q2 {
+    position: absolute;
+  }
+  .q2 {
+    font-size: 43px;
+    top: 163px;
+    left: 211px;
+    font-weight: 800;
+    color: #193612;
+  }
+  .item {
+    top: 233px;
+    left: 151px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-white);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    width: 1138px;
+    height: 369px;
+  }
+  .span {
+    color: var(--color-black);
+  }
+  .span1 {
+    color: #f1ae00;
+  }
+  .p {
+    margin-block-start: 0;
+    margin-block-end: 30px;
+  }
+  .p1 {
+    margin: 0;
+    font-size: 40px;
+  }
+  .div1,
+  .div2 {
+    position: absolute;
+  }
+  .div1 {
+    top: 344px;
+    left: 322px;
+    font-weight: 800;
+  }
+  .div2 {
+    top: 250px;
+    left: 1248px;
+    border-radius: 50%;
+    background-color: var(--color-palegoldenrod);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25) inset;
+    width: 27px;
+    height: 29px;
+  }
+  .child1,
+  .child2,
+  .inner,
+  .rectangle-div {
+    position: absolute;
+    top: 651px;
+    left: 151px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-white);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    width: 556px;
+    height: 158px;
+  }
+  .child1,
+  .child2,
+  .rectangle-div {
+    left: 733px;
+  }
+  .child1,
+  .child2 {
+    top: 835px;
+    left: 151px;
+  }
+  .child2 {
+    left: 733px;
+    background-color: var(--color-palegoldenrod);
+  }
+
+  .div3,
+  .div4 {
+    position: absolute;
+    top: 890px;
+    left: 860px;
+    font-size:40px;
+    font-weight: 800;
+  }
+  .div4 {
+    position: absolute;
+    top: 860px;
+    left: 270px;
+    font-size: var(--font-size-21xl);
+    font-weight: 800;
+  }
+.span2 {
+    font-size: 32px;
+    color: #193612;
+ }
+  .div5,
+  .div6 {
+    position: absolute;
+  }
+  .div5 {
+    font-size: 38px;
+    top: 0;
+    left: 0;
+    font-weight: 800;
+    color: #193612;
+}
+  .div6 {
+    top: 22px;
+    left: 100px;
+    border-radius: 50%;
+    background-color: #4d594a;
+    width: 10px;
+    height: 10px;
+  }
+  .icon,
+  .parent {
+    position: absolute;
+    top: 5px;
+    left: 88px;
+    width: 17px;
+    height: 17px;
+  }
+  .parent {
+    top: 29px;
+    left: 36px;
+    width: 92px;
+    height: 63px;
+    font-size: 52px;
+    color: #295f1c;
+  }
+ 
+  .div {
+    position: relative;
+    background-color: #81c370;
+    width: 100%;
+    height: 1024px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-29xl);
+    color: var(--color-black);
+    font-family: var(--font-inter);
+  }
+.div7{
+    position: absolute;
+    top: 675px;
+    left: 220px;
+    font-size: 40px;
+    font-weight: 800;
+}
+.div8{
+    position: absolute;
+    top: 675px;
+    left: 820px;
+    font-size:40px;
+    font-weight: 800;
+}
+  

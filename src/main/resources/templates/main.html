@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    session 값 확인: <p th:text="${session.loginId}"></p>
+    닉네임 확인: <p>Nickname: <span th:text="${session.nickname}"></span></p>
+    아이디 확인: <p>ID: <span th:text="${session.userId}"></span></p>
+
+</body>
+</html>

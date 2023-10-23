@@ -1,0 +1,103 @@
+@import "reset.css";
+
+
+body{
+
+    padding : 0;
+    margin : 0;
+    border : none;
+    font-size : 14px;
+    font-family : 'Pretendard', sans-serif;
+    background-color: #f0e39e;
+}
+
+.endjoin-page{ /*전체 틀*/
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+
+.menu { /*상단 로고 및 메뉴바*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 83px;
+    width: 100%;
+}
+
+
+/*상단 메뉴*/
+.endjoin-menubar {
+    margin-right: 1%;
+    font-weight: 500;
+}
+
+.endjoin-logo { /*회원가입 페이지 로고*/
+    width: 93px;
+    height: 53px;
+    flex-shrink: 0;
+    margin: 0.5rem 76.3rem 1rem 1rem;
+}
+
+.endjoin-title { /*회원가입 제목*/
+    color: #000000;
+    font-size: 46px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.rabbit { /*토끼*/
+    width: 8rem;
+    height: 8rem;
+    position: absolute;
+    left: 85%;
+}
+
+.endjoin-rectangle { /*하얀색 화면*/
+    background-color: #ffffff;
+    padding: 8rem 5rem;
+    margin-top: 1rem;
+    border-radius: 20px;
+    height: 60vh;
+    width: 75%;
+    font-size: 24px;
+}
+
+
+.endjoin-end {
+    color: #000000;
+    font-size: 50px;
+    font-weight: 800;
+    text-align: center;
+    padding: inherit;
+}
+
+.endjoinbutton { /*회원가입 확인버튼*/
+    padding: 1.5%;
+    box-shadow: 3px 4px 2px lightgray;
+    background-color: #3b9e23;
+    border-radius: 10px;
+    border: none;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 800;
+    font-family: 'Pretendard';
+}
+
+.endjoin-button{
+    text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
