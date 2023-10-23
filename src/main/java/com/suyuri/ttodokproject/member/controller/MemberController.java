@@ -36,10 +36,9 @@ public class MemberController {
         memberDTO.setBirthDate(birthDate);
         //setBirthDate 메소드를 사용하여 DTO객체에 birthDate 값 설정함.
         memberService.save(memberDTO);
-        return "login";
+        return "endjoin";
     }
     //회원가입 끝
-
 
 
     //여기부터 로그인 시작
@@ -57,7 +56,7 @@ public class MemberController {
         Map<String, String> loginResult = memberService.login(memberDTO);
         if (loginResult.get("status").equals("success")) {
             session.setAttribute("loginId", memberDTO.getMemberId());
-            return "main";
+            return "main_verr2";
         } else {
             String errorMessage = loginResult.get("message");
             if (errorMessage != null) {
@@ -67,20 +66,22 @@ public class MemberController {
         } //아이디가 틀리면 아이디가 틀렸다고 에러메시지 넣어줌.
     }
 
-    //아이디 중복체크
+    //아이디 중복확인
     @PostMapping("/member/id-check")
     public @ResponseBody String idCheck(@RequestParam("memberId") String memberId) {
         System.out.println("memberId = " + memberId); //파라미터가 제대로 오는지 확인
         String checkResult = memberService.idCheck(memberId);
         return checkResult;
 
-//        if(checkResult != null) {
-//            return "ok";
-//        } else {
-//            return "no";
-//        }
-
-
         //로그인 끝
     }
+
+    @PostMapping("/member/pw-check")
+    public @ResponseBody String passwordCheck(@RequestParam("memberPw") String memberPw) {
+        System.out.println("memberPw = " + memberPw); //파라미터가 제대로 오는지 확인
+        String pwcheckResult = memberService.passwordCheck(memberPw);
+        return pwcheckResult;
+    }
+
+
 }
