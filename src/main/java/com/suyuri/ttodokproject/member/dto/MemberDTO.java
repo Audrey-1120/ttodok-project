@@ -21,10 +21,6 @@ public class MemberDTO {
     private String memberPhone;
     private String memberNick;
     private String memberPoint;
-
-
-
-
     //생년월일
     private int year;
     private int month;
@@ -55,7 +51,6 @@ public class MemberDTO {
         this.month = birthDate.getMonthValue();
         this.day = birthDate.getDayOfMonth();
     }
-
 
     public static MemberDTO toMemberDTO(MemberEntity memberEntity){
         MemberDTO memberDTO = new MemberDTO();
