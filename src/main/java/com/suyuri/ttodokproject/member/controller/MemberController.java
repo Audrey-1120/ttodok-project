@@ -56,7 +56,7 @@ public class MemberController {
         Map<String, String> loginResult = memberService.login(memberDTO);
         if (loginResult.get("status").equals("success")) {
             session.setAttribute("loginId", memberDTO.getMemberId());
-            return "main_verr2";
+            return "main_ver2";
         } else {
             String errorMessage = loginResult.get("message");
             if (errorMessage != null) {

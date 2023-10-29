@@ -9,6 +9,6 @@ public class HomeController { //전체 요청을 처리하는 대표 컨트롤�
     //기본 페이지 요청 메소드
     @GetMapping("/")
     public String index() { //인덱스 페이지를 요청하는 API
-        return "main_verr2";
+        return "main_ver2";
     }
 }
