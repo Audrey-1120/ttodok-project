@@ -1,4 +1,5 @@
 package com.suyuri.ttodokproject.member.repository;
+import org.springframework.stereotype.Repository;
 
 import com.suyuri.ttodokproject.member.entity.MemberEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -6,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 import java.util.Optional;
 
-
+@Repository
 public interface MemberRepository extends JpaRepository<MemberEntity, Long> {
     //<첫번째인자,두번째인자> - 첫번째 : 어떤 엔티티 클래스 다룰건가요?, 두번째 : 엔티티 클래스의 pk는 어떤 타입인가요?
 

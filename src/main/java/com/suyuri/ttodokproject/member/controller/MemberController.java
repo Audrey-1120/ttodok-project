@@ -4,16 +4,38 @@ import com.suyuri.ttodokproject.member.dto.MemberDTO;
 import com.suyuri.ttodokproject.member.service.MemberService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import com.suyuri.ttodokproject.member.entity.MemberEntity;
+import com.suyuri.ttodokproject.member.repository.MemberRepository;
+
+
+
 
 import java.time.LocalDate;
 import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
+
+
+
 public class MemberController {
+
+    //  화면 연동하기 위해 적은 메소드입니다 -지민
+    @GetMapping("/myPage")
+    public String myPage() {
+        return "myPage";}
+
+    @GetMapping("/quiz1")
+    public String quiz1() {
+        return "quiz1";}
+
+
 
 
     //생성자 주입 - 필드를 매개변수로 하는 생성자를 만들어줌. 자동적으로 서비스에 대한 객체를 주입받는다!!
@@ -83,5 +105,21 @@ public class MemberController {
         return pwcheckResult;
     }
 
+
+
+
+
+    //-짐
+
+    // 회원탈퇴
+    @DeleteMapping("/{memberId}")
+    public ResponseEntity<String> deleteMember(@PathVariable Long memberId) {
+        try {
+            memberService.deleteMember(memberId); // 서비스 메서드 호출
+            return new ResponseEntity<>("회원 탈퇴가 완료되었습니다.", HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>("회원 탈퇴에 실패했습니다.", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
 }

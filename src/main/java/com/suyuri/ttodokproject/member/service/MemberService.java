@@ -6,17 +6,23 @@ import com.suyuri.ttodokproject.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+
+
+
+
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-@Service
 @RequiredArgsConstructor
+@Service
 public class MemberService {
 
 
     //생성자 의존성 주입
     private final MemberRepository memberRepository;
+
 
     //회원가입 관련 메소드
     public void save(MemberDTO memberDTO) {
@@ -76,5 +82,15 @@ public class MemberService {
         } else {
             return "ok";
         }
+    }
+
+
+    // 짐니이의 회원 닉네임 가져오기
+
+
+    //지민이의 회원탈퇴
+
+    public void deleteMember(Long memberId) {
+        memberRepository.deleteById(memberId);
     }
 }

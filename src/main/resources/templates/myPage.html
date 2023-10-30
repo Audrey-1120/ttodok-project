@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>또독</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,20 +26,48 @@
 
 
     <aside id="sidebar">
-        <ul id="list">
+        <ul>
             <li id="loginBtn">
-                <button id="myPageHomeBtn" type="submit" onclick="location.href='main_ver2.html';" > 홈화면 </button>
+                <button id="myPageHomeBtn" type="submit" onclick="redirectToMain()">돌아가기 </button>
             </li>
             <li>
-                <button id="withdrawalBtn" type="submit"> 탈퇴하기 </button>
+                <button id="deleteMemberButton">탈퇴하기</button>
             </li>
         </ul>
     </aside>
 
+    <script>
+
+
+        const deleteMemberButton = document.getElementById("deleteMemberButton");
+        function redirectToMain() {  //홈 화면으로 이동
+            window.location.href = "main_ver2";
+        }
+        deleteMemberButton.addEventListener("click", () => {
+            fetch("/members/{memberId}", {
+                method: "DELETE",
+            })
+                .then(response => {
+                    if (response.status === 200) {
+                        // 회원 탈퇴 성공
+                        alert("회원 탈퇴가 완료되었습니다.");
+                        location.reload(); // 페이지 새로고침
+                    } else {
+                        // 회원 탈퇴 실패
+                        alert("회원 탈퇴에 실패했습니다.");
+                    }
+                });
+        });
+
+
+
+    </script>
+
 
     <footer id="footer">
         <button type="submit" id="binkan"> 빈칸입니다 </button>
-        <footer>
+        </footer>
+
 
 
 </div>

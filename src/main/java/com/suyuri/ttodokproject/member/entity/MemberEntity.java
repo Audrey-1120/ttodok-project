@@ -30,7 +30,7 @@ public class MemberEntity { //Entity클래스는 테이블 역할을 한다. 스
     private String memberPhone;
 
     @Column(length = 20, nullable = false)
-    private String memberNick;
+    private String memberNick; //닉네임 필드 추가
 
     @Column(nullable = false, columnDefinition = "int default 0")
     private int point;
@@ -52,4 +52,18 @@ public class MemberEntity { //Entity클래스는 테이블 역할을 한다. 스
 
         return memberEntity;
     }
+
+    //지 민
+    // Getter 메서드
+    public String getMemberNick() {
+        return memberNick;
+    }
+
+    // Setter 메서드
+    public void setMemberNick(String memberNick) {
+        this.memberNick = memberNick;
+    }
+
+
+
 }
