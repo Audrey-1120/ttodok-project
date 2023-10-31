@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +18,7 @@
       <li id="homeExplain" onclick="redirectToMypage() ">또독이란?</li>
       <li id="homeStudyBtn" onclick="redirectToStudy() "> 학습하기 </a></li>
       <li id="homeStoreBtn"  onclick="redirectToMypage()">포인트 상점</li>
-      <li  id="homeMyPageBtn" onclick="redirectToMypage()"  > 마이페이지  </li>
+      <li  id="homeMyPageBtn" onclick="redirectToMypage()"> 마이페이지  </li>
     </ul>
 
 
@@ -32,9 +31,9 @@
     // 또독 설명 페이지가 생기면 그때 넣을게요
   }
 
-  function redirectToStudy() { //퀴즈로 이동
-    window.location.href = "/quiz1";
-  }
+  // function redirectToStudy() { //퀴즈로 이동
+  //   window.location.href = "/quiz1";
+  // }
 
   function redirectToStudy() { //포인트상점으로 이동
     <!--  window.location.href = "/quiz1";-->
@@ -58,7 +57,8 @@
 
   <aside id="sidebar">
     <img src="/images/loginBtn_ver2.png" id="loginBtn_ver2" height="150">
-    <p> <span th:text="${memberNick}"></span>님! 반가워요</p>
+    <label th:text="${memberDTO.memberNick}"></label>
+
   </aside>
 
 </div>

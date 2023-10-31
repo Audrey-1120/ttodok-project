@@ -53,16 +53,6 @@ public class MemberEntity { //Entity클래스는 테이블 역할을 한다. 스
         return memberEntity;
     }
 
-    //지 민
-    // Getter 메서드
-    public String getMemberNick() {
-        return memberNick;
-    }
-
-    // Setter 메서드
-    public void setMemberNick(String memberNick) {
-        this.memberNick = memberNick;
-    }
 
 
 

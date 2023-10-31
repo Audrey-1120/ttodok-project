@@ -2,6 +2,7 @@ package com.suyuri.ttodokproject.member.controller;
 
 import com.suyuri.ttodokproject.member.dto.MemberDTO;
 import com.suyuri.ttodokproject.member.service.MemberService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import com.suyuri.ttodokproject.member.entity.MemberEntity;
 import com.suyuri.ttodokproject.member.repository.MemberRepository;
-
+import com.suyuri.ttodokproject.member.dto.MemberDTO;
 
 
 
@@ -29,13 +30,13 @@ public class MemberController {
     //  화면 연동하기 위해 적은 메소드입니다 -지민
     @GetMapping("/myPage")
     public String myPage() {
-        return "myPage";}
+        return "myPage";
+    }
 
     @GetMapping("/quiz1")
     public String quiz1() {
-        return "quiz1";}
-
-
+        return "quiz1";
+    }
 
 
     //생성자 주입 - 필드를 매개변수로 하는 생성자를 만들어줌. 자동적으로 서비스에 대한 객체를 주입받는다!!
@@ -106,9 +107,6 @@ public class MemberController {
     }
 
 
-
-
-
     //-짐
 
     // 회원탈퇴
@@ -122,4 +120,16 @@ public class MemberController {
         }
     }
 
+    // 닉네임 가져오기
+
+    @GetMapping("/main_ver2")
+    public String mainPage(Model model) {
+        MemberDTO memberDTO = new MemberDTO();
+        memberDTO.setMemberNick("사용자의 닉네임");
+
+        model.addAttribute("memberDTO", memberDTO);
+
+        return "main_ver2";
+
+    }
 }
