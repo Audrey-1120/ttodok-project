@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/main_ver2.css?afterfit ">
 </head>
-
 <body>
+
+
+
 <div id="container1">
   <header id="header">
     <img src="../images/ttodokLogo2.png" height="70">
@@ -19,38 +20,20 @@
       <li id="homeExplain" onclick="redirectToMypage() ">또독이란?</li>
       <li id="homeStudyBtn" onclick="redirectToStudy() "> 학습하기 </a></li>
       <li id="homeStoreBtn"  onclick="redirectToMypage()">포인트 상점</li>
-      <li  id="homeMyPageBtn" onclick="redirectToMypage()"  > 마이페이지  </li>
+      <li  id="homeMyPageBtn" onclick="redirectToMypage()"> 마이페이지  </li>
     </ul>
-
-
   </header>
 
-  <script>
 
-  function redirectToExplain() {  //또독 설명으로 이동
-    <!--  window.location.href = "/myPage";-->
-    // 또독 설명 페이지가 생기면 그때 넣을게요
+<script>
+
+  function redirectToStudy() {
   }
 
-  function redirectToStudy() { //퀴즈로 이동
-    window.location.href = "/quiz1";
-  }
-
-  function redirectToStudy() { //포인트상점으로 이동
-    <!--  window.location.href = "/quiz1";-->
-    // 포인트 상점이 생기면 그때 넣을게요
-  }
-
-  function redirectToMypage() { //마이페이지로 이동
+  function redirectToMypage() {
     window.location.href = "/myPage";
   }
-
-
-
-
-</script>
-
-
+  </script>
 
   <section id="contents">
     <img src="/images/wordList_ver2.png" id="todayWordList" >
@@ -58,12 +41,11 @@
 
   <aside id="sidebar">
     <img src="/images/loginBtn_ver2.png" id="loginBtn_ver2" height="150">
-    <p> <span th:text="${memberNick}"></span>님! 반가워요</p>
+<!--    <p>Hello, <span th:text="${session.getAttribute('userNick')}"></span>!</p>-->
+
   </aside>
 
 </div>
-
-
 
 
 <div id="container2">
