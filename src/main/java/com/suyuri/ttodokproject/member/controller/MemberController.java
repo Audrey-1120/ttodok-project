@@ -20,6 +20,13 @@ public class MemberController {
     private final MemberService memberService;
 
 
+    //마이페이지 화면 출력요청
+    @GetMapping("/myPage")
+    public String myPage() {
+        return "myPage";
+    }
+
+
     //여기부터 회원가입 시작
     // 회원가입 페이지 출력 요청
     @GetMapping("/member/join")
@@ -56,7 +63,7 @@ public class MemberController {
         Map<String, String> loginResult = memberService.login(memberDTO);
         if (loginResult.get("status").equals("success")) {
             session.setAttribute("loginId", memberDTO.getMemberId());
-            return "main_verr2";
+            return "main_ver2";
         } else {
             String errorMessage = loginResult.get("message");
             if (errorMessage != null) {
@@ -75,6 +82,7 @@ public class MemberController {
 
         //로그인 끝
     }
+
 
     @PostMapping("/member/pw-check")
     public @ResponseBody String passwordCheck(@RequestParam("memberPw") String memberPw) {

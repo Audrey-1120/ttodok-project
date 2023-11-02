@@ -3,11 +3,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: "jdbc:mysql://localhost:3306/ttodok"
     username : "root"
-<<<<<<< HEAD
-    password : "1568"
-=======
     password : "D64x8Ct@"
->>>>>>> ac0a9b974266b264fb70d0484e0a0c5bdb9a1611
   thymeleaf:
     cache: false
 

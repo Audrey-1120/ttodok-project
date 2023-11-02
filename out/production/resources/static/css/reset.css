@@ -45,11 +45,8 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-<<<<<<< HEAD
-=======
 }
 a {
 	text-decoration: none;
 	color: black;
->>>>>>> ac0a9b974266b264fb70d0484e0a0c5bdb9a1611
 }

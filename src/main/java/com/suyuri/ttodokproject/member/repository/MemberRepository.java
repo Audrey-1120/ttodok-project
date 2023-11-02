@@ -15,4 +15,6 @@ public interface MemberRepository extends JpaRepository<MemberEntity, Long> {
 
     //패스워드로 회원정보 조회 (select * from tbl_member where member_pw=?)
     Optional<MemberEntity> findByMemberPw(String memberPw);
+
+
 }

@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController { //전체 요청을 처리하는 대표 컨트롤러
 
     //기본 페이지 요청 메소드
-    @GetMapping("main_ver2.html")
+    @GetMapping("/")
     public String index() { //인덱스 페이지를 요청하는 API
-        return "login";
+        return "main_ver2";
     }
 }
