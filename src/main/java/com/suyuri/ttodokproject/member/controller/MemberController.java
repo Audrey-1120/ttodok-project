@@ -20,6 +20,13 @@ public class MemberController {
     private final MemberService memberService;
 
 
+    //메인페이지 화면 출력 요청
+    @GetMapping("/mainPage")
+    public String mainPage() {
+        return "main_ver2";
+    }
+
+
     //마이페이지 화면 출력요청
     @GetMapping("/myPage")
     public String myPage() {

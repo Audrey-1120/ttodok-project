@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:tx="http://www.w3.org/1999/xhtml">
 <link rel="stylesheet" href="/css/wordstudy.css">
 
 <head>
@@ -19,19 +19,20 @@
     <!--상단 메뉴(로고, 메뉴바)-->
     <header class="menu" id="menu">
         <div class="wordstudy-logo" id="wordstudy-logo">
-            <a href="main.html">
+            <a href="/mainPage">
                 <img class="wordstudy-logo" src="../images/wordstudy_studylogo.png" />
             </a>
 
         </div>
 
         <div class="wordstudy-menubar" id="wordstudy-menubar">
-            <a href="login.html">로그아웃&emsp;</a>
+            <a href="login.html">로그아웃&emsp;</a> <!--수정 해야함.-->
             <a href="/myPage">마이페이지&emsp;</a>
         </div>
     </header>
 
     <div class="wordstudy-form" id="wordstudy-form">
+
 
         <img class="wordstudy-rabbit" src="../images/rabbit.png" />
 
@@ -47,6 +48,7 @@
             <h3 class="wordstudy-title">혹부리 영감</h3>
 
         </div>
+
 
         <!--        학습단어 슬라이드 부분-->
         <div id="wordstudy-slide" class="wordstudy-slide">
@@ -71,6 +73,8 @@
                             <p class="word-name" th:text="${wordEntity.word}"></p><br>
                             <p class="word-mean" th:text="${wordEntity.wordMean}"></p><br>
                             <p class="word-plusMean"  th:text="${wordEntity.wordEx}"></p>
+                            <img class="volume-up" src="../images/volume-up.png" />
+
                         </div>
                     </div>
 
@@ -93,20 +97,26 @@
 
         <!--다음단계 넘어가기 버튼-->
         <div class="wordstudy-button" id="join-button">
-            <input class="wordstudybutton" type="submit" value="다음 단계">
+                <input class="wordstudybutton" type="submit" value="다음 단계" id="wordStudyButton"> <!--경로 설정 필요-->
+
         </div>
 
         <!--하단 뒤로가기, 홈으로 메뉴-->
         <div class="footmenu" id="footmenu">
             <!--뒤로가기-->
             <div class="wordstudy-backbutton" id="wordstudy-backbutton">
-                <a href="학습하기 시작.html">뒤로가기</a>
+                <a href="/mainPage">뒤로가기</a>
             </div>
 
             <!--홈으로-->
             <div class="wordstudyhome">
-                <img class="wordstudy-home" src="../images/wordstudy_home.png" />
-                <a href="main.html">홈으로</a>
+                <a href="/mainPage">
+                    <img class="wordstudy-home" src="../images/wordstudy_home.png" />
+                    <!--                <a href="main.html">홈으로</a>-->
+                    <p>홈으로</p>
+
+                </a>
+
             </div>
         </div>
 

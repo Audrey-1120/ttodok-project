@@ -24,4 +24,7 @@ public class WordEntity {
 
     @Column(length = 100, nullable = false)
     private String wordEx;
+
+    @Column(length = 50)
+    private String wordSrc;
 }

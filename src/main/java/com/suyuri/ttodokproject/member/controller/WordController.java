@@ -4,13 +4,14 @@ import com.suyuri.ttodokproject.member.entity.WordEntity;
 import com.suyuri.ttodokproject.member.service.WordService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
@@ -24,6 +25,7 @@ public class WordController {
         return "wordstudy";
     }
 
+    //슬라이드 데이터 가져오기
     @GetMapping("/study/wordstudy")
     @ResponseBody
     public Map<String, Object> wordstudyForm(@RequestParam String card) {
@@ -39,5 +41,20 @@ public class WordController {
         }
         return response; //해당 response 맵을 반환해서 JSON응답을 클라이언트에게 보냄.
     }
+
+
+//    //해당 동화 제목 가져오기
+//    @GetMapping("/study/wordtitle")
+//    public String wordtitle(@RequestParam String card, Model model) {
+//        TextEntity wordEntity = wordService.getWordTitleByWordCode(card);
+//        if(wordEntity != null) {
+//            model.addAttribute("wordTitle", TextEntity.getTextTitle());
+//        } else {
+//            model.addAttribute("wordTitle", "error");
+//        }
+//
+//    }
+
+
 
 }

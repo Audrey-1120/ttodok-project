@@ -1,39 +1,83 @@
 @import "reset.css";
-.child,
-.q1 {
+
+body {
+
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-size: 14px;
+  font-family: 'Pretendard', sans-serif;
+  background-color: #81C370;
+}
+
+
+
+.quiz1-01 {
+  display: flex;
+
+}
+
+.quiz1-03 {
+  display: fles;
+}
+
+.quiz1-yello,
+.quiz1-question {
   position: absolute;
 }
-.child {
-  top: 139px;
-  left: 186px;
+
+/* 로고 */
+.quiz1-logo {
+  width: 93px;
+  height: 53px;
+  flex-shrink: 0;
+  margin: 0.5rem 76.3rem 1rem 1rem;
+}
+
+
+/* 노란색 배경 카드 */
+.quiz1-yello {
+  /* top: 139px;
+  left: 186px; */
+  margin-left: 12%;
   border-radius: var(--br-xl);
   background-color: var(--color-palegoldenrod);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  width: 839px;
+  width: 60%;
   height: 447px;
 }
-.q1 {
+
+/* 문제 */
+.quiz1-question {
+  /* width: 80rem; */
   font-size: 40px;
-  top: 162px;
-  left: 223px;
-  font-weight: 800;
+  /* top: 162px;
+  left: 223px; */
+  font-weight: 900;
   color: #193612;
+  padding: 2.5%;
 }
-.span {
+
+
+
+/* .span {
   font-size: 38px;
   color: #193612;
-}
-.div1,
+} */
+
+/* .div1,
 .div2 {
   position: absolute;
 }
+
 .div1 {
-    font-size: 38px;
-    top: 0;
-    left: 0;
-    font-weight: 800;
-    color: #193612;
+  font-size: 38px;
+  top: 0;
+  left: 0;
+  font-weight: 800;
+  color: #193612;
 }
+
 .div2 {
   top: 22px;
   left: 100px;
@@ -42,147 +86,235 @@
   width: 10px;
   height: 10px;
 }
+
 .icon {
   top: 5px;
   left: 88px;
   width: 17px;
   height: 17px;
-}
+} */
+
 .icon,
-.item,
+.quiz1-passage,
 .parent {
   position: absolute;
 }
-.parent {
+
+/* .parent {
   top: 29px;
   left: 36px;
   width: 92px;
   height: 63px;
   font-size: 52px;
   color: #295f1c;
-}
-.item {
-  top: 233px;
-  left: 151px;
+} */
+
+.quiz1-passage {
+  /* top: 233px;
+  left: 151px; */
+  margin-top: 5%;
+  margin-left: 10%;
   border-radius: var(--br-xl);
   background-color: var(--color-white);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  width: 1138px;
-  height: 369px;
+  width: 80%;
+  height: 37%;
 }
-.span1 {
+
+/* .span1 {
   color: var(--color-black);
 }
+
 .span2 {
   color: #f1ae00;
-}
+} */
+
 .p {
   margin-block-start: 0;
   margin-block-end: 30px;
 }
-.p1 {
+
+/* .p1 {
   margin: 0;
   font-size: 40px;
-}
-.div3,
-.div4 {
+} */
+
+.quiz1-passageContent,
+.quiz1-hole {
   position: absolute;
 }
-.div3 {
-  top: 344px;
-  left: 322px;
+
+.quiz1-passageContent {
+  /* top: 344px;
+  left: 322px; */
   font-weight: 800;
+  padding: 10% 3% 10% 3%;
 }
-.div4 {
-  top: 247px;
-  left: 1249px;
+
+.quiz1-hole {
+  top: 3%;
+  left: 97%;
   border-radius: 50%;
   background-color: var(--color-lightgreen);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25) inset;
   width: 27px;
   height: 29px;
 }
-.child1,
-.child2,
-.inner,
-.rectangle-div {
+
+
+
+
+.quiz1-choice01 {
   position: absolute;
-  top: 651px;
-  left: 151px;
+  top: 57%;
+  left: 10%;
   border-radius: var(--br-xl);
   background-color: var(--color-white);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  width: 556px;
-  height: 158px;
+  width: 39%;
+  height: 18%;
+  text-align: center;
 }
-.child1,
-.child2,
-.rectangle-div {
+
+.quiz1-choice01:hover {
+  background-color: #F0E39E;
+}
+
+.quiz1-choice02 {
+  position: absolute;
+  top: 57%;
+  left: 51%;
+  border-radius: var(--br-xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 39%;
+  height: 18%;
+  text-align: center;
+}
+
+.quiz1-choice02:hover {
+  background-color: #F0E39E;
+}
+
+.quiz1-choice03 {
+  position: absolute;
+  top: 78%;
+  left: 10%;
+  border-radius: var(--br-xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 39%;
+  height: 18%;
+  text-align: center;
+}
+
+.quiz1-choice03:hover {
+  background-color: #F0E39E;
+}
+
+.quiz1-choice04 {
+  position: absolute;
+  top: 78%;
+  left: 51%;
+  border-radius: var(--br-xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 39%;
+  height: 18%;
+  text-align: center;
+}
+
+.quiz1-choice04:hover {
+  background-color: #F0E39E;
+}
+
+.quiz1-choiceContent {
+  font-weight: 500;
+  padding: 5%;
+
+}
+
+
+
+
+/* .quiz1-choice03,
+.quiz1-choice04,
+.quiz1-choice02 {
   left: 733px;
 }
-.child1,
-.child2 {
+
+.quiz1-choice03,
+.quiz1-choice04 {
   top: 835px;
   left: 151px;
 }
-.child2 {
+
+.quiz1-choice04 {
   left: 733px;
   background-color: var(--color-palegoldenrod);
-}
-.div5{
-    position: absolute;
-    top: 890px;
-    left: 860px;
-    font-size: var(--font-size-21xl);
-    font-weight: 800;
-}
-.div6 {
-    position: absolute;
-    top: 890px;
-    left: 210px;
-    font-size: var(--font-size-21xl);
-    font-weight: 800;
-}
-.div7{
-    position: absolute;
-    top: 675px;
-    left: 220px;
-    font-size: var(--font-size-21xl);
-    font-weight: 800;
-}
-.div8{
-    position: absolute;
-    top: 675px;
-    left: 820px;
-    font-size: var(--font-size-21xl);
-    font-weight: 800;
+} */
 
-}
-.free-icon-rabbit-6363517-1 {
+/* .div5 {
   position: absolute;
-  top: 60px;
-  left: 1065px;
-  width: 169px;
-  height: 173px;
+  top: 890px;
+  left: 860px;
+  font-size: var(--font-size-21xl);
+  font-weight: 800;
+}
+
+.div6 {
+  position: absolute;
+  top: 890px;
+  left: 210px;
+  font-size: var(--font-size-21xl);
+  font-weight: 800;
+}
+
+.div7 {
+  position: absolute;
+  top: 675px;
+  left: 220px;
+  font-size: var(--font-size-21xl);
+  font-weight: 800;
+}
+
+.div8 {
+  position: absolute;
+  top: 675px;
+  left: 820px;
+  font-size: var(--font-size-21xl);
+  font-weight: 800;
+
+} */
+
+.rabbit {
+  position: absolute;
+  /* top: 90rem; */
+  bottom: 83%;
+  left: 75%;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   mix-blend-mode: normal;
 }
+
 .arrow-icon {
   position: absolute;
-  top: 491.79px;
-  left: 1316px;
+  top: 50%;
+  left: 92%;
   width: 102px;
   height: 40.41px;
 }
-.div {
+
+.quiz1-form {
   position: relative;
   background-color: var(--color-lightgreen);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 100%;
-  height: 1024px;
+  height: 100vh;
   overflow: hidden;
   text-align: left;
   font-size: var(--font-size-29xl);
   color: var(--color-black);
-  font-family: var(--font-inter);
+  font-family: 'pretendard';
 }

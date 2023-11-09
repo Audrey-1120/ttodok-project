@@ -3,7 +3,6 @@ package com.suyuri.ttodokproject.member.repository;
 import com.suyuri.ttodokproject.member.entity.MemberEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
 import java.util.Optional;
 
 
