@@ -190,17 +190,21 @@ bookList5, bookList6, bookList7, bookList8 {
 
 #overlay-text {
     top: 400px;
-    padding-left: 15px;
+    padding-left: 10px;
     position: absolute;
     color: black;
+    left: 1260px;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 22px;
     background-color: white;
 }
 
 #overlay-text .user-nick {
+    margin-left: 0; /* 왼쪽 마진을 0으로 설정 */
+    font-family: inherit;
     color: #356A28;
-    font-size: 32px;
+    left: 1290px;
+    font-size: 29px;
     font-weight: 900;
     background-color: white;
 }
@@ -209,14 +213,15 @@ bookList5, bookList6, bookList7, bookList8 {
     position: absolute;
     top: 465px;
     padding-left: 15px;
-    left: 1240px;
+    left: 1265px;
 }
 
 #overlay-text-pointshop {
+    margin-left: 0; /* 왼쪽 마진을 0으로 설정 */
     position: absolute;
     top: 480px;
     padding-left: 15px;
-    left: 1240px;
+    left: 1260px;
     color: black;
     font-weight: 700;
     font-size: 25px;
@@ -225,6 +230,7 @@ bookList5, bookList6, bookList7, bookList8 {
 }
 
 #overlay-text .user-nick {
+    margin: 0;
     color: #356A28;
     font-size: 32px;
     font-weight: 900;
@@ -232,6 +238,7 @@ bookList5, bookList6, bookList7, bookList8 {
 }
 
 #overlay-text-pointview {
+
     position: absolute;
     top: 510px;
     left: 1300px;
@@ -240,14 +247,19 @@ bookList5, bookList6, bookList7, bookList8 {
     font-size: 60px;
     padding-left: 30px;
     background-color: white;
+    padding-top: 30px;
 }
-#overlay-text-pointview .user-point {
+
+#overlay-text-gopointstore{
+
     position: absolute;
-    top: 510px;
-    left: 1300px;
-    color: black;
-    font-weight: 900;
-    font-size: 60px;
-    padding-left: 30px;
-    background-color: white;
+    left: 1285px;
+    background-color: #223A1C;
+    color: #F0E39E;
+    top: 660px;
+    width: 198px;
+    height: 39px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 800;
 }
