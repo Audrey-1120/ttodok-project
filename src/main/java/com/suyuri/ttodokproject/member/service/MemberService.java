@@ -86,7 +86,10 @@ public class MemberService {
 
 
     // 짐니이의 회원 닉네임 가져오기
-
+    public String getNickName(String memberId) {
+        Optional<MemberEntity> byMemberId = memberRepository.findByMemberId(memberId);
+        return byMemberId.map(MemberEntity::getMemberNick).orElse(null);
+    }
 
     //지민이의 회원탈퇴
 

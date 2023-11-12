@@ -79,7 +79,8 @@ public class MemberController {
         Map<String, String> loginResult = memberService.login(memberDTO);
         if (loginResult.get("status").equals("success")) {
             session.setAttribute("loginId", memberDTO.getMemberId());
-            return "main_ver2";
+
+            return "redirect:/main_ver2"; // 리다이렉트 사용
         } else {
             String errorMessage = loginResult.get("message");
             if (errorMessage != null) {
@@ -123,14 +124,18 @@ public class MemberController {
 
     // 닉네임 가져오기
 
-    @PostMapping("login")
-    public String loginNickName(HttpServletRequest request, @ModelAttribute MemberDTO memberDTO) {
-        // 로그인 로직 수행 (memberService를 사용하여 사용자 검증)
+    // 메인 페이지 출력 요청
 
-        // 사용자 정보를 세션에 저장
-        HttpSession session = request.getSession();
-        session.setAttribute("userNick", "사용자의 닉네임");
-        return "redirect:/main_ver2"; // 로그인 후 main_ver2 페이지로 이동
+    @GetMapping("/main_ver2")
+    public String mainPage(HttpSession session, Model model) {
+        String loginId = (String) session.getAttribute("loginId");
+        System.out.println("loginId: " + loginId);
+
+        if (loginId != null) {
+            String userNick = memberService.getNickName(loginId);
+            model.addAttribute("userNick", userNick);
+        }
+
+        return "main_ver2";
     }
-
 }

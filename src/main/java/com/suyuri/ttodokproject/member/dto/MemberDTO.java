@@ -27,6 +27,7 @@ public class MemberDTO {
     private int day;
 
 
+
     //년, 월, 일 값을 설정하는 데 사용함.
     public void setYear(int year) {
         this.year = year;

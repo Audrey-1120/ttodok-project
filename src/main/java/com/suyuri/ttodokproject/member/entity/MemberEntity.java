@@ -38,6 +38,10 @@ public class MemberEntity { //Entity클래스는 테이블 역할을 한다. 스
     @Column
     private LocalDate birthDate;
 
+    public String getMemberNick() {
+        return memberNick;
+    }
+
 
     public static MemberEntity toMemberEntity(MemberDTO memberDTO) {
         MemberEntity memberEntity = new MemberEntity();
