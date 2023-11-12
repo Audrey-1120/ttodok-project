@@ -91,6 +91,12 @@ public class MemberService {
         return byMemberId.map(MemberEntity::getMemberNick).orElse(null);
     }
 
+    // 포인트
+    public int getMemberPoint(String memberId) {
+        Optional<MemberEntity> optionalMember = memberRepository.findByMemberId(memberId);
+        return optionalMember.map(MemberEntity::getPoint).orElse(0);
+    }
+
     //지민이의 회원탈퇴
 
     public void deleteMember(Long memberId) {

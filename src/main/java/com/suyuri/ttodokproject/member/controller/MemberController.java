@@ -134,8 +134,12 @@ public class MemberController {
         if (loginId != null) {
             String userNick = memberService.getNickName(loginId);
             model.addAttribute("userNick", userNick);
+            int memberPoint = memberService.getMemberPoint(loginId);
+            model.addAttribute("memberPoint", memberPoint);
         }
 
         return "main_ver2";
     }
+
+
 }

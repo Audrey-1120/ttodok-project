@@ -168,7 +168,7 @@ bookList5, bookList6, bookList7, bookList8 {
     margin-left: 35%;
     margin-top: 60px;
     margin-bottom: 200px;
-    color: white;;
+    color: white;
     line-height: 66.56px;
     font-weight: bold;
     background-color:#3C9E23;
@@ -183,3 +183,71 @@ bookList5, bookList6, bookList7, bookList8 {
 }
 
 
+/* 사이드 바 */
+.overlay-container {
+    position: relative;
+}
+
+#overlay-text {
+    top: 400px;
+    padding-left: 15px;
+    position: absolute;
+    color: black;
+    font-weight: 700;
+    font-size: 25px;
+    background-color: white;
+}
+
+#overlay-text .user-nick {
+    color: #356A28;
+    font-size: 32px;
+    font-weight: 900;
+    background-color: white;
+}
+
+#line-image {
+    position: absolute;
+    top: 465px;
+    padding-left: 15px;
+    left: 1240px;
+}
+
+#overlay-text-pointshop {
+    position: absolute;
+    top: 480px;
+    padding-left: 15px;
+    left: 1240px;
+    color: black;
+    font-weight: 700;
+    font-size: 25px;
+    padding-left: 15px;
+    background-color: white;
+}
+
+#overlay-text .user-nick {
+    color: #356A28;
+    font-size: 32px;
+    font-weight: 900;
+    background-color: white;
+}
+
+#overlay-text-pointview {
+    position: absolute;
+    top: 510px;
+    left: 1300px;
+    color: black;
+    font-weight: 900;
+    font-size: 60px;
+    padding-left: 30px;
+    background-color: white;
+}
+#overlay-text-pointview .user-point {
+    position: absolute;
+    top: 510px;
+    left: 1300px;
+    color: black;
+    font-weight: 900;
+    font-size: 60px;
+    padding-left: 30px;
+    background-color: white;
+}
