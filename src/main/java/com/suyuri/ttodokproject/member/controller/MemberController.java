@@ -142,4 +142,11 @@ public class MemberController {
     }
 
 
+    //로그아웃
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        session.invalidate(); // 세션 무효화
+        return "redirect:/member/login"; // 로그아웃 후 로그인 페이지로 리다이렉트
+    }
 }
