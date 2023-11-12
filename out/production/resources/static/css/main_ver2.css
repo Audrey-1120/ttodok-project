@@ -189,21 +189,19 @@ bookList5, bookList6, bookList7, bookList8 {
 }
 
 #overlay-text {
+    left: 1070px;
     top: 400px;
-    padding-left: 10px;
+    padding-left: 15px;
     position: absolute;
     color: black;
-    left: 1260px;
     font-weight: 700;
     font-size: 22px;
     background-color: white;
 }
 
-#overlay-text .user-nick {
-    margin-left: 0; /* 왼쪽 마진을 0으로 설정 */
-    font-family: inherit;
+#overlay-text .user-nick { /* 사용자닉네임부분 */
+    left: 1070px;
     color: #356A28;
-    left: 1290px;
     font-size: 29px;
     font-weight: 900;
     background-color: white;
@@ -213,53 +211,51 @@ bookList5, bookList6, bookList7, bookList8 {
     position: absolute;
     top: 465px;
     padding-left: 15px;
-    left: 1265px;
+    left: 1075px;
 }
 
-#overlay-text-pointshop {
-    margin-left: 0; /* 왼쪽 마진을 0으로 설정 */
+#overlay-text-pointshop { /* 내포인트 문구 */
     position: absolute;
     top: 480px;
     padding-left: 15px;
-    left: 1260px;
+    left: 1063px;
     color: black;
     font-weight: 700;
-    font-size: 25px;
-    padding-left: 15px;
+    font-size: 19px;
     background-color: white;
 }
 
 #overlay-text .user-nick {
-    margin: 0;
     color: #356A28;
     font-size: 32px;
+    left: 1300px;
     font-weight: 900;
     background-color: white;
 }
 
-#overlay-text-pointview {
-
+#overlay-text-pointview { /* 점수출력 */
     position: absolute;
     top: 510px;
-    left: 1300px;
+    left: 1085px;
     color: black;
     font-weight: 900;
     font-size: 60px;
-    padding-left: 30px;
-    background-color: white;
+    padding-left: 60px;
     padding-top: 30px;
+    background-color: white;
 }
 
-#overlay-text-gopointstore{
 
+#overlay-text-gopointshop{
+    top: 650px;
+    left: 1100px;
     position: absolute;
-    left: 1285px;
-    background-color: #223A1C;
     color: #F0E39E;
-    top: 660px;
-    width: 198px;
-    height: 39px;
+    background-color: #223A1C;
     border-radius: 10px;
+    height: 39px;
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 900;
+    width : 198px ;
+
 }
