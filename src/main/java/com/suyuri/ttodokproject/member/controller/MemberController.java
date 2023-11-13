@@ -101,19 +101,30 @@ public class MemberController {
     //-짐
 
     // 회원탈퇴
-    @DeleteMapping("/{memberId}")
-    public ResponseEntity<String> deleteMember(@PathVariable Long memberId) {
-        try {
-            memberService.deleteMember(memberId); // 서비스 메서드 호출
-            return new ResponseEntity<>("회원 탈퇴가 완료되었습니다.", HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>("회원 탈퇴에 실패했습니다.", HttpStatus.INTERNAL_SERVER_ERROR);
+
+    @DeleteMapping("/members/delete")
+    public ResponseEntity<String> deleteMember(HttpSession session) {
+        String loginId = (String) session.getAttribute("loginId");
+
+        if (loginId != null) {
+            // 회원 탈퇴 로직 수행
+            boolean success = memberService.deleteMember(loginId);
+
+            if (success) {
+                session.invalidate(); // 세션 무효화
+                return ResponseEntity.ok("회원 탈퇴가 완료되었습니다.");
+            } else {
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                        .body("회원 탈퇴에 실패했습니다.");
+            }
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body("로그인된 사용자만 회원 탈퇴가 가능합니다.");
         }
     }
 
-    // 닉네임 가져오기
 
-    // 메인 페이지 출력 요청
+    // 메인 페이지와 마이페이지 출력 요청
 
     @GetMapping("/main_ver2")
     public String mainPage(HttpSession session, Model model) {

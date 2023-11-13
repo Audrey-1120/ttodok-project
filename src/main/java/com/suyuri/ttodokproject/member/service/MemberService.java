@@ -98,8 +98,14 @@ public class MemberService {
     }
 
     //지민이의 회원탈퇴
+    public boolean deleteMember(String memberId) {
+        Optional<MemberEntity> optionalMember = memberRepository.findByMemberId(memberId);
 
-    public void deleteMember(Long memberId) {
-        memberRepository.deleteById(memberId);
+        if (optionalMember.isPresent()) {
+            memberRepository.delete(optionalMember.get());
+            return true;
+        } else {
+            return false;
+        }
     }
 }

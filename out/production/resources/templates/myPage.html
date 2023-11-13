@@ -57,32 +57,32 @@
 </div>
 
 <script>
+    // 로그아웃 코드
     document.getElementById('logoutButton').addEventListener('click', function() {
         // 로그아웃 버튼을 눌렀을 때 실행할 동작을 여기에 작성
         window.location.href = "/member/login"; // 로그아웃 경로로 이동
     });
 
-
+    // 회원 탈퇴
     const deleteMemberButton = document.getElementById("deleteMemberButton");
-    function redirectToMain() {  //홈 화면으로 이동
-        window.location.href = "main_ver2";
-    }
 
     deleteMemberButton.addEventListener("click", () => {
-        fetch("/members/{memberId}", {
-            method: "DELETE",
-        })
-            .then(response => {
-                if (response.status === 200) {
-                    // 회원 탈퇴 성공
-                    alert("회원 탈퇴가 완료되었습니다.");
-                    location.reload(); // 페이지 새로고침
-                } else {
-                    // 회원 탈퇴 실패
-                    alert("회원 탈퇴에 실패했습니다.");
-                }
-            });
+        if (confirm("정말로 회원을 탈퇴하시겠습니까?")) {
+            // 확인 버튼을 눌렀을 때의 동작
+            fetch("/members/delete", {
+                method: "DELETE",
+            })
+                .then(response => {
+                    if (response.status === 200) {
+                        alert("회원 탈퇴가 완료되었습니다.");
+                        location.href = "/member/login"; // 탈퇴 후 로그인 페이지로 이동
+                    } else {
+                        alert("회원 탈퇴에 실패했습니다.");
+                    }
+                });
+        }
     });
+
 </script>
 
 </body>
