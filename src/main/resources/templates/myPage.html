@@ -15,63 +15,75 @@
 <body>
 <div id="container">
 
+
     <header id="header">
-        <img src="images/joinlogo.png" height="70" width="100" >
+        <img src="images/joinlogo.png" height="63" width="92" >
     </header>
 
+    <section id="contents" style="position: relative;">
+        <img src="images/myPageImage.png" id="myPageImg" height="600" width="1200">
 
-    <section id="contents">
-        <img src="images/myPageImg.png" id="myPageImg" >
+        <div style="position: absolute; top: 50px; left: 50px;">
+            <p id="myPage_text">마이 페이지</p>
+        </div>
+
+        <div style="position: absolute; top: 700px; left: 350px;">
+            <p id="overlay-text">
+                <span class="user-nick" th:text="${userNick != null ? userNick : 'Guest'}"></span> 님! 반가워요
+            </p>
+        </div>
+
+        <div style="position: absolute; top: 900px; left: 350px;">
+            <p id="overlay-text-pointview" th:text="${memberPoint} + '점'"></p>
+        </div>
+
+        <div style="position: absolute; top: 500px; left: 50px;">
+            <button id="logoutButton">로그아웃</button>
+        </div>
+
+        <div style="position: absolute; top: 500px; left: 200px;">
+            <button id="deleteMemberButton">탈퇴하기</button>
+        </div>
+
+        <div style="position: absolute; top: 500px; left: 350px;">
+            <button id="myPagetoGoHome">돌아가기</button>
+        </div>
+
     </section>
 
 
-                <button id="deleteMemberButton">탈퇴하기</button>
-
-<button id="logoutButton">로그아웃</button>
-
-
-    <script>
-
-
-            document.getElementById('logoutButton').addEventListener('click', function() {
-            // 로그아웃 버튼을 눌렀을 때 실행할 동작을 여기에 작성
-            window.location.href = "/member/login"; // 로그아웃 경로로 이동
-        });
-
-
-        const deleteMemberButton = document.getElementById("deleteMemberButton");
-        function redirectToMain() {  //홈 화면으로 이동
-            window.location.href = "main_ver2";
-        }
-
-        deleteMemberButton.addEventListener("click", () => {
-            fetch("/members/{memberId}", {
-                method: "DELETE",
-            })
-                .then(response => {
-                    if (response.status === 200) {
-                        // 회원 탈퇴 성공
-                        alert("회원 탈퇴가 완료되었습니다.");
-                        location.reload(); // 페이지 새로고침
-                    } else {
-                        // 회원 탈퇴 실패
-                        alert("회원 탈퇴에 실패했습니다.");
-                    }
-                });
-        });
-
-
-
-    </script>
-
-
-    <footer id="footer">
-        <button type="submit" id="binkan"> 빈칸입니다 </button>
-        </footer>
-
 
 
 </div>
-</div>
+
+<script>
+    document.getElementById('logoutButton').addEventListener('click', function() {
+        // 로그아웃 버튼을 눌렀을 때 실행할 동작을 여기에 작성
+        window.location.href = "/member/login"; // 로그아웃 경로로 이동
+    });
+
+
+    const deleteMemberButton = document.getElementById("deleteMemberButton");
+    function redirectToMain() {  //홈 화면으로 이동
+        window.location.href = "main_ver2";
+    }
+
+    deleteMemberButton.addEventListener("click", () => {
+        fetch("/members/{memberId}", {
+            method: "DELETE",
+        })
+            .then(response => {
+                if (response.status === 200) {
+                    // 회원 탈퇴 성공
+                    alert("회원 탈퇴가 완료되었습니다.");
+                    location.reload(); // 페이지 새로고침
+                } else {
+                    // 회원 탈퇴 실패
+                    alert("회원 탈퇴에 실패했습니다.");
+                }
+            });
+    });
+</script>
+
 </body>
 </html>

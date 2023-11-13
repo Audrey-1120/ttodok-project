@@ -27,17 +27,6 @@ import java.util.Map;
 
 public class MemberController {
 
-    //  화면 연동하기 위해 적은 메소드입니다 -지민
-    @GetMapping("/myPage")
-    public String myPage() {
-        return "myPage";
-    }
-
-    @GetMapping("/quiz1")
-    public String quiz1() {
-        return "quiz1";
-    }
-
 
     //생성자 주입 - 필드를 매개변수로 하는 생성자를 만들어줌. 자동적으로 서비스에 대한 객체를 주입받는다!!
     private final MemberService memberService;
@@ -140,6 +129,21 @@ public class MemberController {
 
         return "main_ver2";
     }
+
+    @GetMapping("/myPage")
+    public String myPage(HttpSession session, Model model) {
+        String loginId = (String) session.getAttribute("loginId");
+
+        if (loginId != null) {
+            String userNick = memberService.getNickName(loginId);
+            model.addAttribute("userNick", userNick);
+            int memberPoint = memberService.getMemberPoint(loginId);
+            model.addAttribute("memberPoint", memberPoint);
+        }
+
+        return "myPage";
+    }
+
 
 
     //로그아웃
