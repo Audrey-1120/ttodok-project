@@ -95,7 +95,7 @@ public class MemberController {
 
     //-짐
 
-    // 회원탈퇴
+    // 회원탈퇴v ...
 
     @DeleteMapping("/members/delete")
     public ResponseEntity<String> deleteMember(HttpSession session) {
