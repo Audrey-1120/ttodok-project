@@ -1,10 +1,16 @@
 package com.suyuri.ttodokproject.controller.member;
 
 import com.suyuri.ttodokproject.dto.MemberDTO;
+import com.suyuri.ttodokproject.entity.MemberEntity;
+import com.suyuri.ttodokproject.service.MemberService;
+import jakarta.servlet.http.HttpServletRequest;
+import com.suyuri.ttodokproject.dto.MemberDTO;
 import com.suyuri.ttodokproject.service.MemberService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,18 +19,23 @@ import org.springframework.http.ResponseEntity;
 
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
-
-
-
 public class MemberController {
 
 
     //생성자 주입 - 필드를 매개변수로 하는 생성자를 만들어줌. 자동적으로 서비스에 대한 객체를 주입받는다!!
     private final MemberService memberService;
+
+
+    //메인페이지 화면 출력 요청
+    @GetMapping("/main")
+    public String mainPage() {
+        return "main_ver2";
+    }
 
 
     //여기부터 회원가입 시작
@@ -85,6 +96,8 @@ public class MemberController {
         //로그인 끝
     }
 
+
+    //패스워드 중복및 유효성 검사
     @PostMapping("/member/pw-check")
     public @ResponseBody String passwordCheck(@RequestParam("memberPw") String memberPw) {
         System.out.println("memberPw = " + memberPw); //파라미터가 제대로 오는지 확인

@@ -1,47 +1,131 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 
-    <link rel="stylesheet" href="/css/global.css" />
-    <link rel="stylesheet" href="/css/style3.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap"
-    />
-  </head>
-  <body>
-    <div class="div">
-      <div class="child" onclick="location.href='quizex2.html';"></div>
-      <div class="q2">Q2. 노란색 단어와 비슷한 뜻을 가진 단어를 골라보세요!</div>
-      <div class="item"></div>
-      <div class="div1">
-        <p class="p">
-          <span class="span">이 빈 집같이 조용하던 집에서 </span>
-          <span class="span1">나직</span>
-          <span>하고 </span>
-        </p>
-        <p class="p1">조심스런 소녀의 소리가 들리었습니다.</p>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/style2.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+
+  <script
+          src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+
+
+
+
+<!--전체 화면(로고 제외)    -->
+<div class="quiz1-form">
+
+  <div class="quiz1-logoform">
+    <!--로고      -->
+    <a href="/main_ver2">
+      <img class="quiz1-logo" src="../images/wordstudy_studylogo.png" />
+    </a>
+  </div>
+
+
+
+
+  <!-- 문제 & 토끼 + 지문 -->
+  <div class="quiz1-02">
+
+    <!-- 문제 및 토끼 -->
+    <div class="quiz1-01">
+
+      <!--노란색 배경카드(문제 적는 카드)    -->
+      <div class="quiz1-yello">
+        <!--문제      -->
+        <div class="quiz1-question" th:text="${questionContent}"></div>
+        <!--        <div class="quiz1-question">문제1) 문제 1 입니다.</div>-->
       </div>
-      <div class="div2"></div>
-      <div class="inner"></div>
-      <div class="rectangle-div"></div>
-      <div class="child1"></div>
-      <div class="child2"></div>
-      <div class="div3">소리가 꽤 낮다.</div>
-      <div class="div4">보다 더 좋거나<br>앞서 있다.</div>
-      <div class="parent">
-        <div class="div5">
-          <span>또독</span>
-        </div>
-        <div class="div6"></div>
-        <img class="icon" alt="" src="../images/point.svg" />
-      </div>
-      <div class="div7">겉에서 속, 또는 밑에서 <br>
-        위까지의 길이가 짧다.</div>
-     <div class="div8">병이나 상처 따위가 <br>
-        고쳐져 본래대로 되다.</div>
+
+      <!--토끼이미지      -->
+      <img class="rabbit" alt="" onclick="location.href='quizex1.html';" src="../images/rabbit.png" />
+
     </div>
-  </body>
+
+    <!--지문 표시 카드      -->
+    <div class="quiz1-passage">
+
+      <!--카드 구멍      -->
+      <div class="quiz1-hole"></div>
+
+      <div class="quiz1-passageContent">
+
+        <div class="quiz1-passagedesign">
+          <div class="quiz1-passage" th:text="${questionPassage}"></div>
+        </div>
+        <!--지문      -->
+
+
+        <!--            <p class="p">[ 문제 1 의 지문입니다. ]</p>-->
+
+      </div>
+
+
+    </div>
+    <!--지문 텍스트      -->
+
+
+  </div>
+
+
+  <!-- 선택지 4개 -->
+  <div class="quiz1-03">
+
+    <!--첫번째 카드      -->
+    <div class="quiz1-choice01">
+      <div class="quiz1-choiceCode01" data-choiceCode="${isAnswerRight}"></div>
+      <!--첫번째 카드 내용      -->
+      <div class="quiz1-choiceContent" th:text="${choiceContent}"></div><br>
+    </div>
+
+    <!--두번째 카드      -->
+    <div class="quiz1-choice02">
+      <div class="quiz1-choiceCode02" data-choiceCode="${isAnswerRight}"></div>
+      <!--두번째 카드 내용      -->
+      <div class="quiz1-choiceContent" th:text="${choiceContent}"></div><br>
+    </div>
+
+    <!--세번째 카드      -->
+    <div class="quiz1-choice03">
+      <div class="quiz1-choiceCode03" data-choiceCode="${isAnswerRight}"></div>
+      <!--세번째 카드 내용      -->
+      <div class="quiz1-choiceContent" th:text="${choiceContent}"></div>
+    </div>
+
+    <!--네번째 카드      -->
+    <div class="quiz1-choice04">
+      <div class="quiz1-choiceCode04" data-choiceCode="${isAnswerRight}"></div>
+      <!--네번째 카드 내용      -->
+      <div class="quiz1-choiceContent" th:text="${choiceContent}"></div>
+    </div>
+
+
+
+
+
+
+  </div>
+
+
+</div>
+
+<!--화살표      -->
+<img class="arrow-icon" alt="" onclick="location.href='quiz2.html';" src="../images/arrow.svg" id="arrowButton"/>
+</div>
+
+<script type="text/javascript" th:src="@{/js/quiz2.js}"></script>
+</body>
+
 </html>

@@ -1,0 +1,240 @@
+@import "reset.css";
+
+body {
+
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-size: 14px;
+  font-family: 'Pretendard', sans-serif;
+  background-color: #81C370;
+}
+
+/*전체 틀*/
+v .workdstudy-page {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+/*상단 로고 및 메뉴바*/
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3%;
+  width: 100%;
+}
+
+/*상단 메뉴*/
+.wordstudy-menubar {
+  margin-right: 1%;
+  font-weight: 500;
+}
+
+/*회원가입 페이지 로고*/
+.wordstudy-logo {
+  width: 93px;
+  height: 53px;
+  flex-shrink: 0;
+  margin: 0.5rem 76.3rem 1rem 1rem;
+}
+
+/*단어를 공부해봐요*/
+.wordstudy-gostudy {
+  color: #000000;
+  font-size: 60px;
+  font-weight: 800;
+  text-align: center;
+  /* width: 71%; */
+  align-items: center;
+}
+
+.wordstudy-rabbit {
+  /*토끼*/
+
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  left: 25%;
+  top: 8.5%;
+}
+
+
+
+/*학습하는 동화 제목 부분*/
+.wordstudy-title {
+
+  color: #000000;
+  font-size: 25px;
+  font-weight: 800;
+  width: 75%;
+  margin: 10px auto;
+  text-align: right;
+
+}
+
+/*학습 단어 슬라이드*/
+.wordstudy-slide {
+  background-color: #81C370;
+  width: 100%;
+  height: 55vh;
+}
+
+.word-name {
+  font-size: 140px;
+  margin-top: 13%;
+}
+
+.word-mean {
+  font-size: 45px;
+}
+
+.word-plusMean {
+  font-size: 25px;
+}
+
+.word-rec {
+  width: 80%;
+}
+
+/* 음성 기능 버튼 */
+.volume-up {
+  margin-top: 2%;
+  width: 40px;
+  height: 40px;
+
+}
+
+
+/*회원가입 확인버튼*/
+.wordstudybutton {
+  padding: 20px 50px;
+  box-shadow: 3px 4px 4px gray;
+  background-color: #3b9e23;
+  border-radius: 10px;
+  border: none;
+  color: #ffffff;
+  font-size: 55px;
+  font-weight: 800;
+  font-family: 'Pretendard';
+}
+
+/* 다음단계 넘어가기 버튼 */
+.wordstudy-button {
+  text-align: center;
+  margin-top: 2%;
+
+}
+
+
+/*하단메뉴*/
+.footmenu {
+  width: 100%;
+  display: flex;
+}
+
+/*뒤로가기*/
+.wordstudy-backbutton {
+  width: 92.5%;
+  font-size: 32px;
+  font-weight: 800;
+  margin-left: 2%;
+  margin-top: 1%;
+}
+
+/*홈으로 - 집로고*/
+.wordstudy-home {
+  width: 53px;
+  height: 53px;
+}
+
+/* 홈으로 */
+.wordstudyhome {
+  margin-left: 1%;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+
+
+
+/*슬라이드*/
+
+
+#slider {
+  position: relative;
+  width: 100%;
+  max-width: 90rem;
+  margin: 0 auto;
+  /*visibility: hidden;*/
+}
+
+
+.btn {
+  position: absolute;
+  width: 3rem;
+  height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  border: 0;
+  transition: 0.2s;
+  cursor: pointer;
+  font-size: 2rem;
+  opacity: 0.3;
+
+}
+
+.btn.prev {
+  left: 0;
+}
+
+.btn.next {
+  right: 0;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 35rem;
+  overflow: hidden;
+  padding: 3px 0;
+}
+
+.items {
+  position: absolute;
+  width: 500%;
+  left: 0;
+  top: 0;
+  display: flex;
+}
+
+.items.active {
+  transition: 0.3s;
+}
+
+.item {
+  width: 100%;
+  pointer-events: none;
+  position: relative;
+  padding: 0 1rem;
+}
+
+
+.item .word-content {
+    width: 80rem;
+    height: 35rem;
+    border: 1px solid #c8c8c8;
+    box-shadow: 0 1rem 2.8rem rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+    text-align: center;
+    background-color: #fff;
+    font-weight: 700;
+    color: #000000;
+}
+
+
+

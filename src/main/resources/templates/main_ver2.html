@@ -4,21 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>또독</title>
+
+  <script
+          src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/main_ver2.css?afterfit ">
 </head>
+
 <body>
-
-<script>
-  function redirectToMypage() {
-    window.location.href = "/myPage";
-  }
-</script>
-
 <div id="container1">
-
   <header id="header">
     <img id="mainLogo" src="../images/ttodokLogo2.png" height="70">
     <ul id="headerul">
@@ -53,23 +52,26 @@
     <ul id="booklistul_1">
       <li id="bookList1">
         <h2 id="bookNameNum1">엄지공주</h2>
-        <img src="/images/book1.png">
+        <img src="/images/book1.png" onclick="redirectToWordLearningPage('t001')"> <!--Audrey님이 추가함. : 이미지에 해당하는 word_code 전송.-->
       </li>
       <li id="bookList2">
         <h2 id="bookNameNum2">피노키오</h2>
-        <img src="/images/book1.png"></li>
+        <img src="/images/book1.png" onclick="redirectToWordLearningPage('t002')"> <!--Audrey님이 추가함. : 이미지에 해당하는 word_code 전송.-->
+      </li>
       <li id="bookList3">
         <h2 id="bookNameNum3">신데렐라</h2>
-        <img src="/images/book1.png"></li>
+        <img src="/images/book1.png" onclick="redirectToWordLearningPage('t003')"> <!--Audrey님이 추가함. : 이미지에 해당하는 word_code 전송.-->
+      </li>
       <li id="bookList4">
         <h2 id="bookNameNum4">개구리 왕자</h2>
-        <img src="/images/book1.png"></li>
+        <img src="/images/book1.png" onclick="redirectToWordLearningPage('t004')"> <!--Audrey님이 추가함. : 이미지에 해당하는 word_code 전송.-->
+      </li>
     </ul>
 
     <ul id="booklistul_2">
       <li id="bookList5">
         <h2 id="bookNameNum5">컵케이크</h2>
-        <img src="/images/.png">
+        <img src="/images/book1.png">
       </li>
       <li id="bookLis6">
         <h2 id="bookNameNum6">우주비행사</h2>
@@ -100,5 +102,24 @@
 </div>
 
 
+
 </body>
 </html>
+
+<script>
+
+
+  //Audrey님이 추가함. - 마이페이지 넘어가기. 이미지에 해당하는 번호 넘기는 함수
+  function redirectToMypage() {
+      window.location.href = "/myPage";
+  }
+
+  //Audrey님이 추가함. - 이미지 번호 매개변수 추가해서 페이지 이동하는 함수
+  function redirectToWordLearningPage(imageNumber) {
+      // 단어 학습 페이지 URL에 이미지 번호를 매개변수로 추가하여 페이지 이동
+      window.location.href = "/wordstudy?card=" + imageNumber;
+  }
+
+
+
+</script>
