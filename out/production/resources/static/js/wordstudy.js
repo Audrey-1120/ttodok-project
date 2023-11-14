@@ -1,4 +1,3 @@
-
 //메인페이지에서 사진1 클릭 시 t001이란 숫자 잘 전달되는지 확인.
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -45,14 +44,12 @@
                                         const wrapper = document.querySelector('.wrapper'); //클래스가 wrapper인 클래스 찾음
                                         const items = document.querySelector('.items'); //const는 상수선언. 한번 선언하면 못바꿈. let은 변수 선언
                                         const item = document.querySelectorAll('.item');
-//                                        const item = data.count;
 
                                         console.log("item 개수: ", item) //테스트용 로그 출력
 
                                         const next = document.querySelector('.next');
                                         const prev = document.querySelector('.prev');
                                         const itemCount = item.length - 2;
-//                                        const itemCount = count;
 
                                         console.log("itemCount 개수: ", itemCount) //테스트용 로그 출력
 

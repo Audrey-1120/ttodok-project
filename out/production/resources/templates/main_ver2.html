@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,22 +13,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="/css/main_ver2.css">
+  <link rel="stylesheet" href="/css/main_ver2.css?afterfit ">
 </head>
 
 <body>
 <div id="container1">
+
   <header id="header">
-    <img src="../images/ttodokLogo2.png" height="70">
-    <ul>
-      <li id="homeExplain">또독이란?</li>
-      <li id="homeStudyBtn"> 학습하기 </a></li>
-      <!--      <li id="homeStudyBtn"> <a href="myPage"> 학습하기 </a></li>-->
-      <li id="homeStoreBtn" >포인트 상점</li>
+    <img id="mainLogo" src="../images/ttodokLogo2.png" height="70">
+    <ul id="headerul">
+      <li>또독이란?</li>
+      <li>학습하기</li>
+      <li>포인트 상점</li>
       <li id="homeMyPageBtn" onclick="redirectToMypage()"> 마이페이지  </li>
     </ul>
-
-
   </header>
 
   <section id="contents">
@@ -36,7 +34,16 @@
   </section>
 
   <aside id="sidebar">
-    <img src="/images/loginBtn_ver2.png" id="loginBtn_ver2" height="150">
+    <div id="overlay-container">
+      <img src="/images/loginBtn_ver2.png" id="loginBtn_ver2" height="150">
+      <p id="overlay-text">
+        <span class="user-nick" th:text="${userNick != null ? userNick : 'Guest'}"></span> 님! 반가워요
+      </p>
+      <img src="/images/line.png" id="line-image"  width="240">
+      <p id="overlay-text-pointshop">내 포인트</p>
+      <p id="overlay-text-pointview" th:text="${memberPoint} + '점'"></p>
+      <button id="overlay-text-gopointshop" >포인트상점 </button>
+    </div>
   </aside>
 
 </div>
@@ -47,7 +54,7 @@
 <div id="container2">
   <section id="book">
     <h1 id="book_text">재미있는 이야기가 가득!</h1>
-    <ul>
+    <ul id="booklistul_1">
       <li id="bookList1">
         <h2 id="bookNameNum1">엄지공주</h2>
         <img src="/images/book1.png" onclick="redirectToWordLearningPage('t001')"> <!--Audrey님이 추가함. : 이미지에 해당하는 word_code 전송.-->
@@ -66,7 +73,7 @@
       </li>
     </ul>
 
-    <ul>
+    <ul id="booklistul_2">
       <li id="bookList5">
         <h2 id="bookNameNum5">컵케이크</h2>
         <img src="/images/book1.png">
@@ -89,7 +96,6 @@
   <section id="point_sotre">
     <h1 id="storeText">포인트로 상품을 구매할 수 있어요!</h1>
     <img src="/images/pointStoreVer2.png" id="pointStoreVer2" >
-
     <button id="storeGoBtn" type="submit"> 바로가기 </button>
   </section>
 

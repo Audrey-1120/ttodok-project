@@ -14,11 +14,10 @@ body {
 
 .quiz1-01 {
   display: flex;
-
 }
 
 .quiz1-03 {
-  display: fles;
+  display: flex;
 }
 
 .quiz1-yello,
@@ -50,7 +49,7 @@ body {
 /* 문제 */
 .quiz1-question {
   /* width: 80rem; */
-  font-size: 40px;
+  font-size: 38px;
   /* top: 162px;
   left: 223px; */
   font-weight: 900;
@@ -60,39 +59,7 @@ body {
 
 
 
-/* .span {
-  font-size: 38px;
-  color: #193612;
-} */
 
-/* .div1,
-.div2 {
-  position: absolute;
-}
-
-.div1 {
-  font-size: 38px;
-  top: 0;
-  left: 0;
-  font-weight: 800;
-  color: #193612;
-}
-
-.div2 {
-  top: 22px;
-  left: 100px;
-  border-radius: 50%;
-  background-color: #287e13;
-  width: 10px;
-  height: 10px;
-}
-
-.icon {
-  top: 5px;
-  left: 88px;
-  width: 17px;
-  height: 17px;
-} */
 
 .icon,
 .quiz1-passage,
@@ -100,15 +67,7 @@ body {
   position: absolute;
 }
 
-/* .parent {
-  top: 29px;
-  left: 36px;
-  width: 92px;
-  height: 63px;
-  font-size: 52px;
-  color: #295f1c;
-} */
-
+/*지문카드*/
 .quiz1-passage {
   /* top: 233px;
   left: 151px; */
@@ -119,25 +78,17 @@ body {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 80%;
   height: 37%;
+  line-height: 360px;
+  font-weight: 500;
+  text-align: center;
+  font-size: 50px;
 }
-
-/* .span1 {
-  color: var(--color-black);
-}
-
-.span2 {
-  color: #f1ae00;
-} */
 
 .p {
   margin-block-start: 0;
   margin-block-end: 30px;
 }
 
-/* .p1 {
-  margin: 0;
-  font-size: 40px;
-} */
 
 .quiz1-passageContent,
 .quiz1-hole {
@@ -145,12 +96,11 @@ body {
 }
 
 .quiz1-passageContent {
-  /* top: 344px;
-  left: 322px; */
   font-weight: 800;
   padding: 10% 3% 10% 3%;
 }
 
+/*카드구멍*/
 .quiz1-hole {
   top: 3%;
   left: 97%;
@@ -161,9 +111,20 @@ body {
   height: 29px;
 }
 
+/*
+.quiz1-choiceContent {
+  font-weight: 500;
+  padding: 5%;
 
+}
 
+.quiz1-choiceCode01 {
+  font-weight: 500;
+  padding: 5%;
+}
+*/
 
+/*선택지 1*/
 .quiz1-choice01 {
   position: absolute;
   top: 57%;
@@ -174,12 +135,16 @@ body {
   width: 39%;
   height: 18%;
   text-align: center;
+  font-weight: 600;
+  line-height: 180px;
 }
 
+/*선택지 1 선택 시 노란색으로 바뀌는 효과*/
 .quiz1-choice01:hover {
   background-color: #F0E39E;
 }
 
+/*선택지 2*/
 .quiz1-choice02 {
   position: absolute;
   top: 57%;
@@ -190,12 +155,16 @@ body {
   width: 39%;
   height: 18%;
   text-align: center;
+  font-weight: 600;
+  line-height: 180px;
 }
 
+/*선택지 2 선택 시 노란색으로 바뀌는 효과*/
 .quiz1-choice02:hover {
   background-color: #F0E39E;
 }
 
+/*선택지 3*/
 .quiz1-choice03 {
   position: absolute;
   top: 78%;
@@ -206,12 +175,16 @@ body {
   width: 39%;
   height: 18%;
   text-align: center;
+  font-weight: 600;
+  line-height: 180px;
 }
 
+/*선택지 3 선택 시 노란색으로 바뀌는 효과*/
 .quiz1-choice03:hover {
   background-color: #F0E39E;
 }
 
+/*선택지 4*/
 .quiz1-choice04 {
   position: absolute;
   top: 78%;
@@ -222,74 +195,24 @@ body {
   width: 39%;
   height: 18%;
   text-align: center;
+  font-weight: 600;
+  line-height: 180px;
 }
 
+/*선택지 4 선택 시 노란색으로 바뀌는 효과*/
 .quiz1-choice04:hover {
   background-color: #F0E39E;
 }
 
-.quiz1-choiceContent {
-  font-weight: 500;
-  padding: 5%;
-
+/*
+.quiz1-passagedesign {
+    color: red;
 }
+*/
 
-
-
-
-/* .quiz1-choice03,
-.quiz1-choice04,
-.quiz1-choice02 {
-  left: 733px;
-}
-
-.quiz1-choice03,
-.quiz1-choice04 {
-  top: 835px;
-  left: 151px;
-}
-
-.quiz1-choice04 {
-  left: 733px;
-  background-color: var(--color-palegoldenrod);
-} */
-
-/* .div5 {
-  position: absolute;
-  top: 890px;
-  left: 860px;
-  font-size: var(--font-size-21xl);
-  font-weight: 800;
-}
-
-.div6 {
-  position: absolute;
-  top: 890px;
-  left: 210px;
-  font-size: var(--font-size-21xl);
-  font-weight: 800;
-}
-
-.div7 {
-  position: absolute;
-  top: 675px;
-  left: 220px;
-  font-size: var(--font-size-21xl);
-  font-weight: 800;
-}
-
-.div8 {
-  position: absolute;
-  top: 675px;
-  left: 820px;
-  font-size: var(--font-size-21xl);
-  font-weight: 800;
-
-} */
-
+/*토끼 아이콘*/
 .rabbit {
   position: absolute;
-  /* top: 90rem; */
   bottom: 83%;
   left: 75%;
   width: 150px;
@@ -298,6 +221,7 @@ body {
   mix-blend-mode: normal;
 }
 
+/*화살표 버튼(다음으로 넘어가기)*/
 .arrow-icon {
   position: absolute;
   top: 50%;
@@ -306,6 +230,7 @@ body {
   height: 40.41px;
 }
 
+/*전체 화면 - 로고 제외*/
 .quiz1-form {
   position: relative;
   background-color: var(--color-lightgreen);

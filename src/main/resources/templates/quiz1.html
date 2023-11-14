@@ -8,11 +8,13 @@
   <link rel="stylesheet" href="/css/global.css" />
   <link rel="stylesheet" href="/css/style2.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
 
   <script
           src="https://code.jquery.com/jquery-3.7.1.min.js"
           integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
           crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -44,22 +46,13 @@
       <div class="quiz1-yello">
         <!--문제      -->
         <div class="quiz1-question" th:text="${questionContent}"></div>
+        <!--        <div class="quiz1-question">문제1) 문제 1 입니다.</div>-->
       </div>
 
       <!--토끼이미지      -->
       <img class="rabbit" alt="" onclick="location.href='quizex1.html';" src="../images/rabbit.png" />
 
     </div>
-
-
-
-
-    <!-- <div class="parent">
-    <div class="div1"><span class="span">또독</span>
-    </div>
-    <div class="div2"></div>
-    <img class="icon" alt="" src="../images/point.svg" />
-  </div> -->
 
     <!--지문 표시 카드      -->
     <div class="quiz1-passage">
@@ -68,8 +61,11 @@
       <div class="quiz1-hole"></div>
 
       <div class="quiz1-passageContent">
+
+        <div class="quiz1-passagedesign">
+          <div class="quiz1-passage" th:text="${questionPassage}"></div>
+        </div>
         <!--지문      -->
-        <p class="p" th:text="${questionPassage}"></p>
 
       </div>
 
@@ -86,26 +82,30 @@
 
     <!--첫번째 카드      -->
     <div class="quiz1-choice01">
+      <div class="quiz1-choiceCode01" data-isAnswerRight="${isAnswerRight}"></div>
       <!--첫번째 카드 내용      -->
-      <p class="quiz1-choiceContent">겉에서 속, 또는 밑에서 위까지의 길이가 짧다.</p><br>
+        <div class="quiz1-choiceContent" th:text="${choiceContent}"></div><br>
     </div>
 
     <!--두번째 카드      -->
     <div class="quiz1-choice02">
+      <div class="quiz1-choiceCode02" data-isAnswerRight="${isAnswerRight}"></div>
       <!--두번째 카드 내용      -->
-      <p class="quiz1-choiceContent">병이나 상처 따위가 고쳐져 본래대로 되다.</p><br>
+      <div class="quiz2-choiceContent" th:text="${choiceContent}"></div><br>
     </div>
 
     <!--세번째 카드      -->
     <div class="quiz1-choice03">
+      <div class="quiz1-choiceCode03" data-isAnswerRight="${isAnswerRight}"></div>
       <!--세번째 카드 내용      -->
-      <p class="quiz1-choiceContent">보다 더 좋거나 앞서 있다.</p>
+      <div class="quiz3-choiceContent" th:text="${choiceContent}"></div>
     </div>
 
     <!--네번째 카드      -->
     <div class="quiz1-choice04">
+      <div class="quiz1-choiceCode04" data-isAnswerRight="${isAnswerRight}"></div>
       <!--네번째 카드 내용      -->
-      <p class="quiz1-choiceContent">소리가 꽤 낮다.</p>
+      <div class="quiz4-choiceContent" th:text="${choiceContent}"></div>
     </div>
 
 
@@ -119,7 +119,8 @@
 </div>
 
 <!--화살표      -->
-<img class="arrow-icon" alt="" onclick="location.href='quiz2.html';" src="../images/arrow.svg" />
+  <img class="arrow-icon" alt="" onclick="location.href='quiz2.html';" src="../images/arrow.svg" id="arrowButton"/>
+
 </div>
 
 <script type="text/javascript" th:src="@{/js/quiz1.js}"></script>

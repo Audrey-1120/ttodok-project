@@ -10,7 +10,7 @@
   .screen .div {
     background-color: #f0e39e;
     width: 1440px;
-    height: 1024px;
+    height: 100vh;
     position: relative;
   }
   
@@ -18,7 +18,7 @@
     position: absolute;
     top: 394px;
     left: 466px;
-    font-family: "Inter-ExtraBold", Helvetica;
+    font-family: "pretendard", Helvetica;
     font-weight: 800;
     color: #000000;
     font-size: 64px;
@@ -41,7 +41,7 @@
     position: absolute;
     top: 20px;
     left: 72px;
-    font-family: "Inter-ExtraBold", Helvetica;
+    font-family: "pretendard", Helvetica;
     font-weight: 800;
     color: #ffffff;
     font-size: 55px;
