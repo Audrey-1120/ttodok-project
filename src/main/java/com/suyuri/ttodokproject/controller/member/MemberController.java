@@ -4,6 +4,9 @@ import com.suyuri.ttodokproject.dto.MemberDTO;
 import com.suyuri.ttodokproject.entity.MemberEntity;
 import com.suyuri.ttodokproject.service.MemberService;
 import jakarta.servlet.http.HttpServletRequest;
+import com.suyuri.ttodokproject.dto.MemberDTO;
+import com.suyuri.ttodokproject.service.MemberService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -11,6 +14,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
 
 import java.time.LocalDate;
 import java.util.List;
@@ -78,6 +84,7 @@ public class MemberController {
             return "login";
         } //아이디가 틀리면 아이디가 틀렸다고 에러메시지 넣어줌.
     }
+
 
     //아이디 중복확인
     @PostMapping("/member/id-check")
