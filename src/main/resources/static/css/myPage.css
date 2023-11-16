@@ -21,6 +21,12 @@
     height:800px;
     float:left;
 }
+
+.overlay-container {
+    position: relative;
+}
+
+
 #deleteMemberButton {
     color: white;
     line-height: 66.56px;
@@ -33,9 +39,13 @@
     width: 150px;
     height: 70px;
     overflow: hidden;
+    position: absolute;
+    left: 230px;
+    top:570px;
 }
 
 #logoutButton {
+    position: absolute;
     color: white;
     line-height: 66.56px;
     font-weight: bold;
@@ -47,9 +57,12 @@
     width: 150px;
     height: 70px;
     overflow: hidden;
+    top:570px;
+    left: 400px;
 }
 
 #myPagetoGoHome {
+    position: absolute;
     color: white;
     line-height: 66.56px;
     font-weight: bold;
@@ -61,16 +74,71 @@
     width: 150px;
     height: 70px;
     overflow: hidden;
+    top:570px;
+    left: 570px;
 }
 
 
 #myPage_text {
-    left: 800px;
+    top: 170px;
+    left: 200px;
+    background-color: #F0E39E;
+    position: absolute;
     font-size: 40px;
     font-weight: 900;
     color: black;
 }
 
+#user-nick-info {
+    position: absolute;
+    left: 340px;
+    top: 295px;
+    color: black;
+    font-weight: 700;
+    font-size: 27px;
+    background-color: white;
+}
+
+.user-nick { /* 사용자닉네임부분 */
+    position: absolute;
+    left: 200px;
+    top: 280px;
+    color: #356A28;
+    font-size: 45px;
+    font-weight: 900;
+    background-color: white;
+}
 
 
+#line-image {
+    position: absolute;
+    left: 200px;
+    top: 350px;
+}
 
+#overlay-text-pointshop {
+    position: absolute;
+    left: 230px;
+    top: 400px;
+    color: black;
+    font-size: 30px;
+    font-weight: 800;
+    background-color: white;
+}
+
+#overlay-text-pointview {
+    position: absolute;
+    left: 230px;
+    top: 470px;
+    color: black;
+    font-size: 48px;
+    font-weight: 900;
+    background-color: white;
+}
+
+#puppy-image {
+    position: absolute;
+    left: 1000px;
+    top: 500px;
+    background-color: white;
+}
