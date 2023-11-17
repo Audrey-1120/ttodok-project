@@ -3,20 +3,24 @@ package com.suyuri.ttodokproject.service;
 import com.suyuri.ttodokproject.dto.MemberDTO;
 import com.suyuri.ttodokproject.entity.MemberEntity;
 import com.suyuri.ttodokproject.repository.MemberRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+
+import java.lang.reflect.Member;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-@Service
 @RequiredArgsConstructor
+@Service
 public class MemberService {
 
 
     //생성자 의존성 주입
     private final MemberRepository memberRepository;
+
 
     //회원가입 관련 메소드
     public void save(MemberDTO memberDTO) {
@@ -75,6 +79,53 @@ public class MemberService {
             return null;
         } else {
             return "ok";
+        }
+    }
+
+
+    // 짐니이의 회원 닉네임 가져오기
+    public String getNickName(String memberId) {
+        Optional<MemberEntity> byMemberId = memberRepository.findByMemberId(memberId);
+        return byMemberId.map(MemberEntity::getMemberNick).orElse(null);
+    }
+
+    // 포인트
+    public int getMemberPoint(String memberId) {
+        Optional<MemberEntity> optionalMember = memberRepository.findByMemberId(memberId);
+        return optionalMember.map(MemberEntity::getPoint).orElse(0);
+    }
+
+    //지민이의 회원탈퇴
+    public boolean deleteMember(String memberId) {
+        Optional<MemberEntity> optionalMember = memberRepository.findByMemberId(memberId);
+
+        if (optionalMember.isPresent()) {
+            memberRepository.delete(optionalMember.get());
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    //오드리 적음
+    //퀴즈 데이터 받아와서 수정
+
+    //MemberDTO통해서 로그인한 유저 아이디와 100점 추가된 해당 유저의 포인트 값 받아와서 memberEntity 값에 수정.
+    @Transactional
+    public String updateMemberPoint(MemberDTO memberDTO) {
+        String loginId = memberDTO.getMemberId();
+        int updatedPoint = memberDTO.getMemberPoint();
+
+        Optional<MemberEntity> byMemberId = memberRepository.findByMemberId(loginId);
+
+        if (byMemberId.isPresent()) {
+            MemberEntity memberEntity = byMemberId.get();
+            memberEntity.setPoint(updatedPoint);
+            memberRepository.save(memberEntity);
+            return "/main_ver2";
+        } else {
+            return "/main_ver2";
         }
     }
 }

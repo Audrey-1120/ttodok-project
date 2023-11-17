@@ -4,129 +4,14 @@
 
     console.log("card", card);
 
-
-/*    $(document).ready(function(){
-                    $.ajax({
-                        type: 'GET',
-                        url: '/study/textstudy?card=' + card,
-                        success: function(data) {
-                            console.log("data: ", data);
-                            count = data.count;
-                            console.log("count: ", count);
-
-                            if(count>0) {
-                            data.data.forEach(function(textEntity) {
-
-                            var textContent = '<div class="text"><p class="text-content">' + textEntity.text + '</p></div>';
-
-                            })
-                            } else {
-                                console.log("데이터가 없습니다.");
-
-                            }
-                        },
-                        error: function(jqXHR, textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
-
-                        }
-                    });
-                });
-    2번째수정
-      $(document).ready(function () {
-          $.ajax({
-              type: 'GET',
-              url: '/study/textstudy?card=' + card,
-              success: function (data) {
-                  console.log("data: ", data);
-                  count = data.count;
-                  console.log("count: ", count);
-
-                  if (count > 0) {
-                      // 변수 선언을 블록 외부로 이동
-                      var textContent;
-
-                      data.data.forEach(function (textEntity) {
-                          // textEntity.text가 존재하는지 확인하고 사용
-                          if (textEntity.text) {
-                              textContent = '<div class="text"><p class="text-content">' + textEntity.text + '</p></div>';
-                              // 여기에 가져온 데이터를 사용하는 로직을 추가할 수 있습니다.
-                          }
-                      });
-                  } else {
-                      console.log("데이터가 없습니다.");
-                  }
-              },
-              error: function (jqXHR, textStatus, errorThrown) {
-                  console.log(textStatus, errorThrown);
-              }
-          });
-      });
-
-
-    3번째수정
+    //기능 처리 함수
     $(document).ready(function () {
-        var count;
-        var textContent;
-
-        $.ajax({
-            type: 'GET',
-            url: '/study/textstudy?card=' + card,
-            success: function (data) {
-                console.log("data: ", data);
-                count = data.count;
-                console.log("count: ", count);
-
-                if (count > 0) {
-                    data.data.forEach(function (textEntity) {
-                        // textEntity.text가 존재하는지 확인하고 사용
-                        if (textEntity.text) {
-                            // textEntity.text 값을 text() 함수를 사용하여 안전하게 처리
-                            textContent = $('<div class="text"><p class="text-content"></p></div>').text(textEntity.text);
-                            // 여기에 가져온 데이터를 사용하는 로직을 추가할 수 있습니다.
-                        }
-                    });
-                } else {
-                    console.log("데이터가 없습니다.");
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log(textStatus, errorThrown);
-            }
-        });
-    });
-
-
-
-//4번째
-    $(document).ready(function () {
-            $.ajax({
-                type: 'GET',
-                url: '/api/text-entities', // 서버에서 TextEntity 데이터를 제공하는 엔드포인트
-                success: function (data) {
-                    console.log("data: ", data);
-
-                    // 데이터를 HTML로 동적으로 렌더링
-                    data.forEach(function (textEntity) {
-                        var htmlContent = '<div class="text-content">' +
-                                            '<h2>' + $('<div/>').text(textEntity.textTitle).html() + '</h2>' +
-                                            '<p class="text-content">' + $('<div/>').text(textEntity.textContent).html() + '</p>' +
-                                          '</div>';
-
-                        $('#text-container').append(htmlContent);
-                    });
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    console.log(textStatus, errorThrown);
-                }
-            });
-        });*/ //코드 수정 내역
-
-    $(document).ready(function () {
+        //DB에서 데이터 불러오기
         $.ajax({
             type: 'GET',
             url: '/study/textstudy?card=' + card, // 서버에서 TextEntity 데이터를 제공하는 엔드포인트
             success: function (data) {
-                console.log("data: ", data);
+                console.log("data: ", data); //가져온 데이터 확인
 
                 for (const textEntity of data.data) {
                     // text-container에 데이터 추가
@@ -145,12 +30,74 @@
                 console.log(textStatus, errorThrown);
             }
         });
-    });
 
+        //음성출력 on/off
+        var isSpeaking = false; // 음성 출력 중인지 여부를 나타내는 변수
+        var speechUtterance; // SpeechSynthesisUtterance 객체를 저장할 변수
+        //tts
+        $('#audioButton').on('click', function () {
+            var contentText = $('.text-content').text();
 
+            // 음성 출력 중이라면 중지, 아니면 음성 합성 함수 호출
+            if (isSpeaking) {
+                stopSpeech();
+            } else {
+                speakText(contentText);
+            }
+        });
 
-    console.log(typeof $);
-    console.log('/study/textstudy?card=' + card);
+        // 음성 합성 함수
+        function speakText(text) {
+            var speechSynthesis = window.speechSynthesis;
+            speechUtterance = new SpeechSynthesisUtterance(text);
+
+            // 음성 합성 시작 이벤트
+            speechUtterance.onstart = function () {
+                isSpeaking = true;
+                $('#audioButton').text('Stop'); // 버튼 텍스트 업데이트
+            };
+
+            // 음성 합성 종료 이벤트
+            speechUtterance.onend = function () {
+                isSpeaking = false;
+                $('#audioButton').text('Play'); // 버튼 텍스트 업데이트
+            };
+
+            speechSynthesis.speak(speechUtterance);
+        }
+
+        // 음성 출력 중지 함수
+        function stopSpeech() {
+            window.speechSynthesis.cancel(); // 음성 출력 중지
+            isSpeaking = false;
+            $('#audioButton').text('Play'); // 버튼 텍스트 업데이트
+        }
+
+        // 페이지 언로드 시 음성 출력 중지
+        $(window).on('unload', function () {
+            stopSpeech();
+        });
+
+        // 스크롤 이벤트 처리
+        /*$('#text-container').on('scroll', function () {
+               console.log('Scrolling...');
+               var container = $(this);
+               var scrollHeight = container.prop('scrollHeight');
+               var scrollTop = container.scrollTop();
+               console.log('Scroll Top:', scrollTop);
+               var containerHeight = container.height();
+
+               // 스크롤이 끝까지 내려가면 다음 단계 버튼 표시
+               if (scrollHeight - scrollTop === containerHeight) {
+                   $('#textStudyButton').parent().show(); // 부모인 textstudy-button을 보여줌
+               } else {
+                   $('#textStudyButton').parent().hide(); // 부모인 textstudy-button을 숨김
+               }
+        });*/
+
+    }); //$(document).ready(function ()
+
+    console.log(typeof $); //테스트용로그
 
     function redirectToTextLearningPage() {
         console.log("redirecting with card", card);

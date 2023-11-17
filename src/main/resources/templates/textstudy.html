@@ -3,17 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="/css/textstudy.css" />
-    <!--    <script>-->
-    <!--      function speakText() {-->
-    <!--            const text = document.getElementById("bookContent").value;-->
-    <!--            const utterance = new SpeechSynthesisUtterance(text);-->
-    <!--            window.speechSynthesis.speak(utterance);-->
-    <!--        }-->
-    <!--    </script>-->
     <title>textstudy</title>
     <script
             src="https://code.jquery.com/jquery-3.6.4.min.js">
-
     </script>
 </head>
 <body style="background-color:#81C370;">
@@ -24,7 +16,7 @@
     <header class="menu" id="menu">
         <div class="textstudy-logo" id="textstudy-logo">
             <a href="/mainPage">
-                <img class="wordstudy-logo" src="../images/wordstudy_studylogo.png" />
+                <img class="textstudy-logo" src="../images/ttodokLogo.png" />
             </a>
         </div>
 
@@ -36,17 +28,17 @@
 
     <div class="textstudy-form" id="textstudy-form">
 
-        <img class="wordstudy-rabbit" src="../images/rabbit.png" />
+        <img class="textstudy-rabbit" src="../images/rabbit.png" />
 
         <!--h1 제목 : 글을 소리내어 읽어보세요-->
         <div class="textstudy-gostudy">
             <h1 class="textstudy-letsstudy">글을 소리내어 읽어보세요!</h1>
-            <!-- <img class="rabbit" src="../img/rabbit.png"/> -->
+            <img class="textstudy-speaker" src="../images/speaker.png" alt="음성 출력 버튼" id="audioButton">
         </div>
 
         <!--학습하는 동화 제목 부분-->
         <div class="textstudy-title">
-            <h3 class="textstudy-title"></h3>
+<!--            <h3 class="textstudy-title"></h3>-->
         </div>
 
         <!--글 내용 보여주는 컨테이너-->
@@ -58,7 +50,7 @@
 
         <!--다음단계 넘어가기 버튼-->
         <div class="textstudy-button" id="textstudy-button">
-            <a href="/quizhome">
+            <a href="/pointshop_home">
                 <input class="textstudybutton" type="submit" value="다음 단계" id="textStudyButton"> <!--경로 설정 필요 퀴즈창으로-->
             </a>
         </div>

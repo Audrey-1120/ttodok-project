@@ -19,11 +19,12 @@ public class MemberDTO {
     private String memberName;
     private String memberPhone;
     private String memberNick;
-    private String memberPoint;
+    private int memberPoint;
     //생년월일
     private int year;
     private int month;
     private int day;
+
 
 
     //년, 월, 일 값을 설정하는 데 사용함.
@@ -51,6 +52,8 @@ public class MemberDTO {
         this.day = birthDate.getDayOfMonth();
     }
 
+
+
     public static MemberDTO toMemberDTO(MemberEntity memberEntity){
         MemberDTO memberDTO = new MemberDTO();
         memberDTO.setMemberId(memberEntity.getMemberId());
@@ -60,6 +63,11 @@ public class MemberDTO {
         memberDTO.setMemberNick(memberEntity.getMemberNick());
 
         return memberDTO;
+    }
+
+    public MemberDTO(String memberId, int memberPoint) {
+        this.memberId = memberId;
+        this.memberPoint = memberPoint;
     }
 
 

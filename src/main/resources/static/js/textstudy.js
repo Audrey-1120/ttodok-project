@@ -4,13 +4,14 @@
 
     console.log("card", card);
 
-
+    //기능 처리 함수
     $(document).ready(function () {
+        //DB에서 데이터 불러오기
         $.ajax({
             type: 'GET',
             url: '/study/textstudy?card=' + card, // 서버에서 TextEntity 데이터를 제공하는 엔드포인트
             success: function (data) {
-                console.log("data: ", data);
+                console.log("data: ", data); //가져온 데이터 확인
 
                 for (const textEntity of data.data) {
                     // text-container에 데이터 추가
@@ -29,7 +30,55 @@
                 console.log(textStatus, errorThrown);
             }
         });
-    });
+
+        //음성출력 on/off
+        var isSpeaking = false; // 음성 출력 중인지 여부를 나타내는 변수
+        var speechUtterance; // SpeechSynthesisUtterance 객체를 저장할 변수
+        //tts
+        $('#audioButton').on('click', function () {
+            var contentText = $('.text-content').text();
+
+            // 음성 출력 중이라면 중지, 아니면 음성 합성 함수 호출
+            if (isSpeaking) {
+                stopSpeech();
+            } else {
+                speakText(contentText);
+            }
+        });
+
+        // 음성 합성 함수
+        function speakText(text) {
+            var speechSynthesis = window.speechSynthesis;
+            speechUtterance = new SpeechSynthesisUtterance(text);
+
+            // 음성 합성 시작 이벤트
+            speechUtterance.onstart = function () {
+                isSpeaking = true;
+                $('#audioButton').text('Stop'); // 버튼 텍스트 업데이트
+            };
+
+            // 음성 합성 종료 이벤트
+            speechUtterance.onend = function () {
+                isSpeaking = false;
+                $('#audioButton').text('Play'); // 버튼 텍스트 업데이트
+            };
+
+            speechSynthesis.speak(speechUtterance);
+        }
+
+        // 음성 출력 중지 함수
+        function stopSpeech() {
+            window.speechSynthesis.cancel(); // 음성 출력 중지
+            isSpeaking = false;
+            $('#audioButton').text('Play'); // 버튼 텍스트 업데이트
+        }
+
+        // 페이지 언로드 시 음성 출력 중지
+        $(window).on('unload', function () {
+            stopSpeech();
+        });
+
+    }); //$(document).ready(function ()
 
     console.log(typeof $); //테스트용로그
 
