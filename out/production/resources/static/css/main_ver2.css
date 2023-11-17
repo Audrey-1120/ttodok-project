@@ -4,12 +4,17 @@
     padding:0;  /* 브라우저 기본 패딩 리셋 */
     box-sizing: border-box;  /* 테두리까지 포함해서 박스 모델 너비로 계산 */
     font-family: 'Inter';
-    background-image: url('images/circle.png');
+    background-image: url('static/images/circle.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
-#container{
+#container1{
+    width:1200px;   /* 내용 전체의 너비 */
+    margin:20px auto;  /* 내용을 화면 가운데 배치하도록 좌우 마진을 auto로 */
+}
+
+#container2{
     width:1200px;   /* 내용 전체의 너비 */
     margin:20px auto;  /* 내용을 화면 가운데 배치하도록 좌우 마진을 auto로 */
 }
@@ -83,14 +88,15 @@ li {
     float:left;
 }
 
-#bookList {
+#bookList1, bookList2, bookList3, bookList4,
+bookList5, bookList6, bookList7, bookList8 {
     margin: 10px;
     border-radius: 25px;
 }
 
 #bookName {
     font-weight: bold;
-    font-size: 30;
+    font-size: 30px;
     margin-bottom: 10px;
     background-color: white;
 }
@@ -114,7 +120,7 @@ li {
 
 #storeText {
     text-align: center;
-    font-size:40;
+    font-size:40px;
     font-weight:bolder ;
 }
 
@@ -155,7 +161,7 @@ li {
     width: 350px;
     height: 100px;
     Top : 867px;
-    Left: 546 px;
+    Left: 546px;
 }
 
 #storeGoBtn {
@@ -173,7 +179,7 @@ li {
     width: 350px;
     height: 100px;
     Top : 867px;
-    Left: 546 px;
+    Left: 546px;
 }
 
 

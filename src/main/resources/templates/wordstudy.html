@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="/css/wordstudy.css">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wordstudy</title>
+  <script
+          src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous">
+  </script>
+
+</head>
+
+<body>
+<div class="wordstudy-page" id="wordstudy-page">
+
+  <!--상단 메뉴(로고, 메뉴바)-->
+  <header class="menu" id="menu">
+    <div class="wordstudy-logo" id="wordstudy-logo">
+      <a href="/mainPage">
+        <img class="wordstudy-logo" src="../images/wordstudy_studylogo.png" />
+      </a>
+
+    </div>
+
+    <div class="wordstudy-menubar" id="wordstudy-menubar">
+      <a href="login.html">로그아웃&emsp;</a> <!--로그아웃 기능 추가-->
+      <a href="/myPage">마이페이지&emsp;</a>
+    </div>
+  </header>
+
+  <div class="wordstudy-form" id="wordstudy-form">
+
+    <img class="wordstudy-rabbit" src="../images/rabbit.png" />
+
+    <!--h1 제목 : 단어를 공부해봐요-->
+    <div class="wordstudy-gostudy">
+      <h1 class="wordstudy-letsstudy">단어를 공부해봐요!</h1>
+      <!-- <img class="rabbit" src="../img/rabbit.png"/> -->
+    </div>
+
+    <!--학습하는 동화 제목 부분-->
+    <div class="wordstudy-title">
+
+      <h3 class="wordstudy-title">혹부리 영감</h3>
+
+    </div>
+
+    <!--        학습단어 슬라이드 부분-->
+    <div id="wordstudy-slide" class="wordstudy-slide">
+
+
+      <div id="slider">
+        <button class="btn prev">
+          <</button> <div class="wrapper">
+        <div class="items">
+
+          <div class="item">
+            <div class="word-content">
+              <p class="word-name"></p><br>
+              <p class="word-mean"></p><br>
+              <p class="word-plusMean"></p>
+            </div>
+          </div>
+
+          <!--                    슬라이드 요소 시작-->
+          <div th:each="wordEntity : ${wordEntities}" class="item">
+            <div class="word-content">
+              <p class="word-name" th:text="${wordEntity.word}"></p><br>
+              <p class="word-mean" th:text="${wordEntity.wordMean}"></p><br>
+              <p class="word-plusMean"  th:text="${wordEntity.wordEx}"></p>
+            </div>
+          </div>
+
+          <!--                    <div class="item">-->
+          <!--                    </div>-->
+
+          <!--                    슬라이드 요소 끝-->
+
+
+          <!--                    <div class="item">-->
+          <!--                    </div>-->
+
+        </div>
+      </div>
+        <button class="btn next">></button>
+      </div>
+
+
+    </div>
+
+    <!--다음단계 넘어가기 버튼-->
+    <div class="wordstudy-button" id="join-button">
+        <input class="wordstudybutton" type="submit" value="다음 단계" id="wordStudyButton"> <!--경로 설정 필요-->
+
+    </div>
+
+    <!--하단 뒤로가기, 홈으로 메뉴-->
+    <div class="footmenu" id="footmenu">
+      <!--뒤로가기-->
+      <div class="wordstudy-backbutton" id="wordstudy-backbutton">
+        <a href="/mainPage">뒤로가기</a>
+      </div>
+
+      <!--홈으로-->
+      <div class="wordstudyhome">
+        <img class="wordstudy-home" src="../images/wordstudy_home.png" />
+        <a href="/mainPage">홈으로</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script type="text/javascript" th:src="@{/js/wordstudy.js}"></script>
+
+</body>
+
+</html>
