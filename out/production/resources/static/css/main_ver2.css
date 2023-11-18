@@ -1,4 +1,4 @@
-
+@import "reset.css";
 
 * {  /* 전체 적용 */
     background-color: #F0E39E;
@@ -20,7 +20,7 @@
 
 #container2{
     width:1200px;   /* 내용 전체의 너비 */
-    margin:20px auto;  /* 내용을 화면 가운데 배치하도록 좌우 마진을 auto로 */
+    margin-bottom: 50px;  /* 내용을 화면 가운데 배치하도록 좌우 마진을 auto로 */
 }
 
 /* 헤더 */
@@ -38,6 +38,7 @@
 /* 네비게이션바 구성요소 */
 
 #headerul {
+    margin-top: 10px;
     margin-left: 50px;
     list-style-type: none;
     width: 1500px;
@@ -107,7 +108,7 @@ ul li:last-child {
 
 #book{
     width:1200px;
-    height:1200px;
+    height:700px;
     float:left;
 }
 
@@ -129,7 +130,7 @@ bookList5, bookList6, bookList7, bookList8 {
 /* 섹션3 (스토어) */
 
 #point_sotre{
-    margin-top: 300px;
+    margin-top: 70px;
     width:fit-content;
     height:max-content;
     float:left;
@@ -213,7 +214,7 @@ bookList5, bookList6, bookList7, bookList8 {
 
 #overlay-text {
     left: 1070px;
-    top: 400px;
+    top: 415px;
     padding-left: 15px;
     position: absolute;
     color: black;
@@ -281,4 +282,56 @@ bookList5, bookList6, bookList7, bookList8 {
     font-weight: 900;
     width : 198px ;
 
+}
+
+
+/* 북이미지 */
+#booklistul_1 li,
+#booklistul_2 li {
+    background-color: white; /* 배경색을 흰색으로 설정 */
+    list-style: none;
+    margin: 10px; /* 각 li 요소의 간격을 조절합니다. */
+    padding: 10px;
+    border: 2px solid #F0E39E; /* 테두리 스타일을 설정합니다. */
+    border-radius: 15px; /* 테두리를 둥글게 만듭니다. */
+}
+
+#booklistul_1 img,
+#booklistul_2 img {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-color: white;
+
+}
+/* 선택적으로 배경색과 글자 색상을 지정할 수 있습니다. */
+#booklistul_1 li,
+#booklistul_2 li {
+    background-color: #f9f9f9; /* 배경색을 설정합니다. */
+    color: #333; /* 글자 색상을 설정합니다. */
+}
+#book
+{
+     margin-left: 60px; /* 왼쪽 마진을 auto로 설정하여 오른쪽으로 이동 */
+ }
+
+/* 버튼 위치 조정 */
+#studyStartBtn,
+#storeGoBtn {
+    margin-left: 420px;
+}
+
+ul h2 {
+    padding-left: 3px;
+    background-color: #f9f9f9;
+    padding-bottom: 7px;
+    font-weight: 900;
+    font-size: 20px;
+    text-align: left;
+}
+
+
+/* 메인로고 정렬 */
+#mainLogo {
+    left: 150px;
 }
