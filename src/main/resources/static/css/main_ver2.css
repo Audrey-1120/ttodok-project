@@ -333,5 +333,38 @@ ul h2 {
 
 /* 메인로고 정렬 */
 #mainLogo {
-    left: 150px;
+    margin: 0 auto; /* 가운데 정렬을 위해 margin 속성 추가 */
+    display: block; /* 가운데 정렬을 위해 block 속성 추가 */
+}
+
+/* 오늘의단어 */
+#overlay-container-word {
+    position: relative;
+}
+
+#overlay-text-word {
+    position: absolute;
+    left: 60px;
+    top:150px;
+    background-color: white;
+    font-size: 75px;
+    font-weight: bolder;
+}
+
+#overlay-text-wordExplain {
+    position: absolute;
+    left: 60px;
+    top: 280px;
+    background-color: white;
+    font-size: 27px;
+    font-weight: bolder;
+}
+
+#overlay-text-wordEx {
+    position: absolute;
+    left: 60px;
+    top: 350px;
+    background-color: white;
+    font-size: 30px;
+    font-weight: bolder;
 }
