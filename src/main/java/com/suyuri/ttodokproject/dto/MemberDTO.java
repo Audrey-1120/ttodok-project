@@ -19,7 +19,7 @@ public class MemberDTO {
     private String memberName;
     private String memberPhone;
     private String memberNick;
-    private String memberPoint;
+    private int memberPoint;
     //생년월일
     private int year;
     private int month;
@@ -52,6 +52,8 @@ public class MemberDTO {
         this.day = birthDate.getDayOfMonth();
     }
 
+
+
     public static MemberDTO toMemberDTO(MemberEntity memberEntity){
         MemberDTO memberDTO = new MemberDTO();
         memberDTO.setMemberId(memberEntity.getMemberId());
@@ -63,6 +65,10 @@ public class MemberDTO {
         return memberDTO;
     }
 
+    public MemberDTO(String memberId, int memberPoint) {
+        this.memberId = memberId;
+        this.memberPoint = memberPoint;
+    }
 
 
 

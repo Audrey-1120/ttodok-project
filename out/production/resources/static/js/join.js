@@ -1,5 +1,4 @@
-
-    let checkid;
+let checkid;
     let checkpw;
     let checkpwsame;
     let checknick;
@@ -240,12 +239,3 @@
 
 
  });
-
-
-
-
-
-
-
-
-

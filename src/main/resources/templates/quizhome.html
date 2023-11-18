@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="/css/globals.css" />
-    <link rel="stylesheet" href="/css/style.css" />
-  </head>
-  <body>
-    <div class="screen">
-      <div class="div">
-        <div class="text-wrapper">문제를 풀어봅시다!</div>
-        <div class="group"onclick="location.href='quiz1.html';"><div class="text-wrapper-2">시작하기</div>
-      </div>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" href="/css/globals.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<div class="screen">
+  <div class="div">
+    <div class="text-wrapper">문제를 풀어봅시다!</div>
+    <div class="group">
+      <div class="text-wrapper-2" id="goQuiz1">시작하기</div>
     </div>
-    </div>
-  </body>
+  </div>
+</div>
+
+
+<script type="text/javascript" th:src="@{/js/quizhome.js}"></script>
+</body>
 </html>
