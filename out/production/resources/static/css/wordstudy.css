@@ -109,7 +109,7 @@ v .workdstudy-page {
 }
 
 
-/*회원가입 확인버튼*/
+
 .wordstudybutton {
   padding: 20px 50px;
   box-shadow: 3px 4px 4px gray;
@@ -120,6 +120,7 @@ v .workdstudy-page {
   font-size: 55px;
   font-weight: 800;
   font-family: 'Pretendard';
+  cursor: pointer;
 }
 
 /* 다음단계 넘어가기 버튼 */

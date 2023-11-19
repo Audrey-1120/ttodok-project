@@ -20,7 +20,7 @@ var selectProductPoint = 0;
 
                 //.gifticon_list 클래스의 하위에 있는 직계 자식 div 요소를 모두 선택합니다.
                 //.forEach(...)를 사용하여 선택된 각 요소에 대해 주어진 함수를 실행합니다.
-                document.querySelectorAll('.gifticon_list > div').forEach(function(gifticonElement, index) {
+                document.querySelectorAll('.set_gifticon > div').forEach(function(gifticonElement, index) {
                     gifticonElement.addEventListener('click', function() {
                         // 클릭한 요소의 productPoint 값을 읽어와서 처리
                         var gifticonPriceElement = gifticonElement.querySelector('.gifticon_price');

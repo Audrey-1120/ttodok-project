@@ -54,7 +54,7 @@ v .textstudy-page {
 
 .textstudy-letsstudy {
     font-size: 49px;
-    width: 75%;
+    width: 65%;
     text-align: right;
 }
 
@@ -80,7 +80,7 @@ v .textstudy-page {
     height: 130px;
     position: absolute;
     left: 25%;
-    top: 5%;
+    top: 4.3%;
 }
 
 .text-name {
@@ -90,15 +90,16 @@ v .textstudy-page {
 
 /* 다음단계 넘어가기 버튼 스타일 */
 .textstudybutton {
-    padding: 10px 40px;
+    padding: 20px 50px;
     box-shadow: 3px 4px 4px gray;
     background-color: #3b9e23;
     border-radius: 10px;
     border: none;
     color: #ffffff;
-    font-size: 40px;
+    font-size: 55px;
     font-weight: 800;
     font-family: 'Pretendard';
+    cursor: pointer;
 }
 
 /* 다음단계 넘어가기 버튼 */
@@ -132,7 +133,7 @@ v .textstudy-page {
     letter-spacing: 0.5px;
     line-height: 1.5;
     width: 80rem;
-    height: 30rem;
+    height: 41rem;
     margin: 0 auto; /* 수평 가운데 정렬을 위해 추가 */
     border-radius: 1rem;
     background-color: #ffffff;
