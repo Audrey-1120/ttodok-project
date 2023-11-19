@@ -1,4 +1,4 @@
-package com.suyuri.ttodokproject.entity.main;
+package com.suyuri.ttodokproject.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,13 +15,13 @@ import lombok.Setter;
 public class TdWordEntity {
 
     @Id
-    private String tdword_code;
+    private String tdwordCode;
     @Column
     private String tdword;
     @Column
-    private String tdword_mean;
+    private String tdwordMean;
     @Column
-    private String tdword_ex;
+    private String tdwordEx;
 
     // 생성자, 게터, 세터 등 필요한 메서드 추가
 }

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="/css/login.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<body>
+
+
+
+
+<!--<div class="login-massage">-->
+<!--    <div class="p1">-->
+<!--        <p>"금일? 나흘? 단어가 헷갈려."</p><br>-->
+<!--        <p>"심심한 사과? 사과가 심심하단 뜻인가?"</p><br>-->
+<!--        <p>"글을 한번에 이해하기가 힘들어..."</p>-->
+<!--    </div>-->
+
+<!--    <div class="p2">-->
+<!--        <p>글을 읽고 이해하는 능력, <span class="word">단어</span>부터 시작입니다.</p><br>-->
+<!--        <p><span class="ttodok">또독</span>과 함께 즐겁게 학습해볼까요?</p>-->
+<!--    </div>-->
+
+
+
+<!--</div>-->
+
+<!--<a href="main.html"> &lt;!&ndash;로그인 창 로고&ndash;&gt;-->
+<!--    <img src="../images/logo.PNG" class="logo" alt="My Image">-->
+<!--</a>-->
+
+
+<a href="main.html"> <!--로그인 창 로고-->
+    <img src="../images/logo.PNG" class="logo" alt="My Image">
+</a>
+
+<div class="login-wrapper">
+
+    <h2>로그인</h2> <!--로그인-->
+    <form method="post" action="/member/login" id="login-form">
+
+        <input type="text" name="memberId" placeholder="아이디"> <!--아이디 입력창-->
+        <input type="passWord" name="memberPw" placeholder="패스워드"> <!--비밀번호 입력창-->
+        <label for="login-form" th:text="${errorMessage}" th:if="${errorMessage}"></label> <!--아이디, 비번 틀렸을 시 경고메시지-->
+
+        <input class="" type="submit" value="로그인"> <!--로그인 확인 버튼-->
+
+        <!--하단 회원가입, 비밀번호 찾기 버튼-->
+        <div class="login-menu">
+            <a class="menu-join" href="/member/join">회원가입</a>
+            <a class="menu-findpw" href="/member/findPw">비밀번호 찾기</a>
+        </div>
+
+
+    </form>
+
+</div>
+
+</body>
+</html>

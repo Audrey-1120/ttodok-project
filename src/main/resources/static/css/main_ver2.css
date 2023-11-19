@@ -1,26 +1,25 @@
 @import "reset.css";
 
-* {  /* 전체 적용 */
+* {
+    /* 전체 적용 */
     background-color: #F0E39E;
-    margin:0;  /* 브라우저 기본 마진 리셋 */
-    padding:0;  /* 브라우저 기본 패딩 리셋 */
-    box-sizing: border-box;  /* 테두리까지 포함해서 박스 모델 너비로 계산 */
-    font-family: 'pretendard';
-    background-image: url('static/images/circle.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
+}
 
 
 #container1{
     width:1200px;   /* 내용 전체의 너비 */
     margin:20px auto;  /* 내용을 화면 가운데 배치하도록 좌우 마진을 auto로 */
+
 }
 
 #container2{
     width:1200px;   /* 내용 전체의 너비 */
     margin-bottom: 50px;  /* 내용을 화면 가운데 배치하도록 좌우 마진을 auto로 */
+
 }
 
 /* 헤더 */
@@ -31,6 +30,7 @@
     margin-left: 90px;
     width:100%;
     height:120px;
+
 
 }
 
@@ -337,6 +337,85 @@ ul h2 {
     display: block; /* 가운데 정렬을 위해 block 속성 추가 */
 }
 
+/*오드리 추가 상품데이터 가져오기*/
+
+.gifticon_list {
+    display: flex;
+    width: 73rem;
+    margin-top: -19px;
+    text-align: center;
+    /* margin-left: 100px; */
+    /* margin-right: 100px; */
+    padding-bottom: 160px;
+    height: 50vh;
+    /*background-color: #f3f2eb;*/
+    background-color: #ffffff
+}
+
+.total_point_box {
+    text-align: center;
+    font-size: 29px;
+    font-weight: 700;
+    background-color: #3C9E23;
+    margin-left: 130px;
+    margin-right: 1100px;
+    height: 80px;
+    width: 300px;
+    padding-bottom: 1px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.set_gifticon{
+    position: relative;
+    margin-left: 8rem;
+    margin-top: 5rem;
+}
+
+.gifticon1{
+    position:absolute;
+    background:#ffffff;
+
+}
+
+.gifticon2{
+    position:absolute;
+    margin-left: 16rem;
+    background:#ffffff;
+
+}
+
+.gifticon3{
+    position:absolute;
+    margin-left: 32rem;
+    background:#ffffff;
+
+}
+
+.gifticon4{
+    position:absolute;
+    margin-left: 48rem;
+    background:#ffffff;
+}
+
+.gifticon_title{
+    background:#ffffff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.gifticon_price{
+    background:#ffffff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+.gifticon_img {
+    width:134px;
+    height:180px;
+}
+
 /* 오늘의단어 */
 #overlay-container-word {
     position: relative;
@@ -345,17 +424,18 @@ ul h2 {
 #overlay-text-word {
     position: absolute;
     left: 60px;
-    top:150px;
-    background-color: white;
+    top: 150px;
+    background-color: rgba(255, 255, 255, 0.7); /* 투명도 조절 */
     font-size: 75px;
     font-weight: bolder;
 }
+
 
 #overlay-text-wordExplain {
     position: absolute;
     left: 60px;
     top: 280px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.7); /* 투명도 조절 */
     font-size: 27px;
     font-weight: bolder;
 }
@@ -364,7 +444,7 @@ ul h2 {
     position: absolute;
     left: 60px;
     top: 350px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.7); /* 투명도 조절 */
     font-size: 30px;
     font-weight: bolder;
 }

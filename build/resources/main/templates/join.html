@@ -1,33 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-<link rel="stylesheet" href="../css/join.css">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="/css/join.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>join</title>
+    <title>Join</title>
+    <!-- jquery cdn -->
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script> <!-- 이 주소가 있어야 jquery를 사용할 수 있음. -->
+
 </head>
 <body>
 
-<!--폼에 작성한 데이터를 어디로 전송할지 지정-->
+
 <form action="/member/join" method="post">
 
-    <div class="joinpage" id="joinpage"> <!--전체 화면-->
+    <!--전체 화면-->
+    <div class="join-page" id="join-page">
 
+        <!--상단 메뉴(로고, 메뉴바)-->
+        <header class="menu" id="menu">
 
-        <div class="menu" id="menu"> <!--상단 메뉴(로고, 메뉴바)-->
-
-            <div class="joinlogo" id="joinlogo">
+            <div class="join-logo" id="join-logo">
                 <a href="main.html">
-                    <img class="joinlogo" src="../img/joinlogo.PNG" id="joinlogo"/>
+                    <img class="join-logo" src="../images/joinlogo.PNG"/>
                 </a>
 
             </div>
 
-            <a href=login.html>로그인&emsp;</a>
-            <a href="mypage.html">마이페이지&emsp;</a>
-            <a href="explain.html">또독이란?</a>
-
-        </div>
+            <div class="join-menubar" id="join-menubar">
+                <a href="/member/login">로그인&emsp;</a>
+                <a href="/myPage">마이페이지&emsp;</a>
+                <a href="/member/login">또독이란?</a>
+            </div>
+        </header>
 
 
         <div>
@@ -35,79 +43,81 @@
         </div>
 
 
-
         <!--회원가입 폼 시작-->
         <div class="join-rectangle" id="join-rectangle">
 
-
-
-
             <table >
                 <tr>
-                    <th>아이디</th>
-                    <td>&emsp;<input type = "text" name = "id" id="idcheck">
+                    <th>아이디</th> <!--onkeyup 속성 : JS 처리, 키보드를 입력할때마다 해당 함수 호출-->
+                    <td>&emsp;<input type = "text" name = "memberId" id="memberId" onkeyup="idCheck()">
                         &nbsp;
-                        <input class="idcheck" type="submit" value="중복확인">
+                        <label class="check-joinid" id="check-result">&emsp;</label>
                     </td>
-
                 </tr>
-
                 <tr>
                     <th>
                     </th>
                     <td>
-                        <label class="notice-joinid" for="idcheck">&emsp; · 영문, 숫자 또는 각각의 조합으로 5~10자리까지 가능합니다.</label>
+                        <label class="notice-joinid" for="memberId">&emsp; · 영문, 숫자 또는 각각의 조합으로 8~10자리까지 가능합니다.</label>
                     </td>
                 </tr>
-
 
                 <tr>
                     <th>비밀번호 </th>
-                    <td>&emsp;<input class = join-input type = "password" name = "password"></td>
+                    <td>&emsp;<input class = join-input type = "password" name = "memberPw" id="memberPw" onkeyup="passwordCheck()">
+                        &nbsp;
+                        <label class="check-joinpw" id="pwcheck-result">&emsp;</label>
+                    </td>
                 </tr>
-
                 <tr>
                     <th>
                     </th>
                     <td>
-                        <label class="notice-joinid" for="idcheck">&emsp; · 영문 대소문자, 숫자, 특수문자 중 2가지 이상 조합이어야 합니다.</label>
+                        <label class="notice-joinid" for="memberPw">&emsp; · 영문 대소문자, 숫자, 특수문자 중 2가지 이상 조합이어야 합니다.</label>
                     </td>
                 </tr>
 
                 <tr>
                     <th>비밀번호 확인 </th>
-                    <td>&emsp;<input class = join-input type = "password" name = "password_check"></td>
+                    <td>&emsp;<input class = join-input type = "password" name = "memberPw_check" id="memberPw_check" onkeyup="isPwSame()">
+                    &nbsp;
+                        <label class="pwcheck01-result" id="pwcheck01-result">&emsp;</label>
+                    </td>
                 </tr>
+
 
                 <tr>
                     <th>이름 </th>
-                    <td>&emsp;<input class = join-input type = "text" name = "name"></td>
+                    <td>&emsp;<input class = join-input type = "text" name = "memberName" id="memberName">
+                    </td>
                 </tr>
 
                 <tr>
                     <th>전화번호 </th>
-                    <td> &emsp;
-                        <select>
-                            <option value = "1">02</option>
-                            <option value = "2">011</option>
-                            <option value = "3">010</option>
-                        </select>
-                        <input type = 'tel' name = 'phone2'> -
-                        <input type = 'tel' name = 'phone3'>
-
+                    <td>&emsp;<input class = join-input type = "text" name = "memberPhone" id="memberPhone"></td>
+                </tr>
+                <tr>
+                    <th>
+                    </th>
+                    <td>
+                        <label class="notice-joinid" for="memberPhone">&emsp; · '-' 기호를 사용해서 작성해주세요.</label>
                     </td>
                 </tr>
 
                 <tr>
                     <th>생년월일 </th>
                     <td> &emsp;
-                        <select>
-                            <option value = "1">2005</option>
-                            <option value = "2">2006</option>
-                            <option value = "3">2007</option>
+                        <select name="year">
+                            <option value = "2005">2005</option>
+                            <option value = "2006">2006</option>
+                            <option value = "2007">2007</option>
+                            <option value = "2008">2008</option>
+                            <option value = "2009">2009</option>
+                            <option value = "2010">2010</option>
+                            <option value = "2011">2011</option>
                         </select> 년
 
-                        <select>
+                        <select name="month">
                             <option value = "1">1</option>
                             <option value = "2">2</option>
                             <option value = "3">3</option>
@@ -122,7 +132,7 @@
                             <option value = "12">12</option>
                         </select> 월
 
-                        <select>
+                        <select name="day">
 
                             <option value = "1">1</option>
                             <option value = "2">2</option>
@@ -160,10 +170,15 @@
                     </td>
                 </tr>
 
+
+
                 <tr>
                     <th>닉네임 </th>
                     <td>&emsp;
-                        <input class = join-input type = "text" name = "nickname"></td>
+                        <input class = join-input type = "text" name = "memberNick" id = "memberNick" onkeyup="checkNicknameLength()">
+                        &nbsp;&nbsp;
+                        <label class="nick-result" id="nick-result">&emsp;</label>
+                    </td>
                 </tr>
 
                 <tr>
@@ -172,25 +187,25 @@
                 </tr>
 
 
+
+
             </table>
 
             <div class="join-button" id="join-button">
-                <input class="joinbutton" type="submit" value="가입하기">
+                <button class="joinbutton" id="joinbutton" type="submit">가입하기</button>
             </div>
-
+            <!--회원가입 폼 끝-->
 
         </div>
 
-
     </div>
-
-
-
 </form>
-
-
-
-
+<script type="text/javascript" th:src="@{/js/join.js}"></script>
 
 </body>
+
+<!--<script th:inline="javascript">-->
+
+<!--</script>-->
+
 </html>

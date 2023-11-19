@@ -1,0 +1,123 @@
+<!doctype html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/textstudy.css" />
+    <!--    <script>-->
+    <!--      function speakText() {-->
+    <!--            const text = document.getElementById("bookContent").value;-->
+    <!--            const utterance = new SpeechSynthesisUtterance(text);-->
+    <!--            window.speechSynthesis.speak(utterance);-->
+    <!--        }-->
+    <!--    </script>-->
+    <title>또독-글학습</title>
+</head>
+<body style="background-color:#81C370;">
+<!--<header>-->
+<!--    <div class="member_links">-->
+<!--        <a href="/" class="link_text">회원가입</a>-->
+<!--        <a href="/" class="link_text">로그인</a>-->
+<!--        <a href="/" class="link_text">마이페이지</a>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <img class="td_logo" src="C:\Users\2064_\Desktop\td_project\public\ttodokLogo.png">-->
+<!--    </div>-->
+<!--    <div class="ts_pageTitle">글을 소리내어 읽어보세요!</div>-->
+<!--    <div class="ts_bookTitle">나비의 꿈 - 방정환</div>-->
+<!--    <input type="text" id="bookContent">-->
+<!--    <button onclick="speakText()">음성으로 변환</button>-->
+<!--</header>-->
+
+<!--<div class="bookContent"> &lt;!&ndash;bookContent 글내용불러오기&ndash;&gt;-->
+<!--    <p>"에그? 어떻게 이런 곳으로 왔을까!" 하고, 나비는 이상해 했습니다.<br>-->
+<!--        그리고, 언뜻 보니까, 그 조그마한 집 뒤뜰에는 동백나무가 서 있고,<br>-->
+<!--        나무에는 빨간 동백꽃이 많이 피어 있으므로, 나비는 그 꽃 위에 앉아서 날개를 쉬고 있었습니다.<br>-->
+<!--        따뜻하게 볕만 퍼지고 동네도 조용하고, 이 조그만 집도 사람 없는 집같이 조용하였습니다.<br>-->
+<!--        그러더니, 이 빈 집같이 조용하던 집에서 나직하고 조심스런 소녀의 소리가 들리었습니다.<br>-->
+<!--        "얘 민수야, 약을 먹고 얼른 나아야 아니하니?<br>-->
+<!--        네가 이렇게 앓아 누워있기만 하면, 누나가 쓸쓸하지 않으냐?"<br>-->
+<!--        분명히 병든 동생의 머리맡에 앉아서 근심하는 소리였습니다.-->
+<!--    </p></div>-->
+
+<!--<button onclick="location.href='textstudy_nextstep.html'">다음 단계</button>-->
+
+
+<div class="textstudy-page" id="textstudy-page">
+
+    <!--상단 메뉴(로고, 메뉴바)-->
+    <header class="menu" id="menu">
+        <div class="textstudy-logo" id="textstudy-logo">
+            <a href="/mainPage">
+                <img class="wordstudy-logo" src="../images/wordstudy_studylogo.png" />
+            </a>
+
+        </div>
+
+        <div class="textstudy-menubar" id="textstudy-menubar">
+            <a href="login.html">로그아웃&emsp;</a> <!--로그아웃 기능 추가-->
+            <a href="/myPage">마이페이지&emsp;</a>
+        </div>
+    </header>
+
+    <div class="textstudy-form" id="textstudy-form">
+
+        <img class="wordstudy-rabbit" src="../images/rabbit.png" />
+
+        <!--h1 제목 : 글을 공부해봐요-->
+        <div class="textstudy-gostudy">
+            <h1 class="textstudy-letsstudy">글을 소리내어 읽어보세요!</h1>
+            <!-- <img class="rabbit" src="../img/rabbit.png"/> -->
+        </div>
+
+        <!--학습하는 동화 제목 부분-->
+        <div class="textstudy-title">
+
+            <h3 class="textstudy-title">혹부리 영감</h3>
+
+        </div>
+
+        <!--        학습단어 슬라이드 부분-->
+        <div id="textstudy-slide" class="textstudy-slide">
+
+
+            <div id="slider">
+                <button class="btn prev">
+                    <</button> <div class="wrapper">
+                <div class="items">
+
+                    <div class="item">
+                        <div class="text-content">
+                            <p class="text-name">내용</p><br>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+                <button class="btn next">></button>
+            </div>
+
+
+        </div>
+
+        <!--다음단계 넘어가기 버튼-->
+        <div class="textstudy-button" id="textstudy-button">
+            <input class="textstudybutton" type="submit" value="다음 단계" id="textStudyBotton"> <!--경로 설정 필요-->
+        </div>
+
+        <!--하단 뒤로가기, 홈으로 메뉴-->
+        <div class="footmenu" id="footmenu">
+            <!--뒤로가기-->
+            <div class="textstudy-backbutton" id="textstudy-backbutton">
+                <a href="/mainPage">뒤로가기</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script type="text/javascript" th:src="@{/js/textstudy.js}"></script>
+
+</body>
+</html>

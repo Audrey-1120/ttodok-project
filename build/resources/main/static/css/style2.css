@@ -1,0 +1,245 @@
+@import "reset.css";
+
+body {
+
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-size: 14px;
+  font-family: 'Pretendard', sans-serif;
+  background-color: #81C370;
+}
+
+
+
+.quiz1-01 {
+  display: flex;
+}
+
+.quiz1-03 {
+  display: flex;
+}
+
+.quiz1-yello,
+.quiz1-question {
+  position: absolute;
+}
+
+/* 로고 */
+.quiz1-logo {
+  width: 93px;
+  height: 53px;
+  flex-shrink: 0;
+  margin: 0.5rem 76.3rem 1rem 1rem;
+}
+
+
+/* 노란색 배경 카드 */
+.quiz1-yello {
+  /* top: 139px;
+  left: 186px; */
+  margin-left: 12%;
+  border-radius: var(--br-xl);
+  background-color: var(--color-palegoldenrod);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 60%;
+  height: 447px;
+}
+
+/* 문제 */
+.quiz1-question {
+  /* width: 80rem; */
+  font-size: 38px;
+  /* top: 162px;
+  left: 223px; */
+  font-weight: 900;
+  color: #193612;
+  padding: 2.5%;
+}
+
+
+
+
+
+.icon,
+.quiz1-passage,
+.parent {
+  position: absolute;
+}
+
+/*지문카드*/
+.quiz1-passage {
+  /* top: 233px;
+  left: 151px; */
+  margin-top: 5%;
+  margin-left: 10%;
+  border-radius: var(--br-xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 80%;
+  height: 37%;
+  line-height: 360px;
+  font-weight: 500;
+  text-align: center;
+  font-size: 50px;
+}
+
+.p {
+  margin-block-start: 0;
+  margin-block-end: 30px;
+}
+
+
+.quiz1-passageContent,
+.quiz1-hole {
+  position: absolute;
+}
+
+.quiz1-passageContent {
+  font-weight: 800;
+  padding: 10% 3% 10% 3%;
+}
+
+/*카드구멍*/
+.quiz1-hole {
+  top: 3%;
+  left: 97%;
+  border-radius: 50%;
+  background-color: var(--color-lightgreen);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25) inset;
+  width: 27px;
+  height: 29px;
+}
+
+/*
+.quiz1-choiceContent {
+  font-weight: 500;
+  padding: 5%;
+
+}
+
+.quiz1-choiceCode01 {
+  font-weight: 500;
+  padding: 5%;
+}
+*/
+
+/*선택지 1*/
+.quiz1-choice01 {
+  position: absolute;
+  top: 57%;
+  left: 10%;
+  border-radius: var(--br-xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 39%;
+  height: 18%;
+  text-align: center;
+  font-weight: 600;
+  line-height: 180px;
+}
+
+/*선택지 1 선택 시 노란색으로 바뀌는 효과*/
+.quiz1-choice01:hover {
+  background-color: #F0E39E;
+}
+
+/*선택지 2*/
+.quiz1-choice02 {
+  position: absolute;
+  top: 57%;
+  left: 51%;
+  border-radius: var(--br-xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 39%;
+  height: 18%;
+  text-align: center;
+  font-weight: 600;
+  line-height: 180px;
+}
+
+/*선택지 2 선택 시 노란색으로 바뀌는 효과*/
+.quiz1-choice02:hover {
+  background-color: #F0E39E;
+}
+
+/*선택지 3*/
+.quiz1-choice03 {
+  position: absolute;
+  top: 78%;
+  left: 10%;
+  border-radius: var(--br-xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 39%;
+  height: 18%;
+  text-align: center;
+  font-weight: 600;
+  line-height: 180px;
+}
+
+/*선택지 3 선택 시 노란색으로 바뀌는 효과*/
+.quiz1-choice03:hover {
+  background-color: #F0E39E;
+}
+
+/*선택지 4*/
+.quiz1-choice04 {
+  position: absolute;
+  top: 78%;
+  left: 51%;
+  border-radius: var(--br-xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 39%;
+  height: 18%;
+  text-align: center;
+  font-weight: 600;
+  line-height: 180px;
+}
+
+/*선택지 4 선택 시 노란색으로 바뀌는 효과*/
+.quiz1-choice04:hover {
+  background-color: #F0E39E;
+}
+
+/*
+.quiz1-passagedesign {
+    color: red;
+}
+*/
+
+/*토끼 아이콘*/
+.rabbit {
+  position: absolute;
+  bottom: 83%;
+  left: 75%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  mix-blend-mode: normal;
+}
+
+/*화살표 버튼(다음으로 넘어가기)*/
+.arrow-icon {
+  position: absolute;
+  top: 50%;
+  left: 92%;
+  width: 102px;
+  height: 40.41px;
+}
+
+/*전체 화면 - 로고 제외*/
+.quiz1-form {
+  position: relative;
+  background-color: var(--color-lightgreen);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-29xl);
+  color: var(--color-black);
+  font-family: 'pretendard';
+}

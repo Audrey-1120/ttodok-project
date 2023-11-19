@@ -1,0 +1,370 @@
+@import "reset.css";
+
+* {  /* 전체 적용 */
+    background-color: #F0E39E;
+    margin:0;  /* 브라우저 기본 마진 리셋 */
+    padding:0;  /* 브라우저 기본 패딩 리셋 */
+    box-sizing: border-box;  /* 테두리까지 포함해서 박스 모델 너비로 계산 */
+    font-family: 'pretendard';
+    background-image: url('static/images/circle.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+
+#container1{
+    width:1200px;   /* 내용 전체의 너비 */
+    margin:20px auto;  /* 내용을 화면 가운데 배치하도록 좌우 마진을 auto로 */
+}
+
+#container2{
+    width:1200px;   /* 내용 전체의 너비 */
+    margin-bottom: 50px;  /* 내용을 화면 가운데 배치하도록 좌우 마진을 auto로 */
+}
+
+/* 헤더 */
+
+#header {
+    margin-top: 50px;
+    margin-bottom: 70px;
+    margin-left: 90px;
+    width:100%;
+    height:120px;
+
+}
+
+
+/* 네비게이션바 구성요소 */
+
+#headerul {
+    margin-top: 10px;
+    margin-left: 50px;
+    list-style-type: none;
+    width: 1500px;
+    height: 500px;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+li {
+    font-weight: 900;
+    min-width: 14rem;
+    padding: 10px;
+    float: left;
+    text-align: center;
+    box-shadow: 0px 4px 4px #00000040;
+    background-color: white;
+    border: 1px solid white;
+}
+
+/* 첫 번째 아이템의 왼쪽 끝을 둥글게 만듭니다 */
+ul li:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+/* 마지막 아이템의 오른쪽 끝을 둥글게 만듭니다 */
+ul li:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+
+/* 사이드바 (로그인, 회원가입) */
+
+#sidebar{
+    width:300px;  /* 사이드바의 너비 */
+    height:600px;  /* 사이드바의 높이 */
+    float:left;  /* 왼쪽으로 플로팅 */
+}
+
+#loginBtn_ver2 {
+    height: 510px;
+}
+
+/* 섹션1 (오늘의 단어) */
+
+#contents {
+    width:900px;
+    height:600px;
+    float:left;
+}
+
+#todayWordList {
+    width:900px;
+    height:510px;
+}
+
+/* 섹션2 (작품 소개) */
+
+#book_text {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size:38px;
+    font-weight:bolder ;
+}
+
+#book{
+    width:1200px;
+    height:700px;
+    float:left;
+}
+
+#bookList1, bookList2, bookList3, bookList4,
+bookList5, bookList6, bookList7, bookList8 {
+    margin: 10px;
+    border-radius: 25px;
+}
+
+#bookName {
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+
+
+/* 섹션3 (스토어) */
+
+#point_sotre{
+    margin-top: 70px;
+    width:fit-content;
+    height:max-content;
+    float:left;
+}
+
+#pointStoreVer2 { /* 스토어 이미지 */
+    margin-top: 50px;
+    width:1200px;
+    height:450px;
+}
+
+#storeText {
+    text-align: center;
+    font-size:40px;
+    font-weight:bolder ;
+}
+
+
+/* 푸터 */
+
+#last_footer {
+    width: 100%;
+    background-color: #81C370;
+}
+
+#footer {
+    height: 200px;
+    background-color: #81C370;
+    clear: both;
+}
+
+#footerLogo {
+    background-color: #81C370;
+    margin: 25px;
+}
+
+
+/* 버튼 */
+
+#studyStartBtn {
+    margin-left: 35%;
+    margin-top: 10px;
+    margin-bottom: 300px;
+    color: white;;
+    line-height: 66.56px;
+    font-weight: bold;
+    background-color:#3C9E23;
+    border-radius: 25px;
+    border-style: none;
+    font-size: 55px;
+    box-shadow: 0px 4px 4px #00000040;
+    width: 350px;
+    height: 100px;
+    Top : 867px;
+    Left: 546px;
+}
+
+#storeGoBtn {
+    margin-left: 35%;
+    margin-top: 60px;
+    margin-bottom: 200px;
+    color: white;
+    line-height: 66.56px;
+    font-weight: bold;
+    background-color:#3C9E23;
+    border-radius: 25px;
+    border-style: none;
+    font-size: 55px;
+    box-shadow: 0px 4px 4px #00000040;
+    width: 350px;
+    height: 100px;
+    Top : 867px;
+    Left: 546px;
+}
+
+
+/* 사이드 바 */
+.overlay-container {
+    position: relative;
+}
+
+#overlay-text {
+    left: 1070px;
+    top: 415px;
+    padding-left: 15px;
+    position: absolute;
+    color: black;
+    font-weight: 700;
+    font-size: 22px;
+    background-color: white;
+}
+
+#overlay-text .user-nick { /* 사용자닉네임부분 */
+    left: 1070px;
+    color: #356A28;
+    font-size: 29px;
+    font-weight: 900;
+    background-color: white;
+}
+
+#line-image {
+    position: absolute;
+    top: 465px;
+    padding-left: 15px;
+    left: 1075px;
+}
+
+#overlay-text-pointshop { /* 내포인트 문구 */
+    position: absolute;
+    top: 480px;
+    padding-left: 15px;
+    left: 1063px;
+    color: black;
+    font-weight: 700;
+    font-size: 19px;
+    background-color: white;
+}
+
+#overlay-text .user-nick {
+    color: #356A28;
+    font-size: 32px;
+    left: 1300px;
+    font-weight: 900;
+    background-color: white;
+}
+
+#overlay-text-pointview { /* 점수출력 */
+    position: absolute;
+    top: 510px;
+    left: 1085px;
+    color: black;
+    font-weight: 900;
+    font-size: 60px;
+    padding-left: 60px;
+    padding-top: 30px;
+    background-color: white;
+}
+
+
+#overlay-text-gopointshop{
+    top: 650px;
+    left: 1100px;
+    position: absolute;
+    color: #F0E39E;
+    background-color: #223A1C;
+    border-radius: 10px;
+    height: 39px;
+    font-size: 20px;
+    font-weight: 900;
+    width : 198px ;
+
+}
+
+
+/* 북이미지 */
+#booklistul_1 li,
+#booklistul_2 li {
+    background-color: white; /* 배경색을 흰색으로 설정 */
+    list-style: none;
+    margin: 10px; /* 각 li 요소의 간격을 조절합니다. */
+    padding: 10px;
+    border: 2px solid #F0E39E; /* 테두리 스타일을 설정합니다. */
+    border-radius: 15px; /* 테두리를 둥글게 만듭니다. */
+}
+
+#booklistul_1 img,
+#booklistul_2 img {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-color: white;
+
+}
+/* 선택적으로 배경색과 글자 색상을 지정할 수 있습니다. */
+#booklistul_1 li,
+#booklistul_2 li {
+    background-color: #f9f9f9; /* 배경색을 설정합니다. */
+    color: #333; /* 글자 색상을 설정합니다. */
+}
+#book
+{
+     margin-left: 60px; /* 왼쪽 마진을 auto로 설정하여 오른쪽으로 이동 */
+ }
+
+/* 버튼 위치 조정 */
+#studyStartBtn,
+#storeGoBtn {
+    margin-left: 420px;
+}
+
+ul h2 {
+    padding-left: 3px;
+    background-color: #f9f9f9;
+    padding-bottom: 7px;
+    font-weight: 900;
+    font-size: 20px;
+    text-align: left;
+}
+
+
+/* 메인로고 정렬 */
+#mainLogo {
+    margin: 0 auto; /* 가운데 정렬을 위해 margin 속성 추가 */
+    display: block; /* 가운데 정렬을 위해 block 속성 추가 */
+}
+
+/* 오늘의단어 */
+#overlay-container-word {
+    position: relative;
+}
+
+#overlay-text-word {
+    position: absolute;
+    left: 60px;
+    top:150px;
+    background-color: white;
+    font-size: 75px;
+    font-weight: bolder;
+}
+
+#overlay-text-wordExplain {
+    position: absolute;
+    left: 60px;
+    top: 280px;
+    background-color: white;
+    font-size: 27px;
+    font-weight: bolder;
+}
+
+#overlay-text-wordEx {
+    position: absolute;
+    left: 60px;
+    top: 350px;
+    background-color: white;
+    font-size: 30px;
+    font-weight: bolder;
+}

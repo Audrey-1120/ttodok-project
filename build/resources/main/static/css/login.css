@@ -1,0 +1,128 @@
+@import "reset.css";
+
+*{
+    padding : 0;
+    margin : 0;
+    border : none;
+}
+body{
+    font-size : 14px;
+    font-family : 'Pretendard', sans-serif;
+}
+
+.logo{
+    width: 165px;
+    height: 85px;
+    display: block;
+    margin: auto;
+    margin-top: 10%;
+}
+
+/* 홍보메시지 */
+.login-massage {
+    font-size: 45px;
+    text-align: center;
+    padding: 15%;
+}
+
+/*단어*/
+.word {
+    font-size: 70px;
+    font-weight: 800;
+    color: #66ad54;
+}
+
+/* 또독 */
+.ttodok {
+    font-size: 70px;
+    font-weight: 800;
+    color: #57814d;
+}
+
+/*홍보메시지-말*/
+.p1 {
+    font-size: 60px;
+    font-weight: 300;
+    color: #000000;
+    margin-bottom: 50%;
+}
+
+/*홍보메시지-문구*/
+.p2 {
+    font-size: 70px;
+    margin-bottom: 50%;
+}
+
+
+
+
+
+.login-wrapper{ /*로그인 폼 전체*/
+    border-radius: 10px;
+    background-color: #F0E39E;
+    width: 290px;
+    height: 390px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 20%;
+
+}
+
+.login-wrapper > h2{ /*로그인 제목*/
+    font-size: 33px;
+    font-weight: 900;
+    color: #000000;
+    margin-bottom: 35px;
+}
+
+#login-form > input{ /*아이디, 비번 입력창*/
+    width: 100%;
+    height: 48px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: #F8F8F8;
+    font-size: medium;
+}
+
+#login-form > label{ /*경고메시지*/
+    width: 100%;
+    height: 48px;
+    color: #FF0000;
+    font-size: 14px;
+}
+
+#login-form > input::placeholder{ /*아이디, 비번 안내문구*/
+    color: #dedede;
+}
+#login-form > input[type="submit"]{ /*로그인 확인버튼*/
+    color: #fff;
+    font-size: 16px;
+    font-weight: 900;
+    background-color: #4D594A;
+    margin: 20px 0 5px 0;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/*하단 회원가입, 비밀번호 찾기 버튼*/
+.login-menu{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*회원가입*/
+.menu-join {
+    font-size: 13px;
+}
+
+/*비번찾기*/
+.menu-findpw {
+    font-size: 13px;
+}
