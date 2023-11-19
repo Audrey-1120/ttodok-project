@@ -13,8 +13,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-@RequiredArgsConstructor
 @Service
+@RequiredArgsConstructor
 public class MemberService {
 
 
@@ -106,7 +106,7 @@ public class MemberService {
             return false;
         }
     }
-}
+
 
 
     //오드리 적음
@@ -127,6 +127,22 @@ public class MemberService {
             return "/main_ver2";
         } else {
             return "/main_ver2";
+        }
+    }
+    @Transactional
+    public String updateProductMemberPoint(MemberDTO memberDTO) {
+        String loginId = memberDTO.getMemberId();
+        int updatedProductPoint = memberDTO.getMemberPoint();
+
+        Optional<MemberEntity> byMemberId = memberRepository.findByMemberId(loginId);
+
+        if(byMemberId.isPresent()) {
+            MemberEntity memberEntity = byMemberId.get();
+            memberEntity.setPoint(updatedProductPoint);
+            memberRepository.save(memberEntity);
+            return "/pointshop";
+        } else {
+            return "/pointshop";
         }
     }
 }

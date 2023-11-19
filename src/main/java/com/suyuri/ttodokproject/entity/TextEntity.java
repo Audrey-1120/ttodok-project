@@ -8,20 +8,20 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Setter
 @Getter
+@Setter
 @Table(name = "tbl_text")
 public class TextEntity {
 
     @Id
     private String textCode;
 
-    @Column
+    @Column(length = 50, nullable = false)
     private String textTitle;
 
-    @Column
+    @Column(nullable = false)
     private String textContent;
 
-    @Column
-    private Integer textLevel;
+    @Column(nullable = false)
+    private int textLevel;
 }
