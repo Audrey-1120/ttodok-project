@@ -1,25 +1,26 @@
 @import "reset.css";
 
-* {
-    /* 전체 적용 */
+* {  /* 전체 적용 */
     background-color: #F0E39E;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
+    margin:0;  /* 브라우저 기본 마진 리셋 */
+    padding:0;  /* 브라우저 기본 패딩 리셋 */
+    box-sizing: border-box;  /* 테두리까지 포함해서 박스 모델 너비로 계산 */
+    font-family: 'Pretendard';
+    background-image: url('static/images/circle.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
+
 
 
 #container1{
     width:1200px;   /* 내용 전체의 너비 */
     margin:20px auto;  /* 내용을 화면 가운데 배치하도록 좌우 마진을 auto로 */
-
 }
 
 #container2{
     width:1200px;   /* 내용 전체의 너비 */
     margin-bottom: 50px;  /* 내용을 화면 가운데 배치하도록 좌우 마진을 auto로 */
-
 }
 
 /* 헤더 */
@@ -30,7 +31,6 @@
     margin-left: 90px;
     width:100%;
     height:120px;
-
 
 }
 
@@ -284,6 +284,15 @@ bookList5, bookList6, bookList7, bookList8 {
 
 }
 
+/*마우스 호버*/
+#booklistul_1 li:hover {
+      background-color: #E8D77D;
+}
+
+#booklistul_2 li:hover {
+      background-color: #E8D77D;
+}
+
 
 /* 북이미지 */
 #booklistul_1 li,
@@ -337,10 +346,43 @@ ul h2 {
     display: block; /* 가운데 정렬을 위해 block 속성 추가 */
 }
 
+/* 오늘의단어 */
+#overlay-container-word {
+    position: relative;
+}
+
+
+#overlay-text-word {
+    position: absolute;
+    left: 60px;
+    top:150px;
+    background-color: white;
+    font-size: 75px;
+    font-weight: bolder;
+}
+
+#overlay-text-wordExplain {
+    position: absolute;
+    left: 60px;
+    top: 280px;
+    background-color: white;
+    font-size: 27px;
+    font-weight: bolder;
+}
+
+#overlay-text-wordEx {
+    position: absolute;
+    left: 60px;
+    top: 350px;
+    background-color: white;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
 /*오드리 추가 상품데이터 가져오기*/
 
 .gifticon_list {
-    display: flex;
+display: flex;
     width: 73rem;
     margin-top: -19px;
     text-align: center;
@@ -414,37 +456,4 @@ ul h2 {
 .gifticon_img {
     width:134px;
     height:180px;
-}
-
-/* 오늘의단어 */
-#overlay-container-word {
-    position: relative;
-}
-
-#overlay-text-word {
-    position: absolute;
-    left: 60px;
-    top: 150px;
-    background-color: rgba(255, 255, 255, 0.7); /* 투명도 조절 */
-    font-size: 75px;
-    font-weight: bolder;
-}
-
-
-#overlay-text-wordExplain {
-    position: absolute;
-    left: 60px;
-    top: 280px;
-    background-color: rgba(255, 255, 255, 0.7); /* 투명도 조절 */
-    font-size: 27px;
-    font-weight: bolder;
-}
-
-#overlay-text-wordEx {
-    position: absolute;
-    left: 60px;
-    top: 350px;
-    background-color: rgba(255, 255, 255, 0.7); /* 투명도 조절 */
-    font-size: 30px;
-    font-weight: bolder;
 }

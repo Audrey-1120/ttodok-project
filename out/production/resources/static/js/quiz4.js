@@ -113,6 +113,7 @@ $(document).ready(function(){
                                             .css('color', 'red')
                                             .css('font-size', '35px');
                                             addPoints();
+                                            isAnswerRight = 0;
 
                                         } else {
                                             console.log("No option data available.");
@@ -157,6 +158,7 @@ $(document).ready(function(){
                                             .css('color', 'red')
                                             .css('font-size', '35px');
                                             addPoints();
+                                            isAnswerRight = 0;
 
                                         } else {
                                             console.log("No option data available.");
@@ -200,6 +202,7 @@ $(document).ready(function(){
                                             .css('color', 'red')
                                             .css('font-size', '35px');
                                             addPoints();
+                                            isAnswerRight = 0;
 
                                         } else {
                                             console.log("No option data available.");
@@ -223,8 +226,10 @@ $(document).ready(function(){
                     var $clickedElement = $(this);
                     var isAnswerRight = $clickedElement.data('isAnswerRight');
                     var questionCode01 = questionCode;
+                    var answerQuestions = [];
 
                     console.log("isAnswerRight 값 가져와졌나요?", isAnswerRight);
+
 
 
                     if (isAnswerRight == 1) {
@@ -243,6 +248,7 @@ $(document).ready(function(){
                                             .css('color', 'red')
                                             .css('font-size', '35px');
                                             addPoints();
+                                            isAnswerRight = 0;
 
                                         } else {
                                             console.log("No option data available.");
@@ -318,6 +324,16 @@ $(document).ready(function(){
                                 // 확인 버튼이 클릭되면 메인 페이지로 이동
                             window.location.href = "/main_ver2";
                         }
+                    });
+                }
+
+
+
+                function showAlertSecond() {
+                    Swal.fire({
+                      title: "이미 푼 문제예요!",
+                      text: "오잉",
+                      icon: "error"
                     });
                 }
 
