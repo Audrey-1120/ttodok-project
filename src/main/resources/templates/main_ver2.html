@@ -12,7 +12,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet"> <!--이거 폰트 Inter로 설정해주는 건가?..-->
   <link rel="stylesheet" href="/css/main_ver2.css?afterfit ">
 </head>
 
@@ -23,14 +23,19 @@
     <ul id="headerul">
       <li>또독이란?</li>
       <li>학습하기</li>
-      <li>포인트 상점</li>
+      <li id="pointshopBtn" onclick="redirectToPointshop()">포인트 상점</li>
       <li id="homeMyPageBtn" onclick="redirectToMypage()"> 마이페이지  </li>
     </ul>
   </header>
 
 
   <section id="contents">
-    <img src="/images/wordList_ver2.png" id="todayWordList" >
+    <div id="overlay-container-word">
+      <img src="/images/wordList_ver2.png" id="todayWordList">
+      <p id="overlay-text-word" th:text="${tdwordList[0].tdword}">단어</p>
+      <p id="overlay-text-wordExplain" th:text="${tdwordList[0].tdwordMean}">설명</p>
+      <p id="overlay-text-wordEx" th:text="${tdwordList[0].tdwordEx}">예시</p>
+    </div>
   </section>
 
   <aside id="sidebar">
@@ -42,7 +47,7 @@
       <img src="/images/line.png" id="line-image"  width="240">
       <p id="overlay-text-pointshop">내 포인트</p>
       <p id="overlay-text-pointview" th:text="${memberPoint} + '점'"></p>
-      <button id="overlay-text-gopointshop" >포인트상점 </button>
+      <button id="overlay-text-gopointshop" onclick="redirectToPointshop()">포인트상점 </button>
     </div>
   </aside>
 
@@ -51,45 +56,85 @@
   <section id="book">
     <ul id="booklistul_1">
       <li id="bookList1">
-        <h2 id="bookNameNum1">엄지공주</h2>
+        <h2 id="bookNameNum1">혹부리영감</h2>
         <img src="/images/book1.png" onclick="redirectToWordLearningPage('t001')"> <!--Audrey님이 추가함. : 이미지에 해당하는 word_code 전송.-->
       </li>
       <li id="bookList2">
-        <h2 id="bookNameNum2">겨울나라</h2>
-        <img src="/images/book2.png">
+        <h2 id="bookNameNum2">임금님 귀는 당나귀 귀</h2>
+        <img src="/images/book1.png" onclick="redirectToWordLearningPage('t002')"> <!--Audrey님이 추가함. : 이미지에 해당하는 word_code 전송.-->
       </li>
       <li id="bookList3">
-        <h2 id="bookNameNum3">우주비행사</h2>
-        <img src="/images/book3.png">
+        <h2 id="bookNameNum3">의좋은 형제</h2>
+        <img src="/images/book1.png" onclick="redirectToWordLearningPage('t003')"> <!--Audrey님이 추가함. : 이미지에 해당하는 word_code 전송.-->
       </li>
       <li id="bookList4">
-        <h2 id="bookNameNum4">코끼리의 꿈</h2>
-        <img src="/images/book4.png">
+        <h2 id="bookNameNum4">토끼와 간</h2>
+        <img src="/images/book1.png" onclick="redirectToWordLearningPage('t004')"> <!--Audrey님이 추가함. : 이미지에 해당하는 word_code 전송.-->
       </li>
     </ul>
     <ul id="booklistul_2">
       <li id="bookList5">
         <h2 id="bookNameNum5">컵케이크</h2>
-        <img src="/images/book5.png">
+        <img src="/images/book1.png">
       </li>
-      <li id="bookLis6">
+      <li id="bookList6">
         <h2 id="bookNameNum6">우주비행사</h2>
-        <img src="/images/book6.png"></li>
+        <img src="/images/book1.png"></li>
       <li id="bookList7">
         <h2 id="bookNameNum7">흥부전</h2>
-        <img src="/images/book7.png" height="200"></li>
+        <img src="/images/book1.png"></li>
       <li id="bookList8">
         <h2 id="bookNameNum8">쥬라기공원</h2>
-        <img src="/images/book8.png"></li>
+        <img src="/images/book1.png"></li>
     </ul>
-  </section>
 
-  <button id="studyStartBtn" type="submit"> 학습하기 </button>
+<!--    <button id="studyStartBtn" type="submit"> 학습하기 </button>-->
+
+  </section>
 
   <section id="point_sotre">
     <h1 id="storeText">포인트로 상품을 구매할 수 있어요!</h1>
-    <img src="/images/pointStoreVer2.png" id="pointStoreVer2" >
-    <button id="storeGoBtn" type="submit"> 바로가기 </button>
+    <!--      <img src="/images/pointStoreVer2.png" id="pointStoreVer2" >-->
+
+    <!--      <div class="total_point_box">-->
+    <!--        <div><p>포인트 상점</p></div>-->
+    <!--      </div>-->
+
+    <div class="gifticon_list"> <!--기프티콘리스트묶음-->
+      <div class="set_gifticon">
+        <div class="gifticon1"> <!--기프티콘1-->
+          <div class="gifticon_title" th:text="${productName != null and productName.size() > 0 ? productName[0] : '기프티콘'}"></div>
+          <img class="gifticon_img" src="../images/banana.jpg" title="기프티콘1">
+          <div class="gifticon_price" th:text="${productPoint != null and productPoint.size() > 0 ? productPoint[0] + 'P' : '기본값'}"></div>
+
+        </div>
+
+        <div class="gifticon2"> <!--기프티콘2-->
+          <div class="gifticon_title" th:text="${productName != null and productName.size() > 0 ? productName[1] : '기프티콘'}"></div>
+          <img class="gifticon_img" src="../images/sour.png" title="기프티콘2">
+
+          <div class="gifticon_price" th:text="${productPoint != null and productPoint.size() > 0 ? productPoint[1] + 'P' : '기본값'}">300p</div>
+
+          <!--<button onclick="addPoints(10)">10 포인트 획득</button>-->
+        </div>
+
+        <div class="gifticon3"> <!--기프티콘3-->
+          <div class="gifticon_title" th:text="${productName != null and productName.size() > 0 ? productName[2] : '기프티콘'}"></div>
+          <img class="gifticon_img" src="../images/choco.png" title="기프티콘3">
+          <div class="gifticon_price" th:text="${productPoint != null and productPoint.size() > 0 ? productPoint[2] + 'P' : '기본값'}">250p</div>
+
+        </div>
+
+        <div class="gifticon4"> <!--기프티콘4-->
+          <div class="gifticon_title" th:text="${productName != null and productName.size() > 0 ? productName[3] : '기프티콘'}">기프티콘4</div>
+
+          <img class="gifticon_img" src="../images/vita.jpg" title="기프티콘4">
+          <div class="gifticon_price" th:text="${productPoint != null and productPoint.size() > 0 ? productPoint[3] + 'P' : '기본값'}">100p</div>
+
+        </div>
+      </div>
+    </div>
+    <button id="storeGoBtn" type="submit" onclick="redirectToPointshop()"> 바로가기 </button>
   </section>
 
   <footer id="footer">
@@ -110,6 +155,10 @@
   //Audrey님이 추가함. - 마이페이지 넘어가기. 이미지에 해당하는 번호 넘기는 함수
   function redirectToMypage() {
       window.location.href = "/myPage";
+  }
+
+  function redirectToPointshop() {
+      window.location.href="/pointshop";
   }
 
   //Audrey님이 추가함. - 이미지 번호 매개변수 추가해서 페이지 이동하는 함수

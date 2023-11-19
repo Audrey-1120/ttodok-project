@@ -2,7 +2,10 @@ package com.suyuri.ttodokproject.controller.member;
 
 import com.suyuri.ttodokproject.dto.MemberDTO;
 import com.suyuri.ttodokproject.entity.MemberEntity;
+import com.suyuri.ttodokproject.entity.TdWordEntity;
 import com.suyuri.ttodokproject.service.MemberService;
+import com.suyuri.ttodokproject.service.TdWordService;
+import com.suyuri.ttodokproject.service.point.PointService;
 import jakarta.servlet.http.HttpServletRequest;
 import com.suyuri.ttodokproject.dto.MemberDTO;
 import com.suyuri.ttodokproject.service.MemberService;
@@ -29,6 +32,10 @@ public class MemberController {
 
     //생성자 주입 - 필드를 매개변수로 하는 생성자를 만들어줌. 자동적으로 서비스에 대한 객체를 주입받는다!!
     private final MemberService memberService;
+
+    private final PointService pointService;
+
+    private final TdWordService tdWordService;
 
 
     //메인페이지 화면 출력 요청
@@ -139,11 +146,30 @@ public class MemberController {
         String loginId = (String) session.getAttribute("loginId");
         System.out.println("loginId: " + loginId);
 
+        List<String> allProductNames = pointService.getAllProductNames();
+        System.out.println("allProductNames: " + allProductNames);
+        List<Integer> allProductPoints = pointService.getAllProductPoints();
+        System.out.println("allProductPoints: " + allProductPoints);
+
+        //오늘의 단어
+//        List<TdWordEntity> tdwordList = tdWordService.getAllWords();
+//        System.out.println("tdwordList: "+ tdwordList);
+        // 모델에 데이터를 담아서 타임리프로 전달한다
+
+        TdWordEntity randomWord = tdWordService.getRandomWord();
+
         if (loginId != null) {
             String userNick = memberService.getNickName(loginId);
             model.addAttribute("userNick", userNick);
             int memberPoint = memberService.getMemberPoint(loginId);
             model.addAttribute("memberPoint", memberPoint);
+
+            model.addAttribute("productName", allProductNames);
+            model.addAttribute("productPoint", allProductPoints);
+
+//            model.addAttribute("tdwordList", tdwordList);
+            model.addAttribute("tdwordList", List.of(randomWord));
+
         }
 
         return "main_ver2";

@@ -25,6 +25,11 @@
                         count = data.count;
                         console.log("count: ", count);
 
+                        // 서버에서 받아온 textTitle 데이터
+                        var textTitle = data.textTitle; // 이 값을 서버에서 받아온 데이터로 대체
+                        // wordstudy-title 클래스를 갖는 요소를 찾아내서 그 안의 h3 요소에 textTitle을 추가
+                        $('.wordstudy-title h3').text(textTitle);
+
                         if (count > 0) { //데이터 배열의 길이가 0보다 큰지 확인한다. (서버에서 받아온 데이터가 비어있는지 확인)
                             data.data.forEach(function(wordEntity) { //데이터가 비어있지 않으면 data.forEach 메소드 사용해서 배열의 각 요소에 대해 함수 실행
                                 var wordContent = '<div class="word-content"><p class="word-name">' + wordEntity.word + '</p><br>' + //각 요소에 대해 wordContent라는 HTML문자열 생성함.

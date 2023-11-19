@@ -5,7 +5,7 @@
     margin:0;  /* 브라우저 기본 마진 리셋 */
     padding:0;  /* 브라우저 기본 패딩 리셋 */
     box-sizing: border-box;  /* 테두리까지 포함해서 박스 모델 너비로 계산 */
-    font-family: 'pretendard';
+    font-family: 'Pretendard';
     background-image: url('static/images/circle.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -284,6 +284,15 @@ bookList5, bookList6, bookList7, bookList8 {
 
 }
 
+/*마우스 호버*/
+#booklistul_1 li:hover {
+      background-color: #E8D77D;
+}
+
+#booklistul_2 li:hover {
+      background-color: #E8D77D;
+}
+
 
 /* 북이미지 */
 #booklistul_1 li,
@@ -333,5 +342,118 @@ ul h2 {
 
 /* 메인로고 정렬 */
 #mainLogo {
-    left: 150px;
+    margin: 0 auto; /* 가운데 정렬을 위해 margin 속성 추가 */
+    display: block; /* 가운데 정렬을 위해 block 속성 추가 */
+}
+
+/* 오늘의단어 */
+#overlay-container-word {
+    position: relative;
+}
+
+
+#overlay-text-word {
+    position: absolute;
+    left: 60px;
+    top:150px;
+    background-color: white;
+    font-size: 75px;
+    font-weight: bolder;
+}
+
+#overlay-text-wordExplain {
+    position: absolute;
+    left: 60px;
+    top: 280px;
+    background-color: white;
+    font-size: 27px;
+    font-weight: bolder;
+}
+
+#overlay-text-wordEx {
+    position: absolute;
+    left: 60px;
+    top: 350px;
+    background-color: white;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+/*오드리 추가 상품데이터 가져오기*/
+
+.gifticon_list {
+display: flex;
+    width: 73rem;
+    margin-top: -19px;
+    text-align: center;
+    /* margin-left: 100px; */
+    /* margin-right: 100px; */
+    padding-bottom: 160px;
+    height: 50vh;
+    /*background-color: #f3f2eb;*/
+    background-color: #ffffff
+}
+
+.total_point_box {
+    text-align: center;
+    font-size: 29px;
+    font-weight: 700;
+    background-color: #3C9E23;
+    margin-left: 130px;
+    margin-right: 1100px;
+    height: 80px;
+    width: 300px;
+    padding-bottom: 1px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.set_gifticon{
+    position: relative;
+    margin-left: 8rem;
+    margin-top: 5rem;
+}
+
+.gifticon1{
+    position:absolute;
+    background:#ffffff;
+
+}
+
+.gifticon2{
+    position:absolute;
+    margin-left: 16rem;
+    background:#ffffff;
+
+}
+
+.gifticon3{
+    position:absolute;
+    margin-left: 32rem;
+    background:#ffffff;
+
+}
+
+.gifticon4{
+    position:absolute;
+    margin-left: 48rem;
+    background:#ffffff;
+}
+
+.gifticon_title{
+    background:#ffffff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.gifticon_price{
+    background:#ffffff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+.gifticon_img {
+    width:134px;
+    height:180px;
 }
