@@ -130,7 +130,7 @@ bookList5, bookList6, bookList7, bookList8 {
 /* 섹션3 (스토어) */
 
 #point_sotre{
-    margin-top: 14rem;
+    margin-top: 70px;
     width:fit-content;
     height:max-content;
     float:left;
@@ -213,7 +213,7 @@ bookList5, bookList6, bookList7, bookList8 {
 }
 
 #overlay-text {
-    left: 80rem;
+    left: 1070px;
     top: 415px;
     padding-left: 15px;
     position: absolute;
@@ -235,14 +235,14 @@ bookList5, bookList6, bookList7, bookList8 {
     position: absolute;
     top: 465px;
     padding-left: 15px;
-    left: 79rem;
+    left: 1075px;
 }
 
 #overlay-text-pointshop { /* 내포인트 문구 */
     position: absolute;
     top: 480px;
     padding-left: 15px;
-    left: 79rem;
+    left: 1063px;
     color: black;
     font-weight: 700;
     font-size: 19px;
@@ -260,11 +260,11 @@ bookList5, bookList6, bookList7, bookList8 {
 #overlay-text-pointview { /* 점수출력 */
     position: absolute;
     top: 510px;
-    left: 79rem;
+    left: 1085px;
     color: black;
     font-weight: 900;
     font-size: 60px;
-    padding-left: 42px;
+    padding-left: 60px;
     padding-top: 30px;
     background-color: white;
 }
@@ -272,7 +272,7 @@ bookList5, bookList6, bookList7, bookList8 {
 
 #overlay-text-gopointshop{
     top: 650px;
-    left: 80.5rem;
+    left: 1100px;
     position: absolute;
     color: #F0E39E;
     background-color: #223A1C;
