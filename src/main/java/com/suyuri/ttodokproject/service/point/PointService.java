@@ -2,6 +2,7 @@ package com.suyuri.ttodokproject.service.point;
 
 import com.suyuri.ttodokproject.entity.MemberEntity;
 import com.suyuri.ttodokproject.entity.PointEntity;
+import com.suyuri.ttodokproject.entity.WordEntity;
 import com.suyuri.ttodokproject.repository.MemberRepository;
 import com.suyuri.ttodokproject.repository.PointRepository;
 import lombok.RequiredArgsConstructor;
@@ -33,10 +34,40 @@ public class PointService {
                 .collect(Collectors.toList());
     }
 
+    public List<String> getAllProductCodes() {
+        List<PointEntity> pointEntityList = pointRepository.findAll();
+        return pointEntityList.stream()
+                .map(PointEntity::getProductCode)
+                .collect(Collectors.toList());
+    }
+
+
+
+
+
+//    public List<String> getAllProductImages(String productCode) {
+//        List<PointEntity> pointEntityList = pointRepository.findByProductCode(productCode);
+//        return pointEntityList.stream()
+//                .map(PointEntity::getProductImage)
+//                .collect(Collectors.toList());
+//    }
+//
+//    public List<String> getAllProductNames01(String productCode) {
+//        List<PointEntity> pointEntityList = pointRepository.findByProductCode(productCode);
+//        return pointEntityList.stream()
+//                .map(PointEntity::getProductName)
+//                .collect(Collectors.toList());
+//    }
+
 
     public int getMemberPoint(String memberId) {
         Optional<MemberEntity> optionalMember = memberRepository.findByMemberId(memberId);
         return optionalMember.map(MemberEntity::getPoint).orElse(0);
     }
 
+
+    public List<PointEntity> getProductInfo(String productCode) {
+        List<PointEntity> pointEntityList = pointRepository.findByProductCode(productCode);
+        return pointEntityList;
+    }
 }

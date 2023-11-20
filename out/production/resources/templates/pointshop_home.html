@@ -39,6 +39,7 @@
 <div class="gifticon_list"> <!--기프티콘리스트묶음-->
     <div class="set_gifticon">
         <div class="gifticon1"> <!--기프티콘1-->
+            <div class="gifticon_code" th:text="${productCode != null and productCode.size() > 0 ? productCode[0] : '코드'}"></div>
             <div class="gifticon_title" th:text="${productName != null and productName.size() > 0 ? productName[0] : '기프티콘'}"></div>
                 <img class="gifticon_img" src="../images/gifticon_img.png" title="기프티콘1">
             <div class="gifticon_price" th:text="${productPoint != null and productPoint.size() > 0 ? productPoint[0] + 'P' : '기본값'}"></div>
@@ -46,6 +47,7 @@
         </div>
 
         <div class="gifticon2"> <!--기프티콘2-->
+            <div class="gifticon_code" th:text="${productCode != null and productCode.size() > 0 ? productCode[1] : '코드'}"></div>
             <div class="gifticon_title" th:text="${productName != null and productName.size() > 0 ? productName[1] : '기프티콘'}"></div>
             <div>
                 <img class="gifticon_img" src="../images/gifticon_img.png" title="기프티콘2">
@@ -56,6 +58,7 @@
         </div>
 
         <div class="gifticon3"> <!--기프티콘3-->
+            <div class="gifticon_code" th:text="${productCode != null and productCode.size() > 0 ? productCode[2] : '코드'}"></div>
             <div class="gifticon_title" th:text="${productName != null and productName.size() > 0 ? productName[2] : '기프티콘'}"></div>
             <div>
                 <img class="gifticon_img" src="../images/gifticon_img.png" title="기프티콘3">
@@ -65,6 +68,7 @@
         </div>
 
         <div class="gifticon4"> <!--기프티콘4-->
+            <div class="gifticon_code" th:text="${productCode != null and productCode.size() > 0 ? productCode[3] : '코드'}"></div>
             <div class="gifticon_title" th:text="${productName != null and productName.size() > 0 ? productName[3] : '기프티콘'}">기프티콘4</div>
             <div>
                 <img class="gifticon_img" src="../images/gifticon_img.png" title="기프티콘4">

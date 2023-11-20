@@ -1,6 +1,7 @@
 package com.suyuri.ttodokproject.controller.point;
 
 import com.suyuri.ttodokproject.dto.MemberDTO;
+import com.suyuri.ttodokproject.entity.PointEntity;
 import com.suyuri.ttodokproject.service.MemberService;
 import com.suyuri.ttodokproject.service.point.PointService;
 import jakarta.servlet.http.HttpSession;
@@ -33,11 +34,16 @@ public class PointController {
         System.out.println("allProductNames: " + allProductNames);
         List<Integer> allProductPoints = pointService.getAllProductPoints();
         System.out.println("allProductPoints: " + allProductPoints);
+        List<String> allProductCodes = pointService.getAllProductCodes();
+        System.out.println("allProductCodes : " + allProductCodes);
+
+
         if (loginId != null) {
             int memberPoint = memberService.getMemberPoint(loginId);
             model.addAttribute("memberPoint", memberPoint);
             model.addAttribute("productName", allProductNames);
             model.addAttribute("productPoint", allProductPoints);
+            model.addAttribute("productCode", allProductCodes);
         }
 
         return "pointshop_home";
@@ -65,6 +71,7 @@ public class PointController {
     @PostMapping("/pointshop/productupdatepoint")
     public String pointhomeupdatepoint(@RequestParam String loginId,
                                        @RequestParam int point) {
+
         System.out.println("loginId: " + loginId);
         System.out.println("updatedProductPoint: " + point);
 
@@ -88,4 +95,52 @@ public class PointController {
 //
 //        return "pointshop_home";
 //    }
+
+
+    //포인트 구매 후 구매 상품 페이지 출력 - point.js
+    @GetMapping("/pointshopresult")
+    public String pointshopresult(@RequestParam("currentUser") String currentUser,
+                                  @RequestParam("selectProductCode") String productCode) {
+
+        System.out.println("currentUser: "+currentUser);
+        System.out.println("productCode: "+productCode);
+//        System.out.println("pointshopresult 메소드 실행되었습니다!!!111111");
+
+        return "pointshop_result";
+    }
+
+
+//    @PostMapping("/pointshopresult/gifticonimg")
+//    @ResponseBody
+//    public List<PointEntity> updateProductCodeOnServer(@RequestParam("loginId") String loginId,
+//                                                       @RequestParam("productCode") String productCode) {
+//        // productCode에 해당하는 productName과 productImage 리스트 가져오기
+//        List<PointEntity> pointEntityList = pointService.getProductInfo(productCode);
+//
+//        // List<ProductInfo>을 반환하여 JSON 형태로 전송
+//        return pointEntityList;
+//    }
+
+
+    @PostMapping("/pointshopresult/gifticonimg")
+    @ResponseBody
+    public Map<String, Object> updateProductCodeOnServer(@RequestParam("loginId") String loginId,
+                                                         @RequestParam("productCode") String productCode) {
+        Map<String, Object> response = new HashMap<>();
+
+        // productCode에 해당하는 productName과 productImage 리스트 가져오기
+        List<PointEntity> pointEntityList = pointService.getProductInfo(productCode);
+
+        // 사용자 포인트 가져오기
+        int memberPoint = memberService.getMemberPoint(loginId);
+
+        response.put("pointEntityList", pointEntityList);
+        response.put("memberPoint", memberPoint);
+
+        return response;
+    }
+
+
+
+
 }

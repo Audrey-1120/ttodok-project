@@ -216,8 +216,8 @@ bookList5, bookList6, bookList7, bookList8 {
 }
 
 #overlay-text {
-    left: 80rem;
-    top: 415px;
+    left: 79rem;
+    top: 384px;
     padding-left: 15px;
     position: absolute;
     color: black;
@@ -236,14 +236,14 @@ bookList5, bookList6, bookList7, bookList8 {
 
 #line-image {
     position: absolute;
-    top: 465px;
+    top: 427px;
     /* padding-left: 1px; */
-    left: 79rem;
+    left: 79.4rem;
 }
 
 #overlay-text-pointshop { /* 내포인트 문구 */
     position: absolute;
-    top: 480px;
+    top: 444px;
     padding-left: 15px;
     left: 79rem;
     color: black;
@@ -394,12 +394,12 @@ ul h2 {
     width: 73rem;
     margin-top: 40px;
     text-align: center;
-    /* margin-left: 100px; */
-    /* margin-right: 100px; */
     padding-bottom: 160px;
     height: 35vh;
-    /*background-color: #f3f2eb;*/
-    background-color: #ffffff
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px #00000040;
+    border-radius: 20px;
+    border: 3px solid #F0E39E;
 }
 
 .total_point_box {

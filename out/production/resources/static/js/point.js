@@ -1,4 +1,6 @@
 var selectProductPoint = 0;
+var selectProductCode = '';
+var currentUser = '';
 
 
                 document.getElementById("buybtn1").addEventListener("click", function(event) {
@@ -24,10 +26,14 @@ var selectProductPoint = 0;
                     gifticonElement.addEventListener('click', function() {
                         // 클릭한 요소의 productPoint 값을 읽어와서 처리
                         var gifticonPriceElement = gifticonElement.querySelector('.gifticon_price');
+                        var gifticonCodeElement = gifticonElement.querySelector('.gifticon_code');
+
                         var selectProductPointValue = gifticonPriceElement.innerText;
+                        selectProductCode = gifticonCodeElement.innerText;
                         selectProductPoint = parseInt(selectProductPointValue, 10);
 
                         console.log('선택한 요소의 productPoint:', selectProductPoint);
+                        console.log('선택한 요소의 productcode:', selectProductCode);
                     });
                 });
 
@@ -81,7 +87,7 @@ var selectProductPoint = 0;
                         success: function(response) {
                             console.log('Received response:', response);
 
-                            var currentUser = response.loginId; //현재 로그인한 유저의 아이디 얻어옴.
+                            currentUser = response.loginId; //현재 로그인한 유저의 아이디 얻어옴.
                             var currentPoint = response.memberPoint; // 현재 포인트 값 가져오기
 
                             var updatedProductPoint = 0;
@@ -122,6 +128,12 @@ var selectProductPoint = 0;
                     });
                 }
 
+                function redirectToPointShopResult() {
+                     console.log("redirecting with selectProductCode and currentUser", selectProductCode, currentUser);
+                     const apiUrl = `/pointshopresult?selectProductCode=${selectProductCode}&currentUser=${currentUser}`;
+                     window.location.href = apiUrl;
+                }
+
 
 
                 //구매 실패시
@@ -139,5 +151,8 @@ var selectProductPoint = 0;
                       title: "구매가 완료되었습니다!",
                       text: "축하해요!",
                       icon: "success"
-                    });
+                    }).then(function(){
+                      			//포인트샵 결과 화면페이지 이동.
+                      			redirectToPointShopResult();
+                      		})
                 }

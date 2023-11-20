@@ -81,10 +81,10 @@ body{
     border-top-right-radius: 20px;
 }
 
-.set_gifticon{
+.set_gifticon {
     position: relative;
-    margin-left: 18rem;
-    margin-top: 9rem;
+    margin-left: 41%;
+    margin-top: 5rem;
 }
 /*
 .gifticon1 {
@@ -96,8 +96,9 @@ body{
 }
 */
 
+
 .gifticon_code{
-    display: none;
+    display:none;
 }
 
 .gifticon_title {
@@ -114,9 +115,8 @@ body{
 .gifticon_img {
     margin-top: 10px;
     margin-bottom: 10px;
-    width: 185px;
-    height: 280px;
-    border-radius: 20px;
+    width: max-content;
+    height: 480px;
 }
 
 .gifticon1{
