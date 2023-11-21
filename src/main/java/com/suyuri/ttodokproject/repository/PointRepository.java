@@ -10,4 +10,5 @@ import java.util.Optional;
 
 public interface PointRepository extends JpaRepository<PointEntity, String> {
 
+    List<PointEntity> findByProductCode(String productCode);
 }

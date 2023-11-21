@@ -30,12 +30,6 @@
                     // textstudy-title에 데이터 추가
                     var titleContent = '<h3 class="textstudy-title">' + $('<div/>').text(textEntity.textTitle).html() + '</h3>';
                     $('.textstudy-title').append(titleContent);
-
-                    /*console.log('wordTitle:', textEntity.wordTitle);
-                    // wordstudy-title에 textstudy-title 불러오기
-                    var wordTitleContent = '<h3 class="wordstudy-title">' + $('<div/>').text(textEntity.textTitle).html() + '</h3>';
-                    $('.wordstudy-title').append(wordTitleContent);*/
-
                 }
 
             },

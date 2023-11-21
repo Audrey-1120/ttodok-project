@@ -55,8 +55,8 @@ v .workdstudy-page {
 .wordstudy-rabbit {
   /*토끼*/
 
-  width: 155px;
-  height: 155px;
+  width: 150px;
+  height: 150px;
   position: absolute;
   left: 25%;
   top: 8.5%;
@@ -100,7 +100,16 @@ v .workdstudy-page {
   width: 80%;
 }
 
-/*회원가입 확인버튼*/
+/* 음성 기능 버튼 */
+.volume-up {
+  margin-top: 2%;
+  width: 40px;
+  height: 40px;
+
+}
+
+
+
 .wordstudybutton {
   padding: 20px 50px;
   box-shadow: 3px 4px 4px gray;
@@ -111,6 +120,7 @@ v .workdstudy-page {
   font-size: 55px;
   font-weight: 800;
   font-family: 'Pretendard';
+  cursor: pointer;
 }
 
 /* 다음단계 넘어가기 버튼 */
@@ -129,10 +139,11 @@ v .workdstudy-page {
 
 /*뒤로가기*/
 .wordstudy-backbutton {
-  width: 90%;
+  width: 92.5%;
   font-size: 32px;
   font-weight: 800;
   margin-left: 2%;
+  margin-top: 1%;
 }
 
 /*홈으로 - 집로고*/
@@ -192,7 +203,6 @@ v .workdstudy-page {
   height: 35rem;
   overflow: hidden;
   padding: 3px 0;
-  cursor: grab;
 }
 
 .items {
@@ -228,7 +238,4 @@ v .workdstudy-page {
 }
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> develop

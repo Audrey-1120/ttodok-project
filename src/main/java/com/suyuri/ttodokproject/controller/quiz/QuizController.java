@@ -112,7 +112,7 @@ public class QuizController {
 
         MemberDTO memberDTO = new MemberDTO(loginId, point);
         memberService.updateMemberPoint(memberDTO);
-        return "/main";
+        return "quiz4";
     }
 
 

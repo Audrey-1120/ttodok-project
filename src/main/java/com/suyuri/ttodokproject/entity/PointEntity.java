@@ -21,4 +21,7 @@ public class PointEntity {
 
     @Column(nullable = false)
     private Integer productPoint;
+
+    @Column(nullable = false)
+    private String productImage;
 }

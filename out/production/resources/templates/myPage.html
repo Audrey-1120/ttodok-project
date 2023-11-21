@@ -17,38 +17,25 @@
 
 
     <header id="header">
-        <img src="images/joinlogo.png" height="63" width="92" >
+        <img src="images/joinlogo.png" height="60" width="95" >
     </header>
 
-    <section id="contents" style="position: relative;">
-        <img src="images/myPageImage.png" id="myPageImg" height="600" width="1200">
-
-        <div style="position: absolute; top: 50px; left: 50px;">
+    <section>
+        <div id="overlay-container">
+            <img src="images/myPageImage.png" id="myPageImg" height="600" width="1200">
             <p id="myPage_text">마이 페이지</p>
-        </div>
-
-        <div style="position: absolute; top: 700px; left: 350px;">
-            <p id="overlay-text">
-                <span class="user-nick" th:text="${userNick != null ? userNick : 'Guest'}"></span> 님! 반가워요
-            </p>
-        </div>
-
-        <div style="position: absolute; top: 900px; left: 350px;">
+            <span class="user-nick" th:text="${userNick != null ? userNick : 'Guest'}"></span>
+            <p id="user-nick-info">님 반가워요</p>
+            <img src="/images/line.png" id="line-image"  width="240">
+            <p id="overlay-text-pointshop">내 포인트</p>
             <p id="overlay-text-pointview" th:text="${memberPoint} + '점'"></p>
-        </div>
+            <img src="/images/puppy.png" id="puppy-image"  width="200" height="200">
 
-        <div style="position: absolute; top: 500px; left: 50px;">
             <button id="logoutButton">로그아웃</button>
-        </div>
-
-        <div style="position: absolute; top: 500px; left: 200px;">
             <button id="deleteMemberButton">탈퇴하기</button>
-        </div>
-
-        <div style="position: absolute; top: 500px; left: 350px;">
             <button id="myPagetoGoHome">돌아가기</button>
-        </div>
 
+        </div>
     </section>
 
 
@@ -82,6 +69,15 @@
                 });
         }
     });
+
+    // 돌아가기 버튼
+    const myPagetoGoHomeButton = document.getElementById("myPagetoGoHome");
+
+    myPagetoGoHomeButton.addEventListener("click", () => {
+        // 돌아가기 버튼을 눌렀을 때의 동작
+        window.location.href = "/main_ver2"; // main_ver2 페이지로 이동
+    });
+
 
 </script>
 

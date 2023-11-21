@@ -14,18 +14,14 @@ import lombok.Setter;
 public class TextEntity {
 
     @Id
-    private String text;
-
-    @Column(unique = true, length = 10, nullable = false)
     private String textCode;
 
-    @Column(length = 100, nullable = false)
+    @Column(length = 50, nullable = false)
     private String textTitle;
 
-    @Column(length = 1000, nullable = false)
+    @Column(nullable = false)
     private String textContent;
 
-    @Column(length = 100, nullable = false)
+    @Column(nullable = false)
     private int textLevel;
-
 }

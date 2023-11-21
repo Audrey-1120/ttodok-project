@@ -137,6 +137,7 @@ body {
   text-align: center;
   font-weight: 600;
   line-height: 180px;
+  cursor: pointer;
 }
 
 /*선택지 1 선택 시 노란색으로 바뀌는 효과*/
@@ -157,6 +158,7 @@ body {
   text-align: center;
   font-weight: 600;
   line-height: 180px;
+  cursor: pointer;
 }
 
 /*선택지 2 선택 시 노란색으로 바뀌는 효과*/
@@ -177,6 +179,7 @@ body {
   text-align: center;
   font-weight: 600;
   line-height: 180px;
+  cursor: pointer;
 }
 
 /*선택지 3 선택 시 노란색으로 바뀌는 효과*/
@@ -197,6 +200,7 @@ body {
   text-align: center;
   font-weight: 600;
   line-height: 180px;
+  cursor: pointer;
 }
 
 /*선택지 4 선택 시 노란색으로 바뀌는 효과*/
@@ -228,6 +232,7 @@ body {
   left: 92%;
   width: 102px;
   height: 40.41px;
+  cursor: pointer;
 }
 
 /*전체 화면 - 로고 제외*/

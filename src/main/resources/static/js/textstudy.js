@@ -30,7 +30,6 @@
                     // textstudy-title에 데이터 추가
                     var titleContent = '<h3 class="textstudy-title">' + $('<div/>').text(textEntity.textTitle).html() + '</h3>';
                     $('.textstudy-title').append(titleContent);
-
                 }
 
             },

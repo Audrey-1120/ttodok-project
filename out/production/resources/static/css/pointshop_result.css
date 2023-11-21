@@ -1,0 +1,159 @@
+@charset "UTF-8";
+@import "reset.css";
+
+html{
+    width:100%;
+    height:100%;
+}
+body{
+    width:100%;
+    height:100%;
+   /* margin:0px;*/
+   font-family : 'Pretendard', sans-serif;
+}
+
+.menu { /*상단 로고 및 메뉴바*/
+    display : flex;
+    justify-content: space-between;
+    align-items : center;
+    margin-bottom: 7rem;
+    width: 100%;
+}
+
+.join-menubar {
+    margin-right: 2%;
+    font-weight: 500;
+    font-size: 13px;
+}
+.join-menubar {
+    margin-right: 1%;
+    margin-top: -32px;
+    font-weight: 500;
+    font-size: 15px;
+}
+.join-logo {
+    width: 93px;
+    height: 53px;
+    flex-shrink: 0;
+    margin: 0.5rem 76.3rem 1rem 1rem;
+}
+
+.td_logo {
+    width: 75px;
+}
+.ps_pagetitle{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+}
+.member_links { /*상단우측에위치*/
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.links_text {
+    font-size: 10px;
+    margin-right: 5px;
+}
+.total_point_box {
+    text-align: center;
+    font-size: 29px;
+    font-weight: 700;
+    background-color: #3C9E23;
+    margin-left: 130px;
+    margin-right: 1100px;
+    height: 80px;
+    width: 300px;
+    padding-bottom: 1px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.gifticon_list {
+    display: flex;
+    width: 107rem;
+    text-align: center;
+    margin-left: 108px;
+    padding-bottom: 160px;
+    height: 55vh;
+    background-color: #ffffff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.set_gifticon {
+    position: relative;
+    margin-left: 41%;
+    margin-top: 5rem;
+}
+/*
+.gifticon1 {
+    margin-top: 100px;
+    margin-left:149px;
+    width: 100px;
+    height: 300px;
+    text-align: center;
+}
+*/
+
+
+.gifticon_code{
+    display:none;
+}
+
+.gifticon_title {
+    background:#ffffff;
+    font-size: 27px;
+    font-weight: 600;
+}
+.gifticon_price {
+    background:#ffffff;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.gifticon_img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: max-content;
+    height: 480px;
+}
+
+.gifticon1{
+    position:absolute;
+    background:#ffffff;
+
+}
+
+/*기프티콘요소여백정렬*/
+.gifticon2 {
+    position:absolute;
+    margin-left: 19rem;
+    background:#ffffff;
+}
+.gifticon3 {
+    position:absolute;
+    margin-left: 38rem;
+    background:#ffffff;
+}
+.gifticon4 {
+    position:absolute;
+    margin-left: 57rem;
+    background:#ffffff;
+}
+
+
+
+button {
+    font-weight: 700;
+    margin-top: 10px;
+    background-color: #223A1C;
+    color: #F0E39E;
+    border: none;
+    border-radius: 5px;
+    min-height: 40px;
+    min-width: 148px;
+    font-size: 20px;
+    font-family: 'Pretendard', sans-serif;
+    cursor: pointer;
+}
