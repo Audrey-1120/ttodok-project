@@ -4,6 +4,13 @@
 
     console.log("card", card);
 
+    document.getElementById("textStudyButton").addEventListener("click", function(event) {
+            const card1 = card; // 수정된 부분
+            console.log("card1", card1); // 로그 출력
+            redirectToTextLearningPage(card1);
+    //        event.preventDefault();
+    });
+
     //기능 처리 함수
     $(document).ready(function () {
         //DB에서 데이터 불러오기
@@ -23,6 +30,12 @@
                     // textstudy-title에 데이터 추가
                     var titleContent = '<h3 class="textstudy-title">' + $('<div/>').text(textEntity.textTitle).html() + '</h3>';
                     $('.textstudy-title').append(titleContent);
+
+                    /*console.log('wordTitle:', textEntity.wordTitle);
+                    // wordstudy-title에 textstudy-title 불러오기
+                    var wordTitleContent = '<h3 class="wordstudy-title">' + $('<div/>').text(textEntity.textTitle).html() + '</h3>';
+                    $('.wordstudy-title').append(wordTitleContent);*/
+
                 }
 
             },
@@ -78,30 +91,13 @@
             stopSpeech();
         });
 
-        // 스크롤 이벤트 처리
-        /*$('#text-container').on('scroll', function () {
-               console.log('Scrolling...');
-               var container = $(this);
-               var scrollHeight = container.prop('scrollHeight');
-               var scrollTop = container.scrollTop();
-               console.log('Scroll Top:', scrollTop);
-               var containerHeight = container.height();
-
-               // 스크롤이 끝까지 내려가면 다음 단계 버튼 표시
-               if (scrollHeight - scrollTop === containerHeight) {
-                   $('#textStudyButton').parent().show(); // 부모인 textstudy-button을 보여줌
-               } else {
-                   $('#textStudyButton').parent().hide(); // 부모인 textstudy-button을 숨김
-               }
-        });*/
-
     }); //$(document).ready(function ()
 
     console.log(typeof $); //테스트용로그
 
     function redirectToTextLearningPage() {
         console.log("redirecting with card", card);
-        const apiUrl = `/textstudy?card=${card}`;
+        const apiUrl = `/quizhome?card=${card}`;
                       // 단어 학습 페이지 URL에 이미지 번호를 매개변수로 추가하여 페이지 이동
         window.location.href = apiUrl;
     }

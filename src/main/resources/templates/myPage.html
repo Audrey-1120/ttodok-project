@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>또독</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/myPage.css">
+</head>
+
+<body>
+<div id="container">
+
+
+    <header id="header">
+        <img src="images/joinlogo.png" height="63" width="92" >
+    </header>
+
+    <section id="contents" style="position: relative;">
+        <img src="images/myPageImage.png" id="myPageImg" height="600" width="1200">
+
+        <div style="position: absolute; top: 50px; left: 50px;">
+            <p id="myPage_text">마이 페이지</p>
+        </div>
+
+        <div style="position: absolute; top: 700px; left: 350px;">
+            <p id="overlay-text">
+                <span class="user-nick" th:text="${userNick != null ? userNick : 'Guest'}"></span> 님! 반가워요
+            </p>
+        </div>
+
+        <div style="position: absolute; top: 900px; left: 350px;">
+            <p id="overlay-text-pointview" th:text="${memberPoint} + '점'"></p>
+        </div>
+
+        <div style="position: absolute; top: 500px; left: 50px;">
+            <button id="logoutButton">로그아웃</button>
+        </div>
+
+        <div style="position: absolute; top: 500px; left: 200px;">
+            <button id="deleteMemberButton">탈퇴하기</button>
+        </div>
+
+        <div style="position: absolute; top: 500px; left: 350px;">
+            <button id="myPagetoGoHome">돌아가기</button>
+        </div>
+
+    </section>
+
+
+
+
+</div>
+
+<script>
+    // 로그아웃 코드
+    document.getElementById('logoutButton').addEventListener('click', function() {
+        // 로그아웃 버튼을 눌렀을 때 실행할 동작을 여기에 작성
+        window.location.href = "/member/login"; // 로그아웃 경로로 이동
+    });
+
+    // 회원 탈퇴
+    const deleteMemberButton = document.getElementById("deleteMemberButton");
+
+    deleteMemberButton.addEventListener("click", () => {
+        if (confirm("정말로 회원을 탈퇴하시겠습니까?")) {
+            // 확인 버튼을 눌렀을 때의 동작
+            fetch("/members/delete", {
+                method: "DELETE",
+            })
+                .then(response => {
+                    if (response.status === 200) {
+                        alert("회원 탈퇴가 완료되었습니다.");
+                        location.href = "/member/login"; // 탈퇴 후 로그인 페이지로 이동
+                    } else {
+                        alert("회원 탈퇴에 실패했습니다.");
+                    }
+                });
+        }
+    });
+
+</script>
+
+</body>
+</html>

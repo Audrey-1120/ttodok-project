@@ -1,66 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>또독</title>
+
+  <script
+          src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="/css/main_ver2.css">
+  <link rel="stylesheet" href="/css/main_ver2.css?afterfit ">
 </head>
 
 <body>
 <div id="container1">
   <header id="header">
-    <img src="images/ttodokLogo2.png" height="70">
-    <ul>
-      <li id="first">또독이란?</li>
+    <img id="mainLogo" src="../images/ttodokLogo2.png" height="70">
+    <ul id="headerul">
+      <li>또독이란?</li>
       <li>학습하기</li>
       <li>포인트 상점</li>
-      <li id="last">로그인</li>
+      <li id="homeMyPageBtn" onclick="redirectToMypage()"> 마이페이지  </li>
     </ul>
   </header>
+
 
   <section id="contents">
     <img src="/images/wordList_ver2.png" id="todayWordList" >
   </section>
 
   <aside id="sidebar">
-    <img src="/images/loginBtn_ver2.png" id="loginBtn_ver2" height="150">
+    <div id="overlay-container">
+      <img src="/images/loginBtn_ver2.png" id="loginBtn_ver2" height="150">
+      <p id="overlay-text">
+        <span class="user-nick" th:text="${userNick != null ? userNick : 'Guest'}"></span> 님! 반가워요
+      </p>
+      <img src="/images/line.png" id="line-image"  width="240">
+      <p id="overlay-text-pointshop">내 포인트</p>
+      <p id="overlay-text-pointview" th:text="${memberPoint} + '점'"></p>
+      <button id="overlay-text-gopointshop" >포인트상점 </button>
+    </div>
   </aside>
-
-</div>
-
-
-
 
 <div id="container2">
   <section id="book">
     <h1 id="book_text">재미있는 이야기가 가득!</h1>
-    <ul>
+    <ul id="booklistul_1">
       <li id="bookList1">
         <h2 id="bookNameNum1">엄지공주</h2>
-        <img src="/images/book1.png" onclick="redirectToWordLearningPage('t001')">
+        <img src="/images/book1.png" onclick="redirectToWordLearningPage('t001')"> <!--Audrey님이 추가함. : 이미지에 해당하는 word_code 전송.-->
       </li>
       <li id="bookList2">
         <h2 id="bookNameNum2">피노키오</h2>
-        <img src="/images/book1.png" onclick="redirectToWordLearningPage('t002')">
+        <img src="/images/book1.png" onclick="redirectToWordLearningPage('t002')"> <!--Audrey님이 추가함. : 이미지에 해당하는 word_code 전송.-->
       </li>
       <li id="bookList3">
         <h2 id="bookNameNum3">신데렐라</h2>
-        <img src="/images/book1.png" onclick="redirectToWordLearningPage('t003')">
+        <img src="/images/book1.png" onclick="redirectToWordLearningPage('t003')"> <!--Audrey님이 추가함. : 이미지에 해당하는 word_code 전송.-->
       </li>
       <li id="bookList4">
         <h2 id="bookNameNum4">개구리 왕자</h2>
-        <img src="/images/book1.png" onclick="redirectToWordLearningPage('t004')">
+        <img src="/images/book1.png" onclick="redirectToWordLearningPage('t004')"> <!--Audrey님이 추가함. : 이미지에 해당하는 word_code 전송.-->
       </li>
     </ul>
 
-    <ul>
+    <ul id="booklistul_2">
       <li id="bookList5">
         <h2 id="bookNameNum5">컵케이크</h2>
-        <img src="/images/.png">
+        <img src="/images/book1.png">
       </li>
       <li id="bookLis6">
         <h2 id="bookNameNum6">우주비행사</h2>
@@ -77,19 +88,17 @@
 
   </section>
 
-  <section id="point_store">
+  <section id="point_sotre">
     <h1 id="storeText">포인트로 상품을 구매할 수 있어요!</h1>
     <img src="/images/pointStoreVer2.png" id="pointStoreVer2" >
-
-    <a href="/pointshop_home">
-      <button id="storeGoBtn" type="submit"> 바로가기 </button>
-    </a>
+    <button id="storeGoBtn" type="submit"> 바로가기 </button>
   </section>
 
   <footer id="footer">
     <img src="/images/ttodokLogo3.png" id="footerLogo">
   </footer>
 
+</div>
 </div>
 
 
@@ -98,8 +107,19 @@
 </html>
 
 <script>
-    function redirectToWordLearningPage(imageNumber) {
+
+
+  //Audrey님이 추가함. - 마이페이지 넘어가기. 이미지에 해당하는 번호 넘기는 함수
+  function redirectToMypage() {
+      window.location.href = "/myPage";
+  }
+
+  //Audrey님이 추가함. - 이미지 번호 매개변수 추가해서 페이지 이동하는 함수
+  function redirectToWordLearningPage(imageNumber) {
       // 단어 학습 페이지 URL에 이미지 번호를 매개변수로 추가하여 페이지 이동
       window.location.href = "/wordstudy?card=" + imageNumber;
-    }
+  }
+
+
+
 </script>

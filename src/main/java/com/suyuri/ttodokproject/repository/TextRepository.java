@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 public interface TextRepository extends JpaRepository<TextEntity, String> {
-
-    List<TextEntity> findByTextCode(String card);
-
+    //List<TextEntity> findByTextCode(String card);
+    public List<TextEntity> findByTextCode(String textCode);
 }

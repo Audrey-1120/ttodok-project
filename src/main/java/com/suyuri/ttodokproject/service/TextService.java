@@ -21,9 +21,8 @@ public class TextService {
 
     public List<TextEntity> getTextByCard(String card) {
         List<TextEntity> textEntities = textRepository.findByTextCode(card);
+
         return textEntities;
     }
-
-
 
 }

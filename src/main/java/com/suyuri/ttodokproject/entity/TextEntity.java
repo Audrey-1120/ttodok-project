@@ -27,4 +27,5 @@ public class TextEntity {
 
     @Column(length = 100, nullable = false)
     private int textLevel;
+
 }

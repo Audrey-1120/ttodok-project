@@ -20,6 +20,4 @@ public class WordService {
         return wordEntities;
     }
 
-
-
 }

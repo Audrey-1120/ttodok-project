@@ -1,13 +1,17 @@
+
+
 * {  /* 전체 적용 */
     background-color: #F0E39E;
     margin:0;  /* 브라우저 기본 마진 리셋 */
     padding:0;  /* 브라우저 기본 패딩 리셋 */
     box-sizing: border-box;  /* 테두리까지 포함해서 박스 모델 너비로 계산 */
-    font-family: 'Inter';
+    font-family: 'pretendard';
     background-image: url('static/images/circle.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+
 
 #container1{
     width:1200px;   /* 내용 전체의 너비 */
@@ -27,18 +31,23 @@
     margin-left: 90px;
     width:100%;
     height:120px;
+
 }
+
 
 /* 네비게이션바 구성요소 */
 
-ul {
+#headerul {
+    margin-left: 50px;
     list-style-type: none;
     width: 1500px;
     height: 500px;
+    font-size: 18px;
+    font-weight: bolder;
 }
 
 li {
-    font-weight: bold;
+    font-weight: 900;
     min-width: 14rem;
     padding: 10px;
     float: left;
@@ -47,6 +56,20 @@ li {
     background-color: white;
     border: 1px solid white;
 }
+
+/* 첫 번째 아이템의 왼쪽 끝을 둥글게 만듭니다 */
+ul li:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+/* 마지막 아이템의 오른쪽 끝을 둥글게 만듭니다 */
+ul li:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
 
 /* 사이드바 (로그인, 회원가입) */
 
@@ -168,7 +191,7 @@ bookList5, bookList6, bookList7, bookList8 {
     margin-left: 35%;
     margin-top: 60px;
     margin-bottom: 200px;
-    color: white;;
+    color: white;
     line-height: 66.56px;
     font-weight: bold;
     background-color:#3C9E23;
@@ -183,3 +206,79 @@ bookList5, bookList6, bookList7, bookList8 {
 }
 
 
+/* 사이드 바 */
+.overlay-container {
+    position: relative;
+}
+
+#overlay-text {
+    left: 1070px;
+    top: 400px;
+    padding-left: 15px;
+    position: absolute;
+    color: black;
+    font-weight: 700;
+    font-size: 22px;
+    background-color: white;
+}
+
+#overlay-text .user-nick { /* 사용자닉네임부분 */
+    left: 1070px;
+    color: #356A28;
+    font-size: 29px;
+    font-weight: 900;
+    background-color: white;
+}
+
+#line-image {
+    position: absolute;
+    top: 465px;
+    padding-left: 15px;
+    left: 1075px;
+}
+
+#overlay-text-pointshop { /* 내포인트 문구 */
+    position: absolute;
+    top: 480px;
+    padding-left: 15px;
+    left: 1063px;
+    color: black;
+    font-weight: 700;
+    font-size: 19px;
+    background-color: white;
+}
+
+#overlay-text .user-nick {
+    color: #356A28;
+    font-size: 32px;
+    left: 1300px;
+    font-weight: 900;
+    background-color: white;
+}
+
+#overlay-text-pointview { /* 점수출력 */
+    position: absolute;
+    top: 510px;
+    left: 1085px;
+    color: black;
+    font-weight: 900;
+    font-size: 60px;
+    padding-left: 60px;
+    padding-top: 30px;
+    background-color: white;
+}
+
+
+#overlay-text-gopointshop{
+    top: 650px;
+    left: 1100px;
+    position: absolute;
+    color: #F0E39E;
+    background-color: #223A1C;
+    border-radius: 10px;
+    height: 39px;
+    font-size: 20px;
+    font-weight: 900;
+    width : 198px ;
+
+}

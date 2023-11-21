@@ -4,6 +4,13 @@
 
     console.log("card", card);
 
+    document.getElementById("textStudyButton").addEventListener("click", function(event) {
+            const card1 = card; // 수정된 부분
+            console.log("card1", card1); // 로그 출력
+            redirectToTextLearningPage(card1);
+    //        event.preventDefault();
+    });
+
     //기능 처리 함수
     $(document).ready(function () {
         //DB에서 데이터 불러오기
@@ -23,6 +30,7 @@
                     // textstudy-title에 데이터 추가
                     var titleContent = '<h3 class="textstudy-title">' + $('<div/>').text(textEntity.textTitle).html() + '</h3>';
                     $('.textstudy-title').append(titleContent);
+
                 }
 
             },
@@ -84,7 +92,7 @@
 
     function redirectToTextLearningPage() {
         console.log("redirecting with card", card);
-        const apiUrl = `/textstudy?card=${card}`;
+        const apiUrl = `/quizhome?card=${card}`;
                       // 단어 학습 페이지 URL에 이미지 번호를 매개변수로 추가하여 페이지 이동
         window.location.href = apiUrl;
     }
