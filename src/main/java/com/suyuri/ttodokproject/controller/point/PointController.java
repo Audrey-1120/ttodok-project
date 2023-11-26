@@ -81,20 +81,6 @@ public class PointController {
     }
 
 
-    //포인트상점 데이터 가져오기
-//    @GetMapping("/pointshop/stuff")
-//    public String pointshopgetstuff(HttpSession session, Model model) {
-//        List<String> allProductNames = pointService.getAllProductNames();
-//        System.out.println("allProductNames: " + allProductNames);
-//
-//        model.addAttribute("productName", allProductNames);
-//
-//        List<Integer> allProductPoints = pointService.getAllProductPoints();
-//        System.out.println("allProductPoints: " + allProductPoints);
-//        model.addAttribute("productPoint", allProductPoints);
-//
-//        return "pointshop_home";
-//    }
 
 
     //포인트 구매 후 구매 상품 페이지 출력 - point.js
@@ -109,17 +95,6 @@ public class PointController {
         return "pointshop_result";
     }
 
-
-//    @PostMapping("/pointshopresult/gifticonimg")
-//    @ResponseBody
-//    public List<PointEntity> updateProductCodeOnServer(@RequestParam("loginId") String loginId,
-//                                                       @RequestParam("productCode") String productCode) {
-//        // productCode에 해당하는 productName과 productImage 리스트 가져오기
-//        List<PointEntity> pointEntityList = pointService.getProductInfo(productCode);
-//
-//        // List<ProductInfo>을 반환하여 JSON 형태로 전송
-//        return pointEntityList;
-//    }
 
 
     @PostMapping("/pointshopresult/gifticonimg")

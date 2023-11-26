@@ -42,24 +42,6 @@ public class PointService {
     }
 
 
-
-
-
-//    public List<String> getAllProductImages(String productCode) {
-//        List<PointEntity> pointEntityList = pointRepository.findByProductCode(productCode);
-//        return pointEntityList.stream()
-//                .map(PointEntity::getProductImage)
-//                .collect(Collectors.toList());
-//    }
-//
-//    public List<String> getAllProductNames01(String productCode) {
-//        List<PointEntity> pointEntityList = pointRepository.findByProductCode(productCode);
-//        return pointEntityList.stream()
-//                .map(PointEntity::getProductName)
-//                .collect(Collectors.toList());
-//    }
-
-
     public int getMemberPoint(String memberId) {
         Optional<MemberEntity> optionalMember = memberRepository.findByMemberId(memberId);
         return optionalMember.map(MemberEntity::getPoint).orElse(0);

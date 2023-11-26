@@ -152,18 +152,6 @@ let checkid;
         let Nick = document.getElementById("memberNick");
 
 
-        //데이터 확인용 로그 출력
-<!--        console.log("Id",Id.value);-->
-<!--        console.log("Pw",Pw.value);-->
-<!--        console.log("Pw_check",Pw_check.value);-->
-<!--        console.log("Name",Name.value);-->
-<!--        console.log("Phone",Phone.value);-->
-<!--        console.log("Nick",Nick.value);-->
-
-<!--        console.log("checkid",checkid);-->
-<!--        console.log("checkpw",checkpw);-->
-<!--        console.log("checkpwsame",checkpwsame);-->
-<!--        console.log("checknick",checknick);-->
 
 
             //유효성, 중복확인 통과했는지 검사

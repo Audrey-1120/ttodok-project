@@ -6,9 +6,9 @@
     padding:0;  /* 브라우저 기본 패딩 리셋 */
     box-sizing: border-box;  /* 테두리까지 포함해서 박스 모델 너비로 계산 */
     font-family: 'Pretendard';
-    background-image: url('../images/circle.png');
+    /*background-image: url('../images/circle.png');
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: fixed;*/
 }
 
 
@@ -159,14 +159,14 @@ bookList5, bookList6, bookList7, bookList8 {
 }
 
 #footer {
-    height: 117px;
+    height: 84px;
     background-color: #81C370;
     clear: both;
 }
 
 #footerLogo {
     background-color: #81C370;
-    margin: 25px;
+    margin: 9px;
 }
 
 
@@ -217,19 +217,19 @@ bookList5, bookList6, bookList7, bookList8 {
 
 #overlay-text {
     left: 79rem;
-    top: 384px;
+    top: 387px;
     padding-left: 15px;
     position: absolute;
     color: black;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 24px;
     background-color: white;
 }
 
 #overlay-text .user-nick { /* 사용자닉네임부분 */
-    left: 1070px;
     color: #356A28;
-    font-size: 29px;
+    font-size: 38px;
+    left: 1300px;
     font-weight: 900;
     background-color: white;
 }
@@ -243,33 +243,25 @@ bookList5, bookList6, bookList7, bookList8 {
 
 #overlay-text-pointshop { /* 내포인트 문구 */
     position: absolute;
-    top: 444px;
+    top: 450px;
     padding-left: 15px;
     left: 79rem;
     color: black;
     font-weight: 700;
-    font-size: 19px;
+    font-size: 26px;
     background-color: white;
     cursor: pointer;
 }
 
-#overlay-text .user-nick {
-    color: #356A28;
-    font-size: 32px;
-    left: 1300px;
-    font-weight: 900;
-    background-color: white;
-}
-
 #overlay-text-pointview { /* 점수출력 */
     position: absolute;
-    top: 510px;
-    left: 80rem;
+    top: 529px;
+    left: 82rem;
     color: black;
     font-weight: 900;
     font-size: 60px;
-    padding-left: 27px;
-    padding-top: 30px;
+    /* padding-left: 27px; */
+    /* padding-top: 30px; */
     background-color: white;
 }
 
@@ -281,8 +273,8 @@ bookList5, bookList6, bookList7, bookList8 {
     color: #F0E39E;
     background-color: #223A1C;
     border-radius: 10px;
-    height: 39px;
-    font-size: 20px;
+    height: 43px;
+    font-size: 22px;
     font-weight: 900;
     width: 198px;
     cursor: pointer;
@@ -311,12 +303,13 @@ bookList5, bookList6, bookList7, bookList8 {
 
 #booklistul_1 img,
 #booklistul_2 img {
-    max-width: 100%;
-    height: auto;
+    max-width: 97%;
+    height: 215px;
+    width: 15rem;
     overflow: hidden;
     background-color: white;
-
 }
+
 /* 선택적으로 배경색과 글자 색상을 지정할 수 있습니다. */
 #booklistul_1 li,
 #booklistul_2 li {
@@ -448,10 +441,11 @@ ul h2 {
     background:#ffffff;
 }
 
-.gifticon_title{
-    background:#ffffff;
-    font-size: 20px;
+.gifticon_title {
+    background: #ffffff;
+    font-size: 22px;
     font-weight: 600;
+    width: 10rem;
 }
 
 .gifticon_price{
@@ -462,6 +456,13 @@ ul h2 {
 
 
 .gifticon_img {
-    width:134px;
-    height:180px;
+    width: 134px;
+    height: 180px;
+    transform: scale(1.0);
+    transition: transform .5s;
+}
+
+.gifticon_img:hover {
+    transform: scale(0.9);
+    transition: transform .5s;
 }

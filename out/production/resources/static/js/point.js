@@ -37,25 +37,6 @@ var currentUser = '';
                     });
                 });
 
-                //구매하시겠습니까? 알림창
-//                function showAlertBuy() {
-//
-//                    Swal.fire({
-//                      title: "해당 상품을 구매하시겠어요?",
-//                      text: "멋지네요!",
-//                      icon: "question",
-//                      showCancelButton: true,
-//                      confirmButtonColor: "#3085d6",
-//                      cancelButtonColor: "#d33",
-//                      confirmButtonText: "네!"
-//                    }).then((result) => {
-//                        buyProduct();
-//
-//
-//                    });
-//
-//                }
-
 
                 function showAlertBuy() {
 

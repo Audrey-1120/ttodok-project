@@ -26,4 +26,5 @@ public class TdWordEntity {
     @Column
     private String tdwordEx;
 
+    // 생성자, 게터, 세터 등 필요한 메서드 추가
 }

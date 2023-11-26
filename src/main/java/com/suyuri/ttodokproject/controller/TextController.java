@@ -45,14 +45,6 @@ public class TextController {
         return response;
     }
 
-    /*@GetMapping("/textstudy")
-    public String textstudyForm(Model model, @RequestParam String card) {
-        List<TextEntity> textEntities = textService.getTextByCard(card);
-
-        model.addAttribute("textEntities", textEntities);
-
-        return "textstudy"; // 뷰의 이름을 반환
-    }*/
 
 
 }

@@ -17,10 +17,6 @@ public class TdWordService {
     private final TdWordRepository tdWordRepository;
 
 
-//    public List<TdWordEntity> getAllWords() {
-//        return tdWordRepository.findAll();
-//    }
-
     public TdWordEntity getRandomWord() {
         List<TdWordEntity> wordList = tdWordRepository.findAll();
         int randomIndex = new Random().nextInt(wordList.size());

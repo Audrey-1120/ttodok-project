@@ -44,6 +44,12 @@ public class MemberController {
         return "main_ver2";
     }
 
+    //또독이란? 페이지 화면 출력 요청
+    @GetMapping("/intro")
+    public String introPage() {
+        return "intro";
+    }
+
 
     //여기부터 회원가입 시작
     // 회원가입 페이지 출력 요청
@@ -139,8 +145,7 @@ public class MemberController {
     }
 
 
-    // 메인 페이지와 마이페이지 출력 요청
-
+    // 메인 페이지 출력 요청
     @GetMapping("/main_ver2")
     public String mainPage(HttpSession session, Model model) {
         String loginId = (String) session.getAttribute("loginId");
@@ -152,9 +157,6 @@ public class MemberController {
         System.out.println("allProductPoints: " + allProductPoints);
 
         //오늘의 단어
-//        List<TdWordEntity> tdwordList = tdWordService.getAllWords();
-//        System.out.println("tdwordList: "+ tdwordList);
-        // 모델에 데이터를 담아서 타임리프로 전달한다
 
         TdWordEntity randomWord = tdWordService.getRandomWord();
 

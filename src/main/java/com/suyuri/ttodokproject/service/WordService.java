@@ -22,10 +22,4 @@ public class WordService {
         return wordEntities;
     }
 
-
-//    //단어 해당하는 동화 제목 가져오는 메소드
-//    public WordEntity getWordTitleByWordCode(String card) {
-//        WordEntity wordEntity = textRepository.findByTextCode(card);
-//        return wordEntity;
-//    }
 }

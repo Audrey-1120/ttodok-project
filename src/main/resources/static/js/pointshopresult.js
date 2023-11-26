@@ -86,25 +86,3 @@ function triggerDownload() {
         alert('이미지가 아직 로드되지 않았습니다.');
     }
 }
-
-
-
-
-
-
-//function triggerDownload() {
-//    var imgElement = document.getElementById('giftiImage');
-//    var downloadLink = document.createElement('a');
-//
-//    // 이미지가 로드되었을 때 실행되는 함수
-//    downloadLink.href = imgElement.src;
-//    downloadLink.download = 'downloaded_image.png';
-//
-//    document.body.appendChild(downloadLink);
-//    downloadLink.click();
-//
-//    document.body.removeChild(downloadLink);
-//}
-
-
-

@@ -31,12 +31,6 @@ body{
     font-weight: 500;
 }
 
-/*상단 메뉴*/
-/*.menu > a{
-    text-decoration-line: none;
-    color: black;
-}*/
-
 .join-logo { /*회원가입 페이지 로고*/
     width: 93px;
     height: 53px;

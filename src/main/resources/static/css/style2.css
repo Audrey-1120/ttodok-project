@@ -111,18 +111,6 @@ body {
   height: 29px;
 }
 
-/*
-.quiz1-choiceContent {
-  font-weight: 500;
-  padding: 5%;
-
-}
-
-.quiz1-choiceCode01 {
-  font-weight: 500;
-  padding: 5%;
-}
-*/
 
 /*선택지 1*/
 .quiz1-choice01 {
@@ -208,11 +196,6 @@ body {
   background-color: #F0E39E;
 }
 
-/*
-.quiz1-passagedesign {
-    color: red;
-}
-*/
 
 /*토끼 아이콘*/
 .rabbit {

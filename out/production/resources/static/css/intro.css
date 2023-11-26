@@ -1,0 +1,174 @@
+@import "reset.css";
+
+/*
+ *{
+    padding : 0;
+    margin : 0;
+    border : none;
+    background-color: #f0e39e;
+}
+
+body{
+    font-size : 14px;
+    font-family : 'Pretendard', sans-serif;
+}
+
+*/
+
+
+
+
+
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #f0e39e;
+  background-image: url('../images/circle3.jpg');
+  background-size: cover;
+}
+
+.codepen1 {
+  display: flex;
+  font-size: 60px;
+  align-items: flex-start;
+  color: #000;
+  justify-content: center;
+}
+
+.codepen2 {
+    display: flex;
+    font-size: 40px;
+    align-items: flex-start;
+    color: #000;
+    justify-content: center;
+}
+
+.codepen3 {
+    display: flex;
+    font-size: 40px;
+    align-items: flex-start;
+    color: #000;
+    justify-content: center;
+}
+
+
+
+
+span {
+    position: sticky;
+    top: calc(50% - 50px);
+    height: 100px;
+    display: inline-flex;
+    align-items: center;
+    font-family: "pretendard", sans-serif;
+    margin-left: 2px;
+    margin-right: 2px;
+    font-weight: 600;
+    font-size: 60px;
+}
+
+.title01 {
+    color: darkgreen;
+    font-size: 80px;
+    margin-bottom: 12%;
+}
+
+.bg {
+    position: absolute;
+    left: -25vw;
+    top: -50vw;
+    width: 150vw;
+    height: 650vw;
+    background-color:#f0e39e;
+    background-size: cover;
+    z-index: -1;
+    -webkit-filter: blur(120px);
+    filter: blur(120px);
+  }
+
+.c2 {
+    margin-top: 100vw;
+    text-align: center;
+    line-height: 80px;
+}
+
+.c3 {
+  margin-top: 200vw;
+}
+
+.c4 {
+  margin-top: 300vw;
+}
+
+.c5 {
+  margin-top: 400vw;
+}
+
+.c6 {
+  margin-top: 500vw;
+}
+
+.c7 {
+  margin-top: 600vw;
+}
+
+.c8 {
+  margin-top: 700vw;
+}
+
+#a1 {
+    position: sticky;
+    bottom: -80px;
+    width: 180px;
+    text-align: center;
+    right: 0px;
+    padding: 10px 20px;
+    float: right;
+    color: #f0e39e;
+    font-size: 22px;
+    font-family: 'pretendard';
+    z-index: 1;
+    background-color: green;
+    border-radius: 20px 0 0;
+    text-decoration: none;
+}
+
+#a2 {
+    position: sticky;
+    bottom: -80px;
+    width: 180px;
+    text-align: center;
+    right: 90%;
+    padding: 10px 20px;
+    float: right;
+    color: #f0e39e;
+    font-size: 22px;
+    font-family: 'pretendard';
+    z-index: 1;
+    background-color: green;
+    border-radius: 0 20px 0 0;
+    text-decoration: none;
+}
+
+.scroll {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  bottom: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 660px) {
+  a {
+    display: none;
+  }
+
+  span {
+    font-size: 15vw;
+  }
+}
