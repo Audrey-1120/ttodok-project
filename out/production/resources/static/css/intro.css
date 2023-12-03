@@ -78,7 +78,7 @@ span {
     font-size: 80px;
     margin-bottom: 12%;
 }
-
+/*
 .bg {
     position: absolute;
     left: -25vw;
@@ -91,7 +91,7 @@ span {
     -webkit-filter: blur(120px);
     filter: blur(120px);
   }
-
+*/
 .c2 {
     margin-top: 100vw;
     text-align: center;
@@ -106,6 +106,7 @@ span {
   margin-top: 300vw;
 }
 
+/*
 .c5 {
   margin-top: 400vw;
 }
@@ -121,6 +122,7 @@ span {
 .c8 {
   margin-top: 700vw;
 }
+*/
 
 #a1 {
     position: sticky;
@@ -163,6 +165,8 @@ span {
   pointer-events: none;
 }
 
+
+/*
 @media (max-width: 660px) {
   a {
     display: none;
@@ -171,4 +175,4 @@ span {
   span {
     font-size: 15vw;
   }
-}
+}*/
