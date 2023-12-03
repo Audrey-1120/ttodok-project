@@ -1,27 +1,5 @@
 @import "reset.css";
 
-/*
- *{
-    padding : 0;
-    margin : 0;
-    border : none;
-    background-color: #f0e39e;
-}
-
-body{
-    font-size : 14px;
-    font-family : 'Pretendard', sans-serif;
-}
-
-*/
-
-
-
-
-
-
-
-
 html {
   scroll-behavior: smooth;
 }
@@ -78,20 +56,7 @@ span {
     font-size: 80px;
     margin-bottom: 12%;
 }
-/*
-.bg {
-    position: absolute;
-    left: -25vw;
-    top: -50vw;
-    width: 150vw;
-    height: 650vw;
-    background-color:#f0e39e;
-    background-size: cover;
-    z-index: -1;
-    -webkit-filter: blur(120px);
-    filter: blur(120px);
-  }
-*/
+
 .c2 {
     margin-top: 100vw;
     text-align: center;
@@ -106,23 +71,6 @@ span {
   margin-top: 300vw;
 }
 
-/*
-.c5 {
-  margin-top: 400vw;
-}
-
-.c6 {
-  margin-top: 500vw;
-}
-
-.c7 {
-  margin-top: 600vw;
-}
-
-.c8 {
-  margin-top: 700vw;
-}
-*/
 
 #a1 {
     position: sticky;
@@ -164,15 +112,3 @@ span {
   bottom: 0;
   pointer-events: none;
 }
-
-
-/*
-@media (max-width: 660px) {
-  a {
-    display: none;
-  }
-
-  span {
-    font-size: 15vw;
-  }
-}*/

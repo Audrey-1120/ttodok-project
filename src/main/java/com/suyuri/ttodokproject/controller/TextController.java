@@ -27,7 +27,6 @@ public class TextController {
     @GetMapping("/study/textstudy")
     @ResponseBody
     public Map<String, Object> textstudyForm(@RequestParam String card) {
-        System.out.println("card: " + card);
 
         // TextService에서 필요한 비즈니스 로직 수행
         List<TextEntity> textEntities = textService.getTextByCard(card);

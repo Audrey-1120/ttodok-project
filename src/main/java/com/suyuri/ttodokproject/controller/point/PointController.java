@@ -29,13 +29,9 @@ public class PointController {
     @GetMapping("/pointshop")
     public String pointshop(HttpSession session, Model model) {
         String loginId = (String) session.getAttribute("loginId");
-        System.out.println("loginId: " + loginId);
         List<String> allProductNames = pointService.getAllProductNames();
-        System.out.println("allProductNames: " + allProductNames);
         List<Integer> allProductPoints = pointService.getAllProductPoints();
-        System.out.println("allProductPoints: " + allProductPoints);
         List<String> allProductCodes = pointService.getAllProductCodes();
-        System.out.println("allProductCodes : " + allProductCodes);
 
 
         if (loginId != null) {
@@ -60,9 +56,6 @@ public class PointController {
         response.put("loginId", loginId);
         response.put("memberPoint", memberPoint);
 
-        System.out.println("loginId: " + loginId);
-        System.out.println("memberPoint: "+ memberPoint);
-
         return response;
     }
 
@@ -71,9 +64,6 @@ public class PointController {
     @PostMapping("/pointshop/productupdatepoint")
     public String pointhomeupdatepoint(@RequestParam String loginId,
                                        @RequestParam int point) {
-
-        System.out.println("loginId: " + loginId);
-        System.out.println("updatedProductPoint: " + point);
 
         MemberDTO memberDTO = new MemberDTO(loginId, point);
         memberService.updateProductMemberPoint(memberDTO);
@@ -87,10 +77,6 @@ public class PointController {
     @GetMapping("/pointshopresult")
     public String pointshopresult(@RequestParam("currentUser") String currentUser,
                                   @RequestParam("selectProductCode") String productCode) {
-
-        System.out.println("currentUser: "+currentUser);
-        System.out.println("productCode: "+productCode);
-//        System.out.println("pointshopresult 메소드 실행되었습니다!!!111111");
 
         return "pointshop_result";
     }

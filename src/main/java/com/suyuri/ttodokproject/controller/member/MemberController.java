@@ -149,12 +149,9 @@ public class MemberController {
     @GetMapping("/main_ver2")
     public String mainPage(HttpSession session, Model model) {
         String loginId = (String) session.getAttribute("loginId");
-        System.out.println("loginId: " + loginId);
 
         List<String> allProductNames = pointService.getAllProductNames();
-        System.out.println("allProductNames: " + allProductNames);
         List<Integer> allProductPoints = pointService.getAllProductPoints();
-        System.out.println("allProductPoints: " + allProductPoints);
 
         //오늘의 단어
 
@@ -169,7 +166,6 @@ public class MemberController {
             model.addAttribute("productName", allProductNames);
             model.addAttribute("productPoint", allProductPoints);
 
-//            model.addAttribute("tdwordList", tdwordList);
             model.addAttribute("tdwordList", List.of(randomWord));
 
         }

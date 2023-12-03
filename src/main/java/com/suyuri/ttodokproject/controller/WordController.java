@@ -34,7 +34,6 @@ public class WordController {
     @GetMapping("/study/wordstudy")
     @ResponseBody
     public Map<String, Object> wordstudyForm(@RequestParam String card) {
-        System.out.println("card: " + card);
 
         List<WordEntity> wordEntities = wordService.getWordByWordCode(card);
         List<TextEntity> textEntities = textService.getTextByCard(card);

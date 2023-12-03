@@ -81,7 +81,6 @@ var currentUser = '';
                                 // 현재 포인트값이 선택요소의 point값보다 작으면 결과를 false로 설정
                                 console.log("포인트가 부족해요!!");
                                 showAlertProductFailed();
-//                                window.location.href = "/pointshop";
 
                             }
 
@@ -101,7 +100,6 @@ var currentUser = '';
                         data: { loginId: currentUser, point: updatedProductPoint },
                         success: function (data) {
                               showAlertProductSuccess();
-//                              location.reload();
                         },
                         error: function (jqXHR, textStatus, errorThrown) {
                             console.error('Error updatingProduct points:', errorThrown);

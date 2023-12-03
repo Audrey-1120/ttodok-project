@@ -58,7 +58,7 @@ function updateMemberPoint(memberPoint) {
 
 
 
-//사진 저장하기....기프티콘 - 이건 브라우저 뜨자마자 바로 저장됨. 그런데 사용할 수 없는 이미지라고 뜸..
+//사진 저장하기....
 function onImageLoad() {
     var imgElement = document.getElementById('giftiImage');
     var downloadLink = document.createElement('a');

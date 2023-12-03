@@ -61,7 +61,6 @@ public class MemberService {
     //아이디 중복확인 및 유효성 검사
     public String idCheck(String memberId) {
         Optional<MemberEntity> byMemberId = memberRepository.findByMemberId(memberId);
-        System.out.println("byMemberId: " + byMemberId);
         if(byMemberId.isPresent()) {
             // 조회결과가 있다 -> 사용할 수 없다. 기존에 누가 쓰고있음.
             return null;
